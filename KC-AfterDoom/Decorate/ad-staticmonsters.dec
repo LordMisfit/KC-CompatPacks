@@ -1,0 +1,1060 @@
+ACTOR staticRotten_Apocalipsis 10884
+{
+	tag "Rotten Apocalipsis"
+	Health 8000
+	Radius 40
+	Height 160
+	Mass 6666
+	PainChance 0
+	DamageFactor "Bum", 0.0
+	scale 1.7
+	damagefactor "Avoid", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "TeleportRemover", 0.0
+	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
+	+SEEINVISIBLE
+	+NOINFIGHTING
+	+LOOKALLAROUND
+	+NOPAIN
+	+TELESTOMP
+	+MOVEWITHSECTOR
+	+JUMPDOWN
+	+NOTIMEFREEZE
+	+DONTHARMSPECIES
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Tag "Rotten Apocalipsis"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RPOK A -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_Mother 10883
+{
+	Health 8000
+	Tag "Rotten Mother Demon"
+	Radius 40
+	Height 105
+	Mass 10000
+	PainChance 6
+	+NOINFIGHTING
+	+NOBLOCKMONST
+	+LOOKALLAROUND
+	+FLOAT
+	+NOGRAVITY
+	+BOSS
+	+NORADIUSDMG
+	+NOTARGET
+	+NOFEAR
+	+NOTIMEFREEZE
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ROTH A -1
+			Loop
+	}
+}
+
+ACTOR staticKronos 10882
+{
+	+NOICEDEATH
+	Game Doom
+	Health 2500
+	Radius 100
+	Height 150
+	damagefactor "Crush", 30.0
+	Mass 6666
+	scale 2
+	DamageFactor "Fire", 0.0
+	DamageFactor "onda", 0.0
+	tag "Kronos"
+	Species "Icon"
+	+DONTFALL
+	+FLOAT 
+	+NOGRAVITY
+	+BOSS
+	+FLOORCLIP
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	+TELESTOMP 
+	+THRUSPECIES
+	damagefactor "Blood", 0.0
+	States
+	{
+		Spawn:
+			KRON D -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_God 10881
+{
+	+NOICEDEATH
+	+NOTELEPORT
+	Game Doom
+	Health 35000
+	Radius 160
+	Height 840
+	damagefactor "Crush", 30.0
+	Scale 4.8
+	Mass 996000
+	DamageFactor "Inferno", 0.0
+	DamageFactor "Fire", 0.0
+	DamageFactor "onda", 0.0
+	tag "Rotten Icon of Sin" 
+	Species "Icon"
+	
+	//MinMissileChance 200
+	DeathHeight 0
+	BurnHeight 0
+	+MOVEWITHSECTOR
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	+TELESTOMP 
+	+THRUSPECIES
+	damagefactor "Blood", 0.0
+	States
+	{
+		Spawn:
+			RPRM A -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_Cacodemon 10800
+{
+		Health 250
+		Radius 31
+		Height 56
+		Mass 400
+		+FLOAT 
+		+NOGRAVITY
+		Tag "Rotten Cacodemon"
+		DamageFactor "Bum", 0.0
+		Species "Icon"
+	
+	States
+	{
+		Spawn:
+			RAB1 A -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_imp 10799
+{
+		Health 60
+		Radius 20
+		Height 56
+		Mass 100
+		+FLOORCLIP
+		Tag "Rotten imp"
+		DamageFactor "Bum", 0.0
+		Species "Icon"
+
+	States
+	{
+		Spawn:
+			RROO A -1
+			Loop
+	}
+}
+
+Actor staticRotten_Abortion 10798
+{
+	Health 25
+	Radius 14
+	Height 28
+	Mass 20
+	+NoGravity
+	+Float
+	tag "Rotten Abortion"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RALN ABCB 8  
+			Loop
+	}
+}
+
+ACTOR staticRotten_Mancubus 10797
+{
+	Health 400
+	Radius 38
+	Height 64
+	Mass 1000
+	+FLOORCLIP
+	+BOSSDEATH
+	tag "Rotten Mancubus"
+	MeleeRange 128
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RATT A -1
+			Loop
+	}
+}
+
+ACTOR staticFLESHGOLEM 10796
+{
+	Health 1700
+	Radius 30
+	Height 80
+	Mass 1000
+	tag "FLESHGOLEM"
+	+BOSS 
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	States
+	{
+		Spawn:
+			GOLW A -1
+			Loop
+	}
+}
+
+ACTOR staticcolgadogritona 10795
+{
+	Radius 10
+	Height 36
+	Health 20  
+	Mass 999999
+	BloodColor "Red"  
+	Speed 0
+	tag "Zombieman"
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	+DONTFALL
+	States
+	{
+		Spawn:
+			KOLJ I -1
+			Loop
+	}
+}
+
+ACTOR colgadosinarma 22224
+{
+	Radius 20
+	Height 56
+	Mass 999999
+	Speed 0
+	tag "Zombieman"
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			COLG E -1 A_Look
+			Loop
+	}
+}
+
+ACTOR staticcolgadoconarma 10794
+{
+	Health 20
+	Radius 20
+	Height 56
+	Mass 999999
+	BloodColor "Red"
+	Speed 0
+	REACTIONTIME 1
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	tag "Zombieman"
+	DropItem "Clip"
+	States
+	{
+		Spawn:
+			COLJ E -1
+			Loop
+	}
+}
+
+actor staticSinIncarnate 10793 //Phase 1
+{
+	Tag "the Icon of Sin"
+	health 8000
+	Radius 60
+	Height 320
+	mass 9000
+	Scale 1.5
+	DamageFactor "Bum", 0.0
+	Species "Icon"
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOBLOCKMONST
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	states
+	{
+		Spawn:
+			ICOB AA -1
+			loop
+	}
+}
+
+actor staticSinReIncarnate 10792 //Phase 2
+{
+	Tag "Wrath of the Icon of Sin"
+	health 10000
+	DamageFactor "Bum", 0.0
+	Species "Icon"
+	Scale 1.5
+	
+	states
+	{
+	Spawn:
+		ICO2 BB -1
+		loop
+	}
+}
+
+Actor staticFallen 10791
+{
+	Health 40
+	Radius 24
+	Height 48
+	Mass 200
+	+NoGravity
+	+Float
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FALN ABCDB 8 Bright 
+			Loop
+	}
+}
+
+ACTOR staticZyberdemon 10790
+{
+	Health 3500
+	Radius 40
+	Height 110
+	Mass 1000
+	MinMissileChance 160
+	+MOVEWITHSECTOR
+	+JUMPDOWN
+	+NEVERTARGET
+	+NOTARGET
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZYBR A -1
+			Loop
+	}
+}
+
+ACTOR staticCryocubus 10786
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	+ALWAYSFAST
+	+NORADIUSDMG
+	+FLOORCLIP
+	+BOSSDEATH
+	var int user_isfiring;
+	Species "Icon"
+	States
+	{
+		Spawn:
+			HIEL A -1
+			Loop
+	}
+}
+
+ACTOR staticCyberdemon3 10785
+{
+	Health 4000
+	Radius 40
+	Height 110
+	Mass 1000
+	MinMissileChance 160
+	+ALWAYSFAST
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ANNI A -1
+			Loop
+	}
+}
+
+ACTOR staticBelphegorCloney 10772
+{ 
+	Health 1500 
+	Radius 24
+	Height 77
+	Mass 1000
+	Scale 1.1
+	BloodColor "7D 9D 59"
+	+NOTARGET
+	+FLOORCLIP 
+	Species "Icon"
+	States 
+	{ 
+		Spawn: 
+			IOOO A -1
+			Loop 
+	} 
+}	  
+
+ACTOR staticBulltubus 10773
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	+FLOORCLIP
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FOFO A -1
+			Loop
+	}
+}
+
+Actor staticForgottenOne 10784
+{
+	Health 40
+	Radius 14
+	Height 30
+	Mass 50
+	Scale 0.7
+	Species "Icon"
+	tag "ForgottenOne"
+	+FloorClip
+	+Float
+	+NoGravity
+	+NoIceDeath
+	+DontFall
+	+FloatBob
+	+NoBlood
+	States
+	{
+		Spawn:
+			FRGO AAAAAABBBBBB -1 Bright 
+			Loop
+	}
+}
+
+ACTOR staticGiantDemon 10783
+{
+	Health 1500
+	PainChance 0
+	Radius 30
+	Height 80
+	Mass 1000
+	Scale 0.5
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			QARG A -1
+	}
+}
+ACTOR staticButcher 10782
+{
+	Health 200
+	Radius 22
+	Height 44
+	Mass 1000
+	Scale 0.60
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BBUT G -1
+			Loop
+	}
+}	
+
+ACTOR staticMeleeRevenant 10781
+{
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	tag "MeleeRevenant"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZKEL A -1
+			Loop
+	}
+}
+
+ACTOR staticMeleepuffet 10780
+{
+	Health 10
+	Radius 20
+	Height 56
+	Mass 500
+	Scale 0.80
+	tag "Meleepuffet"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+NOTELESTOMP
+	+SOLID
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZKEL A -1
+			Loop
+	}
+}	
+
+ACTOR staticMeleeRebenant 10779
+{
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	tag "MeleeRebenant"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL A -1
+			Loop
+	}
+}
+
+ACTOR staticMeleepuppet 10778
+{
+	Health 10
+	Radius 20
+	Height 56
+	Mass 500
+	Scale 0.73 
+	tag "Meleepuppet"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+NOTELESTOMP
+	+SOLID
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL A -1
+			Loop
+	}
+}
+
+ACTOR staticAngryFatso 10777
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	scale 1.2
+	+ALWAYSFAST
+	+FLOORCLIP
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FATT A -1
+			Loop
+	}
+}	
+
+ACTOR staticInfernalHitler 10776
+{
+	Health 1500
+	Radius 30
+	Height 600
+	Mass 5554
+	Scale 13
+	tag "InfernalHitler"
+	+ALWAYSFAST
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			HITL A -1
+			Loop
+	}
+}
+
+ACTOR staticInfernoDemon 10775
+{
+	Health 5000
+	Radius 65
+	Height 200
+	Mass 5000
+	BloodColor "Red"
+	Scale 2
+	tag "InfernoDemon"
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+BOSS
+	+FLOORCLIP
+	+TELESTOMP
+	+DONTMORPH
+	+NOTARGET
+	+NOICEDEATH
+	damagefactor "Inferno", 0
+	Species "Icon"
+	
+	States
+	{
+		Spawn:
+			OOOI A -1
+			Loop
+	}
+}
+
+ACTOR staticGuardian 10774
+{
+	Health 1200
+	Radius 30
+	Height 100
+	Mass 5000
+	BloodColor "Red"
+	tag "Guardian"
+	+BOSS
+	+FLOORCLIP
+	+DONTMORPH
+	+NOTARGET
+	damagefactor "Inferno", 0
+	
+	States
+	{
+		Spawn:
+			OOOI A -1
+			Loop
+	}
+}	
+
+ACTOR staticRotten_nobu 32221
+{
+	Health 1
+	Radius 20
+	Height 20
+	Mass 500
+	MaxTargetRange 896
+	+FLOORCLIP
+	+NOTARGET
+	tag "Rotten Nobu"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			NOBU A 10 A_Look
+			Loop
+	}
+}
+
+ACTOR staticMaledict 10769
+{
+	Health 7000
+	Radius 80
+	Height 220
+	Mass 9000
+	scale 2
+	MinMissileChance 160
+	tag "Maledict"
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+float
+	+nogravity
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	
+	States
+	{
+		Spawn:
+			MALD ABCDCBA 10 
+			Loop
+	}
+}
+
+actor StaticAracnorbQueen 10768
+{
+	+NOGRAVITY
+	+FLOAT
+	+FLOATBOB
+	+BOSS
+	Health 5500
+	Radius 34
+	Height 76
+	Mass 2000
+	Scale 0.85
+	tag "Aracnorb Queen"
+	States
+	{
+		Spawn:
+			ARNQ A -1 
+			Loop
+	}
+}
+
+ACTOR StaticGod 19998
+{
+	+NOICEDEATH
+	Game Doom
+	Radius 170
+	Height 840
+	damagefactor "Crush", 30.0
+	Scale 4.8
+	Mass 996000
+	MaxStepHeight 300
+	MaxDropOffHeight 400
+	DamageFactor "Fire", 0.0
+	DamageFactor "onda", 0.0
+	tag "Titan Icon of Sin"
+	
+	//MinMissileChance 200
+	DeathHeight 0
+	BurnHeight 0
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	+TELESTOMP 
+	+THRUSPECIES
+	States
+	{
+		Spawn:
+			KPRM A -1 
+			Loop
+	}
+}
+
+ACTOR staticHellstormArchon 10885
+{
+	Health 8000 
+	Radius 40 
+	Height 110
+	scale 2 
+	Mass 1000 
+	PainChance 20 
+	MeleeDamage 10
+	tag "Hell Storm"
+	+FLOORCLIP 
+	+MISSILEMORE
+	+NORADIUSDMG
+	+BOSS
+	+DONTHURTSPECIES
+	DamageFactor "Bum", 0.0
+	Species "Icon"
+	States 
+  { 
+		Spawn: 
+			GOS3 A -1  
+			Loop 
+  }
+}
+
+actor staticGiygas 10771
+{
+	tag "Giygas"
+	health 12450
+	radius 96
+	height 96
+	mass 200
+	Scale 4
+	+NOBLOODDECALS
+	+Float
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+DONTHURTSPECIES
+	+NODAMAGETHRUST
+	+BLOODLESSIMPACT
+	+Nogravity
+	+SPAWNFLOAT
+	+HEXENBOUNCE
+	+NORADIUSDMG 
+	+Boss
+	states
+	{
+		Spawn:
+			GIYE A 1 bright A_Chase
+			GIYE AAAAA 0 A_SpawnItemEx ("GiygasSmoke", -2, random (0, -8), random (-4, 4), 0, random (-1, 1), random (-1, 1), 0, 160)
+			loop
+	}
+}
+
+Actor staticThamuz 10770
+{
+	tag "Thamuz"
+	Health 6000
+	Mass 2000
+	Scale 1.1
+	Bloodcolor "00 AA 00"
+	+Boss
+	+NoRadiusDMG
+	+FloorClip
+	DropItem CellPack
+	DropItem RocketBox
+	DropItem CellPack 128
+	DropItem RocketBox 128
+	States
+	{
+		Spawn:
+			DCYB A -1
+			Loop
+	}
+}	
+
+ACTOR staticApocalipsist 10789
+{
+	Health 800
+	Radius 40
+	Height 170
+	Mass 6666
+	DamageFactor "Bum", 0.0
+	scale 1.7
+	+ALWAYSFAST
+	+NOFEAR
+	+NOTIMEFREEZE
+	+NEVERTARGET
+	+NOTARGET
+	+DONTHARMSPECIES
+	+NOPAIN
+	+QUICKTORETALIATE
+	+MISSILEEVENMORE
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Tag "Apocalipsis"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			APOK A -1
+			Loop
+	}
+}
+
+ACTOR staticApocalipsis 10788
+{
+	Health 9999
+	Radius 40
+	Height 160
+	Mass 6666
+	PainChance 0
+	DamageFactor "Bum", 0.0
+	MeleeRange 1000
+	scale 1.7
+	dropitem "InvulnerabilitySphere"
+	damagefactor "Avoid", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "TeleportRemover", 0.0
+	DamageFactor "CauseSplash", 0.0
+	DamageFactor "CauseObjectsToSplashSlime", 0.0
+	DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0
+	DamageFactor "CauseObjectsToSplashLava", 0.0
+	+SEEINVISIBLE
+	+QUICKTORETALIATE
+	+LOOKALLAROUND
+	+NOPAIN
+	+TELESTOMP
+	+MOVEWITHSECTOR
+	+JUMPDOWN
+	+NOTIMEFREEZE
+	+DONTHARMSPECIES
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Tag "Apocalipsis"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BPOK A -1
+			Loop
+	}
+}
+
+ACTOR staticBattleLord 10787
+{
+	Health 1900
+	Radius 40
+	Height 130
+	Mass 6666
+	PainChance 0
+	DamageFactor "Bum", 0.0
+	scale 1.7
+	+ALWAYSFAST
+	+NOFEAR
+	+NOTIMEFREEZE
+	+NEVERTARGET
+	+NOTARGET
+	+DONTHARMSPECIES
+	+NOPAIN
+	+QUICKTORETALIATE
+	+MISSILEEVENMORE
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BTLO A -1
+			Loop
+	}
+}
+
+ACTOR StaticRotten_Mastermind 10886
+{
+	Health 8000
+	Radius 100
+	Height 100
+	Mass 1000
+	MinMissileChance 160
+	Scale 1.2
+	tag "Rotten Mastermind"
+	+JUMPDOWN
+	+NOINFIGHTING
+	+NEVERTARGET
+	+NOTARGET
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RPID A -1
+			Loop
+	}
+}
+
