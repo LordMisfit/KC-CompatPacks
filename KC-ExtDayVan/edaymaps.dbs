@@ -815,4 +815,146 @@ maps
 			stderriserror = true;
 		}
 	}
+	
+	MAP15
+	{
+		defaultwalltexture = "FLAT23";
+		overridemiddletexture = false;
+		defaultceiltexture = "F_SKY1";
+		overrideceiltexture = false;
+		custombrightness = 196;
+		scriptcompiler = "zdoom_acs.cfg";
+		
+		resources
+		{
+		}
+		viewpositiony = 4144f;
+		viewpositionx = -2640f;
+		
+		testprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		customceilheight = 128;
+		customfloorheight = 0;
+		
+		grid
+		{
+			backoffsetx = 0;
+			backsource = 0;
+			gridoriginy = 0;
+			backscaley = 100;
+			gridrotate = 0;
+			backscalex = 100;
+			gridoriginx = 0;
+			gridsize = 16;
+			background = "";
+			backoffsety = 0;
+		}
+		viewscale = 1.420455f;
+		
+		reloadresourceprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		defaulttoptexture = "FLAT23";
+		overridebottomtexture = false;
+		defaultbottomtexture = "FLAT23";
+		defaultfloortexture = "RROCK17";
+		overrideceilheight = false;
+		overridebrightness = false;
+		
+		testpostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		overridefloorheight = false;
+		overridetoptexture = false;
+		uselongtexturenames = false;
+		overridefloortexture = false;
+		
+		reloadresourcepostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+	}
+	
+	MAP16
+	{
+		defaultwalltexture = "DOORSTOP";
+		overridemiddletexture = false;
+		defaultceiltexture = "F_SKY1";
+		overrideceiltexture = false;
+		custombrightness = 196;
+		scriptcompiler = "zdoom_acs.cfg";
+		
+		resources
+		{
+		}
+		viewpositiony = 7054.378f;
+		viewpositionx = -6936.94f;
+		
+		testprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		customceilheight = 128;
+		customfloorheight = 0;
+		
+		grid
+		{
+			backoffsetx = 0;
+			backsource = 0;
+			gridoriginy = 0;
+			backscaley = 100;
+			gridrotate = 0;
+			backscalex = 100;
+			gridoriginx = 0;
+			gridsize = 32;
+			background = "";
+			backoffsety = 0;
+		}
+		viewscale = 0.1186399f;
+		
+		reloadresourceprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		defaulttoptexture = "DOORSTOP";
+		overridebottomtexture = false;
+		defaultbottomtexture = "DOORSTOP";
+		defaultfloortexture = "CEIL5_1";
+		overrideceilheight = false;
+		overridebrightness = false;
+		
+		testpostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		overridefloorheight = false;
+		overridetoptexture = false;
+		uselongtexturenames = false;
+		overridefloortexture = false;
+		
+		reloadresourcepostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+	}
 }
