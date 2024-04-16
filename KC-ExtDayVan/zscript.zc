@@ -72,6 +72,21 @@ class WaterActivation : KCHealthBoostItem
 						if (healdiff) A_RecoverHUD(healdiff, 0, true);
 						if (MiscItem) MiscItem.HPRegenBoostTimer += (randompick(9,10,10,11,11,12,13) * (healamt * 100));
 						
+						// PP restoration [since drinking water at least SLIGHTLY restores PP in EB, LUL :V]
+						if (A_CheckForHeiwaPlayer())
+						{
+							int PPHealAmt;
+							if (MiscItem.CurrentPsychicPoints < MiscItem.MaxPsychicPoints)
+							{
+										 if (MiscItem.TruePlayerLevel >= 75) PPHealAmt = randompick(9,10,11,11,12,12,13,13,14,15);
+								else if (MiscItem.TruePlayerLevel >= 25) PPHealAmt = randompick(2,3,4,4,5,5,6,6,7,8);
+																										else PPHealAmt = randompick(0,0,1,1,1,1,1,1,2,2);
+								MiscItem.PPRegenBoostTimer += (randompick(9,10,10,11,11,12,13) * (PPHealAmt * 50));
+								MiscItem.CurrentPsychicPoints += PPHealAmt;
+								if (MiscItem.CurrentPsychicPoints > MiscItem.MaxPsychicPoints) MiscItem.CurrentPsychicPoints = MiscItem.MaxPsychicPoints;
+							}
+						}
+						
 						if (MiscItem && MiscItem.CanTalkUnderwater)
 						{
 							double maskpitch = 1.00;
