@@ -16,7 +16,6 @@ version "3.7"
 #include "ZScript/Weapons/Rocket Launcher.zs"
 #include "ZScript/Weapons/Plasma Rifle.zs"
 #include "ZScript/Weapons/BFG9000.zs"
-*/
 
 ///MONSTERS///
 
@@ -41,6 +40,7 @@ version "3.7"
 
 #include "ZScript/Monsters/Cyberdemon.zs"
 #include "ZScript/Monsters/Spider Mastermind.zs"
+*/
 
 ///DECORATIONS///
 
