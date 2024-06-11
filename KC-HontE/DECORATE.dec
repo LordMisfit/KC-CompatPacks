@@ -1,8 +1,8 @@
-ACTOR HontEBossBrain: BossBrain
+ACTOR HontEBossBrain: BossBrainNew
 {
 } 
 
-ACTOR cursedmind: BossBrain
+ACTOR cursedmind : BossBrain
 {
 	health 666
 	RenderStyle "Stencil"
