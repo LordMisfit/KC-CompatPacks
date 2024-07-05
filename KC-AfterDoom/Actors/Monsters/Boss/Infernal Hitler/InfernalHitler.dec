@@ -1,0 +1,77 @@
+ACTOR InfernalHitler 15818
+{
+//$Category "After Doom Monster"
+  Health 1500
+  PainChance 10
+  Speed 10
+  Radius 30
+  Height 600
+  Mass 5554
+  Scale 13
+  Monster
+  +ALWAYSFAST
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+   SeeSound "Hitler/see"
+  AttackSound "spider/attack"
+  PainSound "grunt/pain"
+  DeathSound "cyber/death"
+  ActiveSound "Hitler/active"
+  Obituary "Doomguy stood in awe of the Infernal Hitler."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    HITL AB 10 A_Look
+  See:
+    HITL A 3 A_Metal
+    HITL ABB 3 A_Chase
+    HITL C 3 A_Metal
+    HITL CDD 3 A_Chase
+    HITL E 3 A_Metal
+    HITL EFF 3 A_Chase
+    Loop
+  Missile:
+    HITL A 20 Bright A_FaceTarget
+    HITL G 4 Bright A_SPosAttackUseAtkSound
+    HITL H 4 Bright A_SPosAttackUseAtkSound
+    HITL H 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    HITL I 3
+    HITL I 3 A_Pain
+    Goto See
+  Death:
+    HITL J 20 A_Scream
+    HITL K 10 A_NoBlocking
+    HITL LMNOPQR 10
+    HITL S 30
+    HITL S -1 A_BossDeath
+    Stop
+  }
+}
+
+ACTOR staticInfernalHitler 10776
+{
+
+  Health 1500
+  Radius 30
+  Height 600
+  Mass 5554
+  Scale 13
+  tag "InfernalHitler"
+  +ALWAYSFAST
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    HITL A -1
+    Loop
+  }
+}	

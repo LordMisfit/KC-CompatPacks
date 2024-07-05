@@ -1,0 +1,10 @@
+ACTOR YellowCardMarker : MapMarker 30500
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    YKEY AB 2
+    Loop
+  }
+}

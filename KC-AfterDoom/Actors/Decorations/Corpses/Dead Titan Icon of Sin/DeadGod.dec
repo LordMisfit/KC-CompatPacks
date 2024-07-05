@@ -1,0 +1,14 @@
+ACTOR DeadGod 30910
+{
+	Radius 170
+	Height 840
+    Scale 4.8
+  +FLOORCLIP
+	States
+	{
+	
+    Spawn:
+		KZRM N -1
+		Loop
+	}
+}

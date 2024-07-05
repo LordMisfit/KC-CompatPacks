@@ -1,0 +1,31 @@
+Actor BurningCorpse1 29641
+{
++SOLID
+Radius 8
+Height 108
+States
+{
+Spawn:
+BAVE ABCD 4
+Loop
+Inactive:
+ALVE A 1
+Loop
+}
+}
+
+Actor BurningCorpse2 29642
+{
++SOLID
+Radius 8
+Height 108
+States
+{
+Spawn:
+BAV2 ABCD 4
+Loop
+Inactive:
+ALV2 A 1
+Loop
+}
+}

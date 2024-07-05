@@ -1,0 +1,69 @@
+ACTOR Bulltubus 16555
+{
+//$Category "After Doom Monster"
+  Health 600
+  Radius 48
+  Height 64
+  Mass 1000
+  Speed 8
+  PainChance 80
+  Monster
+  +FLOORCLIP
+  +BOSSDEATH
+  SeeSound "fatso/sight"
+  PainSound "fatso/pain"
+  DeathSound "fatso/death"
+  ActiveSound "fatso/active"
+  Obituary "Doomguy stood in awe of the Bulltubus"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    FOFO AB 15 A_Look
+    Loop
+  See:
+    FOFO AABBCCDDEEFF 4 A_Chase
+    Loop
+  Missile:
+    FOFO G 20  A_FatRaise
+    FOFO G 4 Bright A_SPosAttack
+	FOFO I 5 Bright A_SPosAttack
+    FOFO H 4 Bright A_SPosAttack
+	FOFO I 5 Bright A_SPosAttack
+    FOFO H 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    FOFO J 3
+    FOFO J 3 A_Pain
+    Goto See
+  Death:
+    FOFO K 6
+    FOFO L 6 A_Scream
+    FOFO M 6 A_NoBlocking
+    FOFO NOPQRS 6
+    FOFO T -1 A_BossDeath
+    Stop
+  Raise:
+    FOFO R 5
+    FOFO QPONMLK 5
+    Goto See
+  }
+}
+
+ACTOR staticBulltubus 10773
+{
+
+  Health 600
+  Radius 48
+  Height 64
+  Mass 1000
+  +FLOORCLIP
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    FOFO A -1
+    Loop
+  }
+}	

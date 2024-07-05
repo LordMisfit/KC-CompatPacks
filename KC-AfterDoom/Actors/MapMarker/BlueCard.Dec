@@ -1,0 +1,10 @@
+ACTOR BlueCardMarker : MapMarker 30503
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    BKEY AB 2
+    Loop
+  }
+}

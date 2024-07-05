@@ -1,0 +1,17 @@
+ACTOR colgadosinarma 22224
+{
+  Radius 20
+  Height 56
+  Mass 999999
+  Speed 0
+  tag "Zombieman"
+  +SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+		COLG E -1 A_Look
+		Loop
+  }
+}

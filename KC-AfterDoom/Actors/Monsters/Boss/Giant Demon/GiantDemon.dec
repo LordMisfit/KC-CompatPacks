@@ -1,0 +1,69 @@
+ACTOR GiantDemon 15817
+{
+//$Category "After Doom Monster"
+  Health 1500
+  PainChance 0
+  Speed 17
+  Radius 30
+  Height 80
+  Mass 1000
+  Scale 0.5
+  Monster
+  +ALWAYSFAST
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+   SeeSound "Demon/sight"
+  AttackSound "Demon/melee"
+  PainSound "Demon/pain"
+  DeathSound "Demon/death"
+  ActiveSound "Demon/active"
+  obituary "%o was bit by a giant demon." // "%o was bit by a giant demon."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    QARG AB 10 A_Look
+  See:
+    QARG AABBCCDD 2  A_Chase
+    Loop
+  Melee:
+    QARG EF 4  A_FaceTarget
+    QARG G 4  A_SargAttack
+    Goto See
+  Pain:
+    QARG H 2 
+    QARG H 2  A_Pain
+    Goto See
+  Death:
+    QARG I 8
+    QARG J 8 A_Scream
+    QARG K 4
+    QARG L 4 A_NoBlocking
+    QARG M 4
+    QARG N -1
+    Stop
+  Raise:
+    Stop
+  }
+}
+
+ACTOR staticGiantDemon 10783
+{
+
+  Health 1500
+  PainChance 0
+  Radius 30
+  Height 80
+  Mass 1000
+  Scale 0.5
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    QARG A -1
+ }
+}	

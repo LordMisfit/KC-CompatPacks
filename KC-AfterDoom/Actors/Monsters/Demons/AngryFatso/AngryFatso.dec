@@ -1,0 +1,74 @@
+ACTOR AngryFatso 22222
+{
+//$Category "After Doom Monster"
+  Health 600
+  Radius 48
+  Height 64
+  Mass 1000
+  Speed 8
+  PainChance 20
+  scale 1.2
+  Monster
+  +ALWAYSFAST
+  +FLOORCLIP
+  +BOSSDEATH
+  SeeSound "fatso/sight"
+  PainSound "fatso/pain"
+  DeathSound "fatso/death"
+  ActiveSound "fatso/active"
+  Obituary "$OB_FATSO"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    FATT AB 15 A_Look
+    Loop
+  See:
+    FATT AABBCCDDEEFF 4 A_Chase
+    Loop
+  Missile:
+    FATT G 20 A_FatRaise
+    FATT H 10 Bright A_FatAttack1
+    FATT IG 5 A_FaceTarget
+    FATT H 10 Bright A_FatAttack2
+    FATT IG 5 A_FaceTarget
+    FATT H 10 Bright A_FatAttack3
+    FATT IG 5
+    Goto See
+  Pain:
+    FATT J 3
+    FATT J 3 A_Pain
+    Goto See
+  Death:
+    FATT K 6
+    FATT L 6 A_Scream
+    FATT M 6 A_NoBlocking
+    FATT NOPQRS 6
+    FATT T -1 A_BossDeath
+    Stop
+  Raise:
+    FATT R 5
+    FATT QPONMLK 5
+    Goto See
+  }
+}
+
+ACTOR staticAngryFatso 10777
+{
+
+  Health 600
+  Radius 48
+  Height 64
+  Mass 1000
+  scale 1.2
+  +ALWAYSFAST
+  +FLOORCLIP
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    FATT A -1
+    Loop
+  }
+}	

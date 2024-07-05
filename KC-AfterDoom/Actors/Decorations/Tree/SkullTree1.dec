@@ -1,0 +1,13 @@
+ACTOR fkullTree1 28999
+{
+	Radius 76
+	Height 157
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		TRES A -1
+		Stop
+	}
+}

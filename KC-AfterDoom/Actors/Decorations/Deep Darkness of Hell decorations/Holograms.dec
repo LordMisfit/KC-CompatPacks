@@ -1,0 +1,277 @@
+////////////Green Holograms
+Actor UACHolo1 26000
+{
+Scale 2
+Renderstyle add
++NOGRAVITY
+States
+{
+Spawn:
+	UACH A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner", random(-64,64), random(-64,64), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+
+////////////Plasma Particle Spawner
+Actor PlasmaSpawner
+{
+Alpha 0.75
+RenderStyle Add
++NOGRAVITY
++DONTSPLASH
++NOCLIP
+-SOLID
+Projectile
+States
+{
+Spawn:
+    PLEM AAAAAAAAAAAAAAAA 1 BRIGHT A_FadeOut(0.09) 
+    stop
+Death:
+    TNT1 A 1
+    stop
+}
+}
+
+Actor Chair 26001
+{
+  +FloorClip
+  +Solid
+  +SHOOTABLE
+  +NOBLOOD
+  +Pushable
+  Health 10
+  Height 30
+  Radius 15
+  DeathSound "BREAK1"
+  States
+  {
+  Spawn:
+    CHAI A -1
+    Stop
+	
+  Death:
+    KHAI A 1 A_Scream
+    KHAI A -1 A_NoBlocking
+	Stop
+  }
+}
+
+Actor BushTall1 26002
+{
+Radius 12
+Height 46
++SOLID
+States
+{
+Spawn:
+	BUS1 D -1
+	Stop
+}
+}
+
+Actor BushTall2 26003
+{
+Radius 12
+Height 24
++SOLID
+States
+{
+Spawn:
+	BUS1 E -1
+	Stop
+}
+}
+
+Actor BushTall3 : BushTall1 26004
+{
+States
+{
+Spawn:
+	BUS1 F -1
+	Stop
+}
+}
+
+ACTOR burger1 26005
+{
+  mass 1
+  Radius 4
+  Height 6
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    BRGR A -1
+    loop
+  }
+}
+
+ACTOR burger2 26006
+{
+  mass 1
+  Radius 4
+  Height 6
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    BRGR B -1
+    loop
+  }
+}
+
+ACTOR burger3 26007
+{
+  mass 1
+  Radius 4
+  Height 8
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    BRGR C -1
+    loop
+  }
+}
+
+ACTOR burger4 26008
+{
+  mass 1
+  Radius 4
+  Height 6
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    BRGR D -1
+    loop
+  }
+}
+
+
+ACTOR fries1 26009
+{
+  mass 1
+  Radius 3
+  Height 7
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    FRES A -1
+    loop
+  }
+}
+
+ACTOR fries2 26010
+{
+  mass 1
+  Radius 3
+  Height 6
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    FRES B -1
+    loop
+  }
+}
+
+ACTOR drink 26011
+{
+  mass 1
+  Radius 2
+  Height 7
+  scale 0.6
+  +SOLID
+  States
+  {
+   Spawn:
+    DRNK A -1
+    loop
+  }
+}
+
+ACTOR donuts 26012
+{
+  mass 1
+  Radius 5
+  Height 5
+  scale 0.3
+  +SOLID
+  States
+  {
+   Spawn:
+    DNTS A -1
+    loop
+  }
+}
+
+ACTOR dbox 26013
+{
+  mass 1
+  Radius 6
+  Height 8
+  +SOLID
+  States
+  {
+   Spawn:
+    DBOX A -1
+    loop
+  }
+}
+
+ACTOR Toilet1 26014
+{
+  Health 10
+  Radius 10
+  Height 34
+  Mass 10000000
+  +SOLID
+  +SHOOTABLE
+  +NOBLOOD
+  +ACTIVATEMCROSS
+  +DONTGIB
+  +NOICEDEATH
+  +OLDRADIUSDMG
+  DeathSound "BREAK1"
+  States
+  {
+  Spawn:
+    TOIL A 6
+    Loop
+  Death:
+    TOIL A 1 A_Scream
+    TOIL B 4
+	TOIL C 2
+	TOIL D 2
+	TOIL E 2
+	TOIL F 3
+	Goto Water
+  Water:
+    TOIF A 3 A_PlaySound ("Banio/TOILET1")
+	TOIF B 3
+	TOIF C 3
+	TOIF D 3
+	TOIF A 3
+	TOIF B 3
+	TOIF C 3
+	TOIF D 3
+    TOIF A 3
+	TOIF B 3
+	TOIF C 3
+	TOIF D 3
+    TOIF A 3
+	TOIF B 3
+	TOIF C 3
+	TOIF D 3
+	Loop
+  }
+}

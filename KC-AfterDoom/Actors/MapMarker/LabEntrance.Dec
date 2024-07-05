@@ -1,0 +1,10 @@
+ACTOR LabEntrance : MapMarker 30509
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    PLAB A -1 
+    Stop
+  }
+}

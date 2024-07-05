@@ -1,0 +1,13 @@
+Actor fCorpseBurning 16340
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		WBRN ABCDEFG 4 Bright
+		Loop
+	}
+}

@@ -1,0 +1,77 @@
+ACTOR Rotten_Mancubus 30000
+{
+//$Category "After Doom Monster"
+  Health 400
+  Radius 38
+  Height 64
+  Mass 1000
+  Speed 8
+  PainChance 80
+  Monster
+  +FLOORCLIP
+  +BOSSDEATH
+  tag "Rotten Mancubus"
+  SeeSound "rottenmancubus/ROTMANVE"
+  PainSound "rottenmancubus/ROTMANPA"
+  DeathSound "rottenmancubus/ROTMANMU"
+  ActiveSound "rottenmancubus/ROTMANAC"
+  Obituary "%o was squashed by a Rotten Mancubus."
+  MeleeRange 128
+  Species "Icon"
+  States
+  {
+  Spawn:
+    RATT A 5 A_Look
+    Loop
+  See:
+    RATT AABBCCDDEEFF 4 A_Chase
+    Loop
+  Melee:
+	RATT T 6 A_FaceTarget
+	RATT U 8 Bright A_CustomMissile("FatShot", 56, 0, 0, 0)
+	RATT T 6 
+	Goto See	
+  Missile:
+    RATT K 8  A_Playsound("rottenmancubus/ROTMANCA")
+    RATT L 4  
+	RATT M 8  A_PainAttack (Rotten_Abortion,0,0,0)
+    RATT L 2  
+	RATT K 2  
+    Goto See
+  Pain:
+    RATT J 3
+    RATT J 3 A_Pain
+    Goto See
+  Death:
+		RATT N 6
+		RATT O 6 A_Scream
+		RATT P 6 A_NoBlocking
+		RATT QR 6
+		RATT S -1 A_BossDeath
+    Stop
+  Raise:
+    RATT S 5
+    RATT RQPON 5
+    Goto See
+  }
+}
+
+ACTOR staticRotten_Mancubus 10797
+{
+
+  Health 400
+  Radius 38
+  Height 64
+  Mass 1000
+  +FLOORCLIP
+  +BOSSDEATH
+  tag "Rotten Mancubus"
+  MeleeRange 128
+  Species "Icon"
+  States
+  {
+  Spawn:
+    RATT A -1
+    Loop
+  }
+}	

@@ -1,0 +1,534 @@
+//Brightmaps Doom Burning Corpse 
+
+BrightMap Sprite BAVEA0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRVEA0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAVEB0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRVEB0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAVEC0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRVEC0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAVED0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRVED0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAV2A0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRV2A0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAV2B0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRV2B0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAV2C0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRV2C0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite BAV2D0
+{
+    Map "brightmaps/PNG/Doom Burning Corpse/BRV2D0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite ZXZNI0
+{
+    Map "brightmaps/PNG/CANDLE/ZXXNI0.png"
+    DisableFullBright
+}
+
+//Brightmaps CANDLE
+
+BrightMap Sprite ZZZNG0
+{
+    Map "brightmaps/PNG/CANDLE/ZZZZG0.png"
+	DisableFullBright
+}
+
+BrightMap Sprite ZZZNH0
+{
+    Map "brightmaps/PNG/CANDLE/ZZZZH0.png"
+	DisableFullBright
+}
+
+BrightMap Sprite ZZZNI0
+{
+    Map "brightmaps/PNG/CANDLE/ZZZZI0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite ZXZNG0
+{
+    Map "brightmaps/PNG/CANDLE/ZXXNG0.png"  
+	DisableFullBright
+}
+
+BrightMap Sprite ZXZNH0
+{
+    Map "brightmaps/PNG/CANDLE/ZXXNH0.png"
+    DisableFullBright
+}
+
+BrightMap Sprite ZXZNI0
+{
+    Map "brightmaps/PNG/CANDLE/ZXXNI0.png"
+    DisableFullBright
+}
+
+//Brightmaps
+
+BrightMap Sprite DCYBA1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBA1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBA2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBA2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBA3
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBA3.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBA7
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBA7.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBA8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBA8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBB1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBB1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBB2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBB2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBB3
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBB3.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBB7
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBB7.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBB8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBB8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBC1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBC1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBC2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBC2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBC3
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBC3.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBC7
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBC7.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBC8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBC8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBD1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBD1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBD2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBD2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBD3
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBD3.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBD7
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBD7.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBD8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBD8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBE1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBE1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBE2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBE2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBE3
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBE3.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBE7
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBE7.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBE8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBE8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF3
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF3.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF4
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF4.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF5
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF5.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF6
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF6.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF7
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF7.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBF8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBF8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBG1
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBG1.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBG2
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBG2.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBG8
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBG8.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBJ0
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBJ0.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBK0
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBK0.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBL0
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBL0.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBM0
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBM0.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBN0
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBN0.png"
+DisableFullBright
+}
+
+BrightMap Sprite DCYBO0
+{
+Map "brightmaps/PNG/Thamuz/BMDCYBO0.png"
+DisableFullBright
+}
+
+//BRIGHTMAPS: PISTOL
+BrightMap Sprite ALY2F1
+{
+Map "brightmaps/PNG/Marines/BMALY2F1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F2
+{
+Map "brightmaps/PNG/Marines/BMALY2F2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F3
+{
+Map "brightmaps/PNG/Marines/BMALY2F3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F4
+{
+Map "brightmaps/PNG/Marines/BMALY2F4.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F5
+{
+Map "brightmaps/PNG/Marines/BM1HAND5.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F6
+{
+Map "brightmaps/PNG/Marines/BMALY2F6.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F7
+{
+Map "brightmaps/PNG/Marines/BMALY2F7.png"
+DisableFullBright
+}
+BrightMap Sprite ALY2F8
+{
+Map "brightmaps/PNG/Marines/BMALY2F8.png"
+DisableFullBright
+}
+//MACHINEGUN [DOOM PLAYER BRIGHTMAPS]
+BrightMap Sprite ALY3F1
+{
+Map "brightmaps/PNG/Marines/BMALY3F1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY3F2F8
+{
+Map "brightmaps/PNG/Marines/BMALY3F2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY3F3F7
+{
+Map "brightmaps/PNG/Marines/BMALY3F3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY3F4F6
+{
+Map "brightmaps/PNG/Marines/BMALY3F4.png"
+DisableFullBright
+}
+BrightMap Sprite ALY3F5
+{
+Map "brightmaps/PNG/Marines/BM2HAND5.png"
+DisableFullBright
+}
+//CHAINGUN
+BrightMap Sprite ALY4F1
+{
+Map "brightmaps/PNG/Marines/BMALY4E1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4E2E8
+{
+Map "brightmaps/PNG/Marines/BMALY4E2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4E3E7
+{
+Map "brightmaps/PNG/Marines/BMALY4E3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4F1
+{
+Map "brightmaps/PNG/Marines/BMALY4F1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4F2F8
+{
+Map "brightmaps/PNG/Marines/BMALY4F2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4F3
+{
+Map "brightmaps/PNG/Marines/BMALY4F3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4F4
+{
+Map "brightmaps/PNG/Marines/BMALY4F4.png"
+DisableFullBright
+}
+BrightMap Sprite ALY4F5
+{
+Map "brightmaps/PNG/Marines/BMALY4F5.png"
+DisableFullBright
+}
+//SHOTGUN
+BrightMap Sprite ALY5F1
+{
+Map "brightmaps/PNG/Marines/BMALY5F1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY5F2F8
+{
+Map "brightmaps/PNG/Marines/BMALY5F2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY5F3F7
+{
+Map "brightmaps/PNG/Marines/BMALY5F3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY5F4F6
+{
+Map "brightmaps/PNG/Marines/BMALY5F4.png"
+DisableFullBright
+}
+BrightMap Sprite ALY5F5
+{
+Map "brightmaps/PNG/Marines/BM2HAND5.png"
+DisableFullBright
+}
+//MINIGUN
+BrightMap Sprite ALY6G1
+{
+Map "brightmaps/PNG/Marines/BMALY6G1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY6G2G8
+{
+Map "brightmaps/PNG/Marines/BMALY6G2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY6G3G7
+{
+Map "brightmaps/PNG/Marines/BMALY6G3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY6G4G6
+{
+Map "brightmaps/PNG/Marines/BMALY6G4.png"
+DisableFullBright
+}
+BrightMap Sprite ALY6G5
+{
+Map "brightmaps/PNG/Marines/BMALY6G5.png"
+DisableFullBright
+}
+//PLASMAGUN
+BrightMap Sprite ALY8F1
+{
+Map "brightmaps/PNG/Marines/BMALY8F1.png"
+DisableFullBright
+}
+BrightMap Sprite ALY8F2F8
+{
+Map "brightmaps/PNG/Marines/BMALY8F2.png"
+DisableFullBright
+}
+BrightMap Sprite ALY8F386
+{
+Map "brightmaps/PNG/Marines/BMALY8F3.png"
+DisableFullBright
+}
+BrightMap Sprite ALY8F4F6
+{
+Map "brightmaps/PNG/Marines/BMALY8F4.png"
+DisableFullBright
+}
+BrightMap Sprite ALY8F5
+{
+Map "brightmaps/PNG/Marines/BMALPZF5.png"
+DisableFullBright
+}

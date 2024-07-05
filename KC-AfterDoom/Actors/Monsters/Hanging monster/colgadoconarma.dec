@@ -1,0 +1,113 @@
+ACTOR colgadoconarma 22223
+{
+//$Category "After Doom Monster"
+  Health 20
+  Radius 20
+  Height 56
+  Mass 999999
+  PainChance 200
+  BloodColor "Red"
+  Speed 0
+  REACTIONTIME 1
+  Monster 
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  SeeSound "grunt/sight"
+  AttackSound "grunt/attack"
+  PainSound "grunt/pain"
+  DeathSound "grunt/death"
+  ActiveSound "grunt/active"
+  Obituary "$OB_ZOMBIE"
+  tag "Zombieman"
+  DropItem "Clip"
+  States
+  {
+  Spawn:
+		COLJ E 10 A_Look
+		Loop
+  See:
+		COLJ F 4 A_Chase
+		Loop
+	Missile:
+		COLJ F 10 A_FaceTarget
+		COLJ G 8 Bright A_CustomBulletAttack(22.5,0,1,random(1,5)*3,"BulletPuff",0,CBAF_NORANDOM|CBAF_AIMFACING)
+		COLJ F 8
+		TNT1 A 0 A_ClearTarget
+		Goto See	
+  Pain:
+        COLJ H 3 
+		COLJ H 3 A_Pain
+    Goto See
+  Death:
+	    TNT1 A 0 A_Jump(184, "muerte1", "muerte2", "muerte3")
+		POSS H 5
+		POSS I 5 A_Scream
+		POSS J 5 A_NoBlocking
+		POSS K 5
+		POSS L -1
+		Stop
+  XDeath:
+		POSS M 5
+		POSS N 5 A_XScream
+		POSS O 5 A_NoBlocking
+		POSS PQRST 5
+		POSS U -1
+		Stop	
+		
+	 muerte1:	
+	 COLJ K 5 A_XScream
+	 COLJ O 5 A_NoBlocking
+	 COLJ P 5
+	 COLJ Q 5
+	 COLJ R -1
+	 
+	 muerte2:	
+	 COLJ S 5 A_Scream
+	 COLJ T 10
+	 COLJ U 10 A_Scream
+	 COLJ T 10
+	 COLJ U 10 A_Scream
+	 COLJ T 10
+	 COLJ U 10 A_Scream
+	 COLJ T 10
+	 COLJ U 10 A_Scream
+	 COLJ V 5 A_NoBlocking
+	 COLJ W -1
+	 
+	 muerte3:
+	 ZOLJ C 5 A_XScream
+	 ZOLJ D 5 A_NoBlocking
+	 ZOLJ E 5
+	 ZOLJ F 5
+	 ZOLJ G 5
+	 ZOLJ H -1
+	 
+  }
+}
+
+ACTOR staticcolgadoconarma 10794
+{
+  Health 20
+  Radius 20
+  Height 56
+  Mass 999999
+  BloodColor "Red"
+  Speed 0
+  REACTIONTIME 1
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  tag "Zombieman"
+  DropItem "Clip"
+  States
+  {
+  Spawn:
+		COLJ E -1
+		Loop
+  }
+}		

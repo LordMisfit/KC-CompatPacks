@@ -1,0 +1,10 @@
+ACTOR RedCardMarker : MapMarker 30501
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    RKEY AB 2
+    Loop
+  }
+}

@@ -1,0 +1,27 @@
+ACTOR CandleAD 30667
+{
+  Radius 12
+  Height 12
+  +NOGRAVITY
+  +NOBLOCKMAP
+  States
+  {
+  Spawn:
+    ZZZN GHI 4 Bright
+    Loop
+  }
+}
+
+ACTOR CandleAD2 30668
+{
+  Radius 12
+  Height 12
+  +NOGRAVITY
+  +NOBLOCKMAP
+  States
+  {
+  Spawn:
+    ZXZN GHI 4 Bright
+    Loop
+  }
+}

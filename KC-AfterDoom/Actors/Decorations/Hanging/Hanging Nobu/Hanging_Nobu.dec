@@ -1,0 +1,12 @@
+Actor Hanging_Nobu 22229
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		NOBU Y 8
+		NOBU Z 8
+		Loop
+	}
+}

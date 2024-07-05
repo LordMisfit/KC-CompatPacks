@@ -1,0 +1,10 @@
+ACTOR SkullSwitch : MapMarker 30510
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    SWWV A -1 
+    Stop
+  }
+}

@@ -1,0 +1,71 @@
+ACTOR Butcher 14817
+{
+//$Category "After Doom Monster"
+  Health 200
+  PainChance 100
+  Speed 2
+  Radius 22
+  Height 44
+  Mass 1000
+  Scale 0.60
+  Monster
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+  SeeSound "grunt/sight"
+  PainSound "grunt/pain"
+  DeathSound "grunt/death"
+  ActiveSound "grunt/active"
+  Obituary "$OB_DEMONHIT" // "A butcher made mince meat out of %o."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BBUT GHIJ 10
+	Loop
+  See:
+    BBUT AABBCCDDEEFF 2  A_Chase
+    Loop
+  Melee:
+    BBUT GH 8  A_FaceTarget
+    BBUT IJ 8  A_SargAttack
+    Goto See
+   Pain:
+    BBUT G 5
+    BBUT G 5 A_Pain
+    Goto See
+  Death:
+    BBUT P 8
+    BBUT Q 8 A_Scream
+    BBUT R 4
+    BBUT S 4 A_NoBlocking
+    BBUT U 4
+    BBUT V -1
+    Stop
+  Raise:
+    BBUT V 5
+    BBUT USRQP 5
+    Goto See
+    Stop
+  }
+}
+
+ACTOR staticButcher 10782
+{
+
+  Health 200
+  Radius 22
+  Height 44
+  Mass 1000
+  Scale 0.60
+  +FLOORCLIP
+  +DONTMORPH
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BBUT G -1
+	Loop
+  }
+}	

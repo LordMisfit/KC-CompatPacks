@@ -1,0 +1,72 @@
+ACTOR Rotten_imp 30002
+
+{
+//$Category "After Doom Monster"
+		Health 60
+		Radius 20
+		Height 56
+		Mass 100
+		Speed 8
+		PainChance 200
+		Monster
+		+FLOORCLIP
+		SeeSound "rottenimp/COSAVE"
+		PainSound "rottenimp/COSAPAIN"
+		DeathSound "rottenimp/COSAMUER"
+		ActiveSound "rottenimp/COSAVE"
+		Obituary "%o was smitten by a Rotten imp."
+		Tag "Rotten imp"
+		DamageFactor "Bum", 0.0
+		Species "Icon"
+
+	States
+	{
+	Spawn:
+		RROO AB 10 A_Look
+		Loop
+	See:
+		RROO AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+	Missile:
+		RROO EF 8 A_FaceTarget
+		RROO G 6 A_CustomMissile("CacodemonBall", 32, 10, 0, 0)
+		Goto See
+	Pain:
+		RROO H 2
+		RROO H 2 A_Pain
+		Goto See
+	Death:
+		RROO I 8
+		RROO J 8 A_Scream
+		RROO K 6
+		RROO L 6 A_NoBlocking
+		RROO M -1
+		Stop
+	Raise:
+		RROO ML 8
+		RROO KJI 6
+		Goto See
+	}
+}
+
+ACTOR staticRotten_imp 10799
+
+{
+
+		Health 60
+		Radius 20
+		Height 56
+		Mass 100
+		+FLOORCLIP
+		Tag "Rotten imp"
+		DamageFactor "Bum", 0.0
+		Species "Icon"
+
+	States
+	{
+	Spawn:
+		RROO A -1
+		Loop
+	}
+}		

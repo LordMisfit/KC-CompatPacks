@@ -1,0 +1,169 @@
+//Impaling Spike
+ACTOR empalaco 15120
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POL7 A -1
+    Stop
+  }
+}
+
+//Chaingunner Head
+ACTOR empalado2 15121
+{
+  Radius 16
+  Height 56
+  +SOLID
+  States
+  {
+  Spawn:
+    POL8 A -1
+    Stop
+  }
+}
+
+//Zombieman Head
+ACTOR empalado3 15122
+{
+  Radius 16
+  Height 56
+  +SOLID
+  States
+  {
+  Spawn:
+    POL9 A -1
+    Stop
+  }
+}
+
+//Doomguy Head
+ACTOR empalado4 15320
+{
+  Radius 16
+  Height 56
+  +SOLID
+  States
+  {
+  Spawn:
+    POLA A -1
+    Stop
+  }
+}
+
+//3 Doomguy Heads
+ACTOR empalado5 15321
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POLB A -1
+    Stop
+  }
+}
+
+//3 Doomguy Heads, Short
+ACTOR empalado6 15322
+{
+  Radius 16
+  Height 48
+  +SOLID
+  States
+  {
+  Spawn:
+    POLC A -1
+    Stop
+  }
+}
+
+//Doomguy torso, one arm
+ACTOR empalado7 15323
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POLD A -1
+    Stop
+  }
+}
+
+//Doomguy torso, two arms
+ACTOR empalado8 15324
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POLE A -1
+    Stop
+  }
+}
+
+//Doomguy skewered, twitching
+ACTOR empalado9 15325
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POLF A 6
+    POLF B 8
+    Loop
+  }
+}
+
+//Doomguy skewered, long arm
+ACTOR empalado10 15326
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POLG A -1
+    Stop
+  }
+}
+
+//Doomguy skewered, short arm
+ACTOR empalado 15327
+{
+  Radius 16
+  Height 64
+  +SOLID
+  States
+  {
+  Spawn:
+    POLH A -1
+    Stop
+  }
+}
+
+//Pool of Blood with Marine Helmet
+ACTOR empalado11 15328
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    GIB1 A -1
+    Stop
+  }
+}

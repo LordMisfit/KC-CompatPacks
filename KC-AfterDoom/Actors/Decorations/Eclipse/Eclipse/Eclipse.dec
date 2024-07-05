@@ -1,0 +1,13 @@
+ACTOR Eclipse 30666
+{
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+    ZCLI A -1 Bright
+    Stop
+  }
+}

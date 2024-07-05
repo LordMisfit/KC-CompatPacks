@@ -1,0 +1,58 @@
+ACTOR Rotten_nobu 32222
+{
+//$Category "After Doom Monster"
+  Health 1
+  Radius 20
+  Height 20
+  Mass 500
+  Speed 8
+  Monster
+  MaxTargetRange 896
+  +FLOORCLIP
+  +NOTARGET
+  DeathSound "Rottennobu/Death"
+  ActiveSound "rottennobu/RNOBU"
+  MeleeSound "vile/stop"
+  tag "Rotten Nobu"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    NOBU A 10 A_Look
+    Loop
+  See:
+    NOBU ABCBA 3 A_VileChase
+	TNT1 A 0 A_LoopActiveSound
+    Loop
+  Heal:
+    NOBU FGHIJ 10 
+    Goto See
+  Death:
+    NOBU K 7
+    NOBU M 7 A_Scream
+    NOBU N 7 A_NoBlocking
+    NOBU OPQRS 7
+	NOBU T 120
+    NOBU T -1 A_StopSound
+    Stop
+  }
+}
+
+ACTOR staticRotten_nobu 32221
+{
+  Health 1
+  Radius 20
+  Height 20
+  Mass 500
+  MaxTargetRange 896
+  +FLOORCLIP
+  +NOTARGET
+  tag "Rotten Nobu"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    NOBU A -1
+    Loop
+  }
+}

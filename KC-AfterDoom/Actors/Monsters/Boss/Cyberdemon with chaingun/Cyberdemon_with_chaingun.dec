@@ -1,0 +1,88 @@
+ACTOR Zyberdemon 17000
+{
+//$Category "After Doom Monster"
+  Health 3500
+  Radius 40
+  Height 110
+  Mass 1000
+  Speed 16
+  PainChance 40
+  Monster
+  MinMissileChance 160
+  +MOVEWITHSECTOR
+  +JUMPDOWN
+  +NEVERTARGET
+  +NOTARGET
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  dropitem "Soulsphere"
+  SeeSound "cyber/sight"
+  PainSound "cyber/pain"
+  DeathSound "cyber/death"
+  ActiveSound "cyber/active"
+  Obituary "$OB_CYBORG"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ZYBR AB 10 A_Look
+    Loop
+  See:
+    ZYBR A 3 A_Hoof
+    ZYBR ABBCC 3 A_Chase
+    ZYBR D 3 A_Metal
+    ZYBR D 3 A_Chase
+    Loop
+  Missile:
+    ZYBR E 6 A_FaceTarget
+    ZYBR E 4 Bright A_SPosAttack
+	ZYBR Z 5 Bright A_SPosAttack
+    ZYBR F 4 Bright A_SPosAttack
+	ZYBR Z 5 Bright A_SPosAttack
+    ZYBR F 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    ZYBR G 10 A_Pain
+    Goto See
+  Death:
+    ZYBR H 10
+    ZYBR I 10 A_Scream
+    ZYBR JKL 10
+    ZYBR M 10 A_NoBlocking
+    ZYBR NO 10
+    ZYBR P 30
+    ZYBR P -1 A_BossDeath
+    Stop
+  }
+}
+
+ACTOR staticZyberdemon 10790
+{
+
+  Health 3500
+  Radius 40
+  Height 110
+  Mass 1000
+  MinMissileChance 160
+  +MOVEWITHSECTOR
+  +JUMPDOWN
+  +NEVERTARGET
+  +NOTARGET
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ZYBR A -1
+    Loop
+  }
+}	

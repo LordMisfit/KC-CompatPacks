@@ -1,0 +1,10 @@
+ACTOR YellowSkullMarker : MapMarker 30506
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    YSKU AB 2
+    Loop
+  }
+}

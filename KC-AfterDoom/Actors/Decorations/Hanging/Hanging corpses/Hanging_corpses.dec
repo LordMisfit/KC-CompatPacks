@@ -1,0 +1,59 @@
+Actor cuerpocolgando1 17823
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		UPSC A -1
+		Stop
+	}
+}
+
+Actor cuerpocolgando2 17824
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		UPSC B 140 A_SpawnItemEx("CorpseBloodDrip", 0, 0, 24, 0, 0, 0, 0, SXF_CLIENTSIDE, 192)
+		Loop
+	}
+}
+
+Actor cuerpocolgando3 17825
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		UPSC C 140 A_SpawnItemEx("CorpseBloodDrip", 0, 0, 24, 0, 0, 0, 0, SXF_CLIENTSIDE, 192)
+		Loop
+	}
+}
+
+Actor cuerpocolgando4 17826
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		UPSC D -1
+		Stop
+	}
+}
+
+Actor cuerpocolgando5 17827
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		UPSC E 140 A_SpawnItemEx("CorpseBloodDrip", 0, 0, 20, 0, 0, 0, 0, SXF_CLIENTSIDE, 192)
+		Loop
+	}
+}

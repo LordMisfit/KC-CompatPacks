@@ -1,0 +1,10 @@
+ACTOR RedSkullMarker : MapMarker 30505
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    RSKU AB 2
+    Loop
+  }
+}

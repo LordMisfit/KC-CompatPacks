@@ -1,0 +1,35 @@
+ACTOR MotherDemonDie 22676
+{
+//$Category "After Doom Monster"
+Health 200
+Radius 48
+Height 54
+Mass 1000
+PainChance 200
+Monster
++FLOORCLIP
++BOSSDEATH
+SeeSound "mom/pain"
+PainSound "mom/pain"
+ActiveSound "mom/pain"
+Tag "Mother Demon"
+
+States
+	{
+	Spawn:
+		CIND AB 15 A_Look
+		Loop
+	See:
+		CIND AB 4 A_Chase
+		Loop
+	Pain:
+		CIND A 3
+		CIND B 3 A_Pain
+		Goto See
+	Death:
+		CIND C 6
+		CIND D 6 A_XScream
+		CIND E -1 A_NoBlocking
+		Stop
+	}
+}

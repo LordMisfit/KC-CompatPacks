@@ -1,0 +1,12 @@
+ACTOR BonePile 10410
+{
+  Radius 24
+  Height 24
+  +SOLID
+  States
+  {
+  Spawn:
+    SBON A -1
+    Stop
+  }
+}

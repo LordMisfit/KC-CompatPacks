@@ -1,0 +1,85 @@
+Submitted: Ghastly_dragon
+Decorate: Ghastly_dragon
+Sprites: Id Software
+
+Name: Chair
+Connection: None
+Type: Technical
+Palette: Doom
+Summon: Chair
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: No
+
+===========================================================
+
+Name: UAC Holograms
+Connection: No
+Palette: Doom/Custom
+Summon: UACHologramCustom
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: Spawns particles, can be disabled with User_NoParticles
+Brightmaps: No
+Actor modification: Yes
+ACS: No
+
+Submitted: Gothic
+Code: inkoalawetrust
+GLDefs: Gothic
+Sprites: Id Software
+Sprite Edit: Gothic, Tormentor667
+
+===========================================================
+
+Name: Toilet
+Connection: None
+Palette: Doom
+Summon: Toilet1
+Ambient Sound: Yes (when broken)
+De-/Activatable: No
+Destroyable: Yes
+Special Effects: Yes (spawns fountain when destroyed)
+
+Submitted: FuzzyBlaze
+Decorate: FuzzyBlaze
+Sprites: 3D Realms
+Sounds: 3D Realms
+Sprite Edit: Las Rojas
+
+===========================================================
+
+Name: Food
+Connection: None
+Palette: Custom
+Summon: burger[1-4], drink, donuts, dbox, fries[1/2], glass, bottle[1/2]
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: Yes
+Special Effects: No
+
+Submitted: DavidRaven
+Decorate: DavidRaven
+GLDefs: none
+Sprites: 3DRealms
+
+===========================================================
+
+Name: Bushes
+Connection: None
+Palette: Doom
+Summon: Bush[1-7,U,A,C], BushDmg[1-11], ShootBush[1-7]
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: Yes
+Special Effects: No
+Brightmaps: No
+ACS: No
+
+Submitted: Gothic
+Code: Gothic
+Sprites: id Software, (Ripped by Xaser, Jimmy & Minigunner), osjclatchford
+Sprite Edit: Gothic
+Sounds: Freesound.org (LampEight)

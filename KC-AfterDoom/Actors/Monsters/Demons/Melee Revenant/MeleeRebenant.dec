@@ -1,0 +1,185 @@
+ACTOR MeleeRebenant 16999
+{
+//$Category "After Doom Monster"
+  Health 300
+  Radius 20
+  Height 56
+  Mass 500
+  Speed 15
+  PainChance 10
+  Monster
+  MeleeThreshold 196
+  +MOVEWITHSECTOR
+  +SLIDESONWALLS
+  +JUMPDOWN
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +Shootable
+  +MISSILEMORE 
+  +FLOORCLIP
+  +ALWAYSFAST
+  SeeSound "skeleton/sight"
+  PainSound "skeleton/pain"
+  DeathSound "skeleton/death"
+  ActiveSound "skeleton/active"
+  MeleeSound "skeleton/melee"
+  HitObituary "$OB_UNDEADHIT" // "%o was punched by a revenant."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ZQEL AB 10 A_Look 
+    Loop
+  See:
+    ZQEL AABBCCDDEEFF 2 A_Chase
+    Loop
+  Melee:
+    ZQEL G 1 A_FaceTarget
+    ZQEL G 6 A_SkelWhoosh
+    ZQEL H 0 A_FaceTarget
+   ZQEL H 2 A_Recoil(-3)
+    ZQEL H 0 A_FaceTarget
+   ZQEL H 2 A_Recoil(-4)
+    ZQEL H 0 A_FaceTarget
+   ZQEL H 2 A_Recoil(-4 )
+    ZQEL I 6 A_SkelFist
+    Goto See
+  Pain:
+    ZQEL L 5
+    ZQEL L 5 A_Pain
+    Goto See
+  Death:
+    ZQEL LM 7
+    ZQEL N 7 A_Scream
+    ZQEL O 7 A_NoBlocking
+    ZQEL P 7
+    ZQEL Q -1
+    Stop
+  Raise:
+    ZQEL Q 5
+    ZQEL PONML 5
+    Goto See
+  }
+}
+
+ACTOR Meleepuppet 16997
+{
+//$Category "After Doom Monster"
+  Health 10
+  Radius 20
+  Height 56
+  Mass 500
+  Speed 15
+  PainChance 1
+  MeleeThreshold 196
+  Scale 0.73
+  Monster
+  MaxStepHeight 32
+  MaxDropoffHeight 64  
+  +MOVEWITHSECTOR
+  +SLIDESONWALLS
+  +JUMPDOWN
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +NOTELESTOMP
+  +Shootable
+  +SOLID
+  +MISSILEMORE 
+  +FLOORCLIP
+  +ALWAYSFAST
+  SeeSound "skeleton/sight"
+  PainSound "skeleton/pain"
+  DeathSound "skeleton/death"
+  ActiveSound "skeleton/active"
+  MeleeSound "skeleton/melee"
+  HitObituary "$OB_UNDEADHIT" // "%o was punched by a revenant."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ZQEL AB 10 A_Look 
+    Loop
+  See:
+    ZQEL AABBCCDDEEFF 2 A_Chase
+    Loop
+  Melee:
+    ZQEL G 1 A_FaceTarget
+    ZQEL G 6 A_SkelWhoosh
+    ZQEL H 0 A_FaceTarget
+   ZQEL H 2 A_Recoil(-3)
+    ZQEL H 0 A_FaceTarget
+   ZQEL H 2 A_Recoil(-4)
+    ZQEL H 0 A_FaceTarget
+   ZQEL H 2 A_Recoil(-4 )
+    ZQEL I 6 A_SkelFist
+    Goto See
+  Pain:
+    ZQEL L 5
+    ZQEL L 5 A_Pain
+    Goto See
+  Death:
+    ZQEL LM 7
+    ZQEL N 7 A_Scream
+    ZQEL O 7 A_NoBlocking
+    ZQEL P 7
+    ZQEL Q 40
+    Stop
+  Raise:
+    ZQEL Q 5
+    ZQEL PONML 5
+    Goto See
+  }
+}
+
+ACTOR staticMeleeRebenant 10779
+{
+
+  Health 300
+  Radius 20
+  Height 56
+  Mass 500
+  tag "MeleeRebenant"
+  +MOVEWITHSECTOR
+  +SLIDESONWALLS
+  +JUMPDOWN
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +MISSILEMORE 
+  +FLOORCLIP
+  +ALWAYSFAST
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ZQEL A -1
+    Loop
+  }
+}
+
+ACTOR staticMeleepuppet 10778
+{
+
+  Health 10
+  Radius 20
+  Height 56
+  Mass 500
+  Scale 0.73 
+  tag "Meleepuppet"
+  +MOVEWITHSECTOR
+  +SLIDESONWALLS
+  +JUMPDOWN
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +NOTELESTOMP
+  +SOLID
+  +MISSILEMORE 
+  +FLOORCLIP
+  +ALWAYSFAST
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ZQEL A -1
+    Loop
+  }
+}	

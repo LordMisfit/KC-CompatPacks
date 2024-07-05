@@ -1,0 +1,85 @@
+ACTOR coldattackparticleoverlord
+{
+
+  Radius 28
+  Height 48
+  mass 1000
+ speed 0
+  damage 5
+  projectile
+  +nogravity
+  
+  translation "192:207=168:185" , "240:246=186:191"
+  States
+  {
+  Spawn:
+     
+     ZXSS ABA 25 bright a_changeflag("noclip",0)
+   ZXSS ABA 2 bright a_changeflag("nogravity",0)
+   ZXSS A 1 bright 
+    stop
+  }
+}
+ACTOR DaemoniumOverlordCube
+{
+   Radius 30
+   Height 3
+   Speed 30
+   Damage 0
+   PROJECTILE
+   +DONTREFLECT
+   +SKYEXPLODE
+   RENDERSTYLE Normal
+   ALPHA 1.0
+   States
+   {
+   Spawn:
+      
+      BOSF ABCD 4     
+      goto death
+   Death:
+      FIRE A 0 a_jump(255,"demon","doomimp","lostsoul","spectre","cacodemon","hellknight","baronofhell")
+      demon:
+      FIRE A 1 A_SpawnItemEx ("demon",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      doomimp:
+      FIRE A 1 A_SpawnItemEx ("doomimp",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      lostsoul:
+      FIRE A 1 A_SpawnItemEx ("lostsoul",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      spectre:
+      FIRE A 1 A_SpawnItemEx ("spectre",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      cacodemon:
+      FIRE A 1 A_SpawnItemEx ("cacodemon",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      hellknight:
+      FIRE A 1 A_SpawnItemEx ("hellknight",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      baronofhell:
+      FIRE A 1 A_SpawnItemEx ("baronofhell",0,0,0,0,0,0,0,28,0)
+      FIRE BCDEFG 2
+      FIRE H 1
+      stop
+      
+      
+   }
+}
+actor overlordtoken : Inventory
+{
+Inventory.MaxAmount 120
++INVENTORY.UNDROPPABLE
+}

@@ -1,0 +1,10 @@
+ACTOR ExitMarker : MapMarker 30502
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    MEXI A -1
+    Stop
+  }
+}

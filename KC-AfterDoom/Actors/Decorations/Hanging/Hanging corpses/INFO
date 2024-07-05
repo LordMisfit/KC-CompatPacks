@@ -1,0 +1,8 @@
+Name: Hanged Marines
+Connection: None
+Palette: Doom
+Summon: HangedMarine1-3, HangedMarineBlocking1-3, 
+Ambient Sound: None
+De-/Activatable: N/A
+Destroyable: No
+Special Effects: None

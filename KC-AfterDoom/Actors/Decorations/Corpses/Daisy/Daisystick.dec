@@ -1,0 +1,14 @@
+actor Daisystick 25282
+{
+  +FloorClip
+  Height 40
+  Radius 20
+  Scale 0.60
+  States
+  {
+  Spawn:
+  BUNS A -1
+    Loop
+  }
+}
+

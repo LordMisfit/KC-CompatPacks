@@ -1,0 +1,11 @@
+Actor Hanging_Torso 22230
+{
++NOGRAVITY
+  +SPAWNCEILING
+	States
+	{
+	Spawn:
+		TORZ A -1
+		Stop
+	}
+}

@@ -1,0 +1,31 @@
+ACTOR speak : Health 30874
+{
+  +COUNTITEM
+  +NEVERRESPAWN
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.PickupSound "Ally/Site"
+    Radius 30
+  Height 50
+  States
+  {
+  Spawn:
+    BON1 ABCDCB 6
+    Loop
+  }
+}
+
+ACTOR speak2 : Health 30895
+{
+  +COUNTITEM
+  +NEVERRESPAWN
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.PickupSound "Ally/Site"
+    Radius 666
+  Height 966
+  States
+  {
+  Spawn:
+    BON1 ABCDCB 6
+    Loop
+  }
+}

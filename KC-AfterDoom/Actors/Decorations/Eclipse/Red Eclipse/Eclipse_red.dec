@@ -1,0 +1,13 @@
+ACTOR Eclipse_red 31666
+{
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+    ZRCL A -1 Bright
+    Stop
+  }
+}

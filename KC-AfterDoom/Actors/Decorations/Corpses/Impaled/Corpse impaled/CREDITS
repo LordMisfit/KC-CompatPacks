@@ -1,0 +1,40 @@
+Name: Hexen Burning Corpse
+Connection: None
+Palette: Hexen
+Summon: ZCorpseBurning
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: No
+
+Name: Hexen Crucified Corpses
+Connection: None
+Palette: Hexen
+Summon: ZCorpseCrucified, ZCorpseCrucifiedBloody, ZCorpseCrucifiedSword
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: None
+
+Submitted: ETTiNGRiNDER
+Decorate: ETTiNGRiNDER
+Sounds: N/A
+Sprites: Hexen (Raven Software)
+Sprite Edit: ETTiNGRiNDER
+Idea Base: Similar decor in Gothic DM and Wrath of Magic
+
+Name: Hexen Impaled Corpses
+Connection: None
+Palette: Hexen
+Summon: ZCorpseImpaled1, ZCorpseImpaled2, ZCorpseImpaled3, ZCorpseImpaled4, ZCorpseImpaled5
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: No
+
+Submitted: ETTiNGRiNDER
+Decorate: ETTiNGRiNDER
+Sounds: N/A
+Sprites: Magnet Interactive Studios / Mat Weathers
+Sprite Edit: ETTiNGRiNDER
+Idea Base: Sprite left over from an unreleased Hellraiser game, heavily reworked

@@ -1,0 +1,10 @@
+ACTOR BlueSkullMarker : MapMarker 30504
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    BSKU AB 2
+    Loop
+  }
+}

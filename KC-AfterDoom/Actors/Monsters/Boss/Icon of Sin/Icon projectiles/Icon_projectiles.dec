@@ -1,0 +1,385 @@
+Actor IconBossPyroShot
+{
+  Radius 8
+  Height 12
+  Speed 33
+  Damage 2
+  Projectile
+  DamageType Fire
+  Scale 0.75
+  SeeSound "iconsin/balllaunch"
+  DeathSound "PyroCannon/Hit"
+  Decal BigScorch
+    +FULLVOLACTIVE
+	+EXTREMEDEATH
+  States
+  {
+  Spawn:
+    IOS1 AAAABBBB 4 Bright A_Explode(10, 128, 0)
+    Loop
+  Death:
+    IOS2 AB 2 Bright
+    IOS2 C 2 Bright A_Explode(20, 128)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 0, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 45, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 90, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 135, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 180, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 225, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 270, 4)
+    IOS2 C 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 315, 4)
+    IOS2 C 0 Bright A_Mushroom("IconBossPyroFlare", 16)
+    TNT1 A 0 A_Quake(9, 10, 0, 100, " ")
+    IOS2 DEFGHIJKLMNOPQRSTU 2 Bright
+    Stop
+  }
+}
+
+Actor IconBossPyroSpawner
+{
+  Radius 1
+  Height 1
+  Damage 0
+  Projectile
+  DamageType Fire
+  Speed 15
+  +Ripper
+  +BloodlessImpact
+  States
+  {
+  Spawn:
+    TNT1 AAAAA 5 Bright A_CustomMissile("IconBossPyroBoom", 0, 0, 0, 4)
+    Stop
+  }
+}
+
+Actor IconBossPyroBoom
+{
+  Radius 0
+  Height 1
+  Damage 0
+  Projectile
+  DamageType Fire
+  Scale 0.67
+  SeeSound "iconsin/ballexplod"
+  States
+  {
+  Spawn:
+    IOS2 AB 2 Bright
+    IOS2 C 2 Bright A_Explode(20, 128)
+    TNT1 A 0 A_Quake(9, 10, 0, 700, " ")
+    IOS2 DEFGHIJKLMNOPQRSTU 2 Bright
+    Stop
+  }
+}
+
+
+Actor IconBossPyroFlare
+{
+  Radius 8
+  Height 11
+  Speed 35
+  Damage 3
+  Projectile
+  DamageType Fire
+  Decal DoomImpScorch
+  -NoGravity
+  DeathSound "PyroCannon/Flare"
+  States
+  {
+  Spawn:
+    TNT1 A 1 Bright A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    Loop
+  Death:
+    IOS5 HIJ 2 Bright
+    IOS5 J 0 A_Explode(64, 64)
+    IOS5 J 0 A_CustomMissile("IconBossDropFire", 0, 0, 0, 6)
+    IOS5 KLMNO 2 Bright
+    Stop
+  }
+}
+
+Actor IconBossPyroFX
+{
+  Radius 0
+  Height 1
+  Speed 0
+  Projectile
+  DamageType Fire
+  +ClientSideOnly
+  States
+  {
+  Spawn:
+    TNT1 A 3 Bright
+    IOS3 ABCDE 3 Bright
+    Stop
+  }
+}
+
+Actor IconBossDropFire
+{
+  Radius 8
+  Height 40
+  Projectile
+  DamageType Fire
+  -NoGravity
+  +LowGravity
+  +NoExplodeFloor
+  +NoDamageThrust
+  +ThruGhost
+  States
+  {
+  Spawn:
+    IOF1 A 1 Bright A_Playsound("Flamethrower/Flame")
+    IOF1 A 1 Bright A_Explode(5, 16, 0)
+    IOF1 BCDEFGHIJKLMN 2 Bright A_Explode(5, 16, 0)
+    IOF1 A 1 Bright A_Playsound("Flamethrower/Flame")
+    IOF1 A 1 Bright A_Explode(5, 32, 0)
+    IOF1 BCDEFGHIJKLMN 2 Bright A_Explode(5, 16, 0)
+    IOF1 A 1 Bright A_Playsound("Flamethrower/Flame")
+    IOF1 A 1 Bright A_Explode(5, 32, 0)
+    IOF1 BCDEFGHIJKLMN 2 Bright A_Explode(5, 16, 0)
+    IOF1 A 1 Bright A_Playsound("Flamethrower/Flame")
+    IOF1 A 1 Bright A_Explode(5, 32, 0)
+    IOF1 BCDEFGHIJKLMN 2 Bright A_Explode(5, 16, 0)
+    IOF1 A 1 Bright A_Playsound("Flamethrower/Flame")
+    IOF1 A 1 Bright A_Explode(5, 32, 0)
+    IOF1 BCDEFGHIJKLMN 2 Bright A_Explode(5, 16, 0)
+    IOF1 A 0 A_Jump(192, 1)
+    Loop
+    TNT1 A 0
+  Death:
+    IOF1 A 2 Bright A_SetScale(0.9)
+    IOF1 B 2 Bright A_SetScale(0.8)
+    IOF1 C 2 Bright A_SetScale(0.7)
+    IOF1 D 2 Bright A_SetScale(0.6)
+    IOF1 E 2 Bright A_SetScale(0.5)
+    IOF1 F 2 Bright A_SetScale(0.4)
+    IOF1 G 2 Bright A_SetScale(0.3)
+    IOF1 H 2 Bright A_SetScale(0.2)
+    IOF1 I 2 Bright A_SetScale(0.1)
+    Stop
+  }
+}
+
+Actor IconBossDragonBreath // stinky breafth (">H<)
+{
+  Radius 2
+  Height 4
+  Speed 40
+  Damage 2
+  Projectile
+  RenderStyle Add
+  DamageType Fire
+  Alpha 0.67
+  Scale 0.67
+  SeeSound "Flamethrower/Fire"
+  DeathSound "Flamethrower/Hit"
+  +NoGravity
+  States
+  {
+  Spawn:
+    TNT1 A 2
+    IOS5 ABCD 2 bright A_Explode(5, 8, 0)
+    IOS5 EFG 2 bright A_Explode(5, 16, 0)
+    IOS5 HIJ 2 bright A_Explode(5, 32, 0)
+    IOS5 KLM 2 bright A_Explode(5, 64, 0)
+    IOS5 NO 2 bright
+    Stop
+  Death:
+    IOS5 HIJ 2 bright A_Explode(5, 32, 0)
+    TNT1 A 0 A_CustomMissile("IconBossDropFire", 0, 0, 0, 4)
+    IOS5 KLM 2 bright A_Explode(5, 64, 0)
+    IOS5 NO 2 bright
+    Stop
+  }
+}
+
+Actor IconBossFlameAttack //Originally from the Diabolist
+{
+  Obituary "%o was immolated by the Icon of Sin."
+  Radius 0
+  Height 1
+  Speed 0
+  RenderStyle Add
+  DamageType Fire
+  Scale 2.0
+  ALPHA 1.00
+  +NoGravity
+  +SeekerMissile
+  +NoTarget
+  +NoDamageThrust
+  States
+  {
+  Spawn:
+    IOF1 A 2 Bright A_StartFire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 B 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 A 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 B 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 C 2 Bright A_FireCrackle
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 B 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 C 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 B 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 C 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 D 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 C 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 D 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 C 2 Bright A_Fire
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 D 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.9)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 E 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.8)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 D 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.7)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 E 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.6)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 D 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.5)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 E 2 Bright A_FireCrackle
+    IOF1 A 0 Bright A_SetScale(1.4)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 F 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.3)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 E 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.2)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 F 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.1)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 E 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.0)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 F 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.9)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 G 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.8)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 H 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(1.7)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 I 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.6)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 J 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.5)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 K 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.4)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 L 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.3)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 M 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.2)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 A_SpawnItemEx("IconBossPyroFX", 0, 0, 0, 0, 0, 0, 0, 128)
+    TNT1 A 0 Bright A_Explode(1, 64)
+    IOF1 N 2 Bright A_Fire
+    IOF1 A 0 Bright A_SetScale(0.1)
+    Stop
+  }
+}
+
+ACTOR IconBossDeathNuke
+{
+  -SOLID
+  +NOBLOCKMAP
+  DamageType Fire
+  Scale 1.5
+  States
+  {
+  Spawn:
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 0, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 45, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 90, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 135, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 180, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 225, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 270, 4)
+    IOS4 A 0 Bright A_CustomMissile("IconBossPyroSpawner", 0, 0, 315, 4)
+    IOS4 A 0 Bright A_Mushroom("IconBossPyroFlare", 16)
+    IOS4 ABCD 4 Bright A_PlaySound("iconsin/expdeth",CHAN_AUTO,3.5)
+    IOS4 EFGHI 4 Bright 
+    Stop
+  }
+}

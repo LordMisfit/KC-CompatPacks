@@ -1,0 +1,10 @@
+ACTOR PortalMarker : MapMarker 30507
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    PMAR A -1
+    Stop
+  }
+}

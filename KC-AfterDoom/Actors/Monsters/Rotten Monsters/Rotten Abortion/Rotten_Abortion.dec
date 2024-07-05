@@ -1,0 +1,97 @@
+Actor Rotten_Abortion 30001
+{
+//$Category "After Doom Monster"
+  Health 25
+  Radius 14
+  Height 28
+  Mass 20
+  Speed 10
+  PainChance 128
+  MaxTargetRange 650
+  Monster
+  +NoGravity
+  +Float
+  Obituary "%o got melted  by a Rotten Abortion."
+  SeeSound "rottenabortion/ROTABOAC"
+  PainSound "rottenabortion/ROTABOPA"
+  DeathSound "rottenabortion/ROTABOMU"
+  ActiveSound "rottenabortion/ROTABOAC"
+  tag "Rotten Abortion"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    RALN ABCB 8  A_Look
+    Loop
+  See:
+    RALN A 1  A_Playsound("monster/falwng")
+    RALN AABBCCBB 2  A_Chase
+    Loop
+  Missile:
+    TNT1 A 0 A_Playsound("rottenabortion/ROTABOAT")
+    RALN CE 5  A_FaceTarget 
+    RALN F 3  A_CustomMissile("PlaugeShot", 10, 0, 0, 0)
+    RALN E 2  A_FaceTarget 
+    RALN F 3  A_CustomMissile("PlaugeShot", 10, 0, 0, 0)
+    RALN E 5 
+    Goto See
+  Pain: 
+    RALN G 3 
+    RALN G 3  A_Pain 
+    RALN G 3 
+    Goto See 
+  Death: 
+    RALN H 5 
+    RALN I 5  A_Scream 
+    RALN J 5 
+    RALN K 5  A_NoBlocking 
+    RALN L 111 A_SetFloorClip 
+    Stop 
+  Raise: 
+    RALN L 5 A_UnSetFloorClip 
+    RALN KJIH 5 
+    Goto See 
+  }
+}
+
+ACTOR PlaugeShot
+{
+   Radius 8
+   Height 16
+   Speed 16
+   Damage 2
+   PoisonDamage 12
+   PROJECTILE
+   +THRUGHOST
+   scale 0.5
+   DeathSound "monster/plaugeBall"
+   
+   States
+   {
+   Spawn:
+      FVUL AAABBB 1 Bright
+      loop
+   Death:
+      FVUL CDEF 4 Bright
+      stop
+   }
+}
+
+Actor staticRotten_Abortion 10798
+{
+
+  Health 25
+  Radius 14
+  Height 28
+  Mass 20
+  +NoGravity
+  +Float
+  tag "Rotten Abortion"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    RALN ABCB 8  
+    Loop
+   }
+}	

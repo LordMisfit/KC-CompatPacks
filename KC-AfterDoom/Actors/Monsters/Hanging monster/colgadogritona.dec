@@ -1,0 +1,71 @@
+ACTOR colgadogritona 22225
+{
+//$Category "After Doom Monster"
+  Radius 10
+  Height 36
+  Health 20  
+  Mass 999999
+  BloodColor "Red"  
+  Speed 0
+  tag "Zombieman"
+  SeeSound "colgado/gritona"
+  AttackSound "colgado/gritona"
+  PainSound "colgado/gritona"
+  DeathSound "colgado/gritona"
+  monster
+  +SHOOTABLE
+  +SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  +DONTFALL
+  States
+  {
+  Spawn:
+		KOLJ I 10 A_Look
+		Loop
+		
+  See:
+       TNT1 A 0 
+	   KOLJ A 5 
+	   KOLJ B 5 A_Scream
+	   KOLJ C 5 
+	   KOLJ D 5
+	   KOLJ E 5 
+	   KOLJ D 5 
+	   KOLJ C 5 
+	   KOLJ B 5 A_Scream
+	   KOLJ A 5 
+	   KOLJ F 5 
+	   KOLJ G 5
+	   KOLJ H 5 
+	   KOLJ G 5
+	   KOLJ F 5 	   
+	   
+		Loop	
+	  Death:
+	    TNT1 A 0 A_Scream
+		KOLJ I -1
+		Stop	
+  }
+}
+
+ACTOR staticcolgadogritona 10795
+{
+  Radius 10
+  Height 36
+  Health 20  
+  Mass 999999
+  BloodColor "Red"  
+  Speed 0
+  tag "Zombieman"
+  +SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  +DONTFALL
+  States
+  {
+  Spawn:
+		KOLJ I -1
+		Loop
+  }
+}		

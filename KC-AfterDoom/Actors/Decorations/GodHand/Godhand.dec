@@ -1,0 +1,14 @@
+ACTOR Godhand 30868
+{
+  Radius 267
+  Height 1246
+  +FORCEYBILLBOARD
+  -SOLID
+  +FLOORCLIP
+  States
+  {
+  Spawn:
+    GODH A -1
+    Stop
+  }
+}

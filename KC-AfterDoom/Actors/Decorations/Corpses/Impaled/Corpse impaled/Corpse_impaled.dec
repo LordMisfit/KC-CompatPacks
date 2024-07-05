@@ -1,0 +1,69 @@
+Actor fCorpseImpaled1 16720
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		CACA A -1
+		Stop
+	}
+}
+
+Actor fCorpseImpaled2 16721
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		CACA B -1
+		Stop
+	}
+}
+
+Actor fCorpseImpaled3 16722
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		CACA C -1
+		Stop
+	}
+}
+
+Actor fCorpseImpaled4 16723
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		CACA D -1
+		Stop
+	}
+}
+
+Actor fCorpseImpaled5 16724
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		CACA E -1
+		Stop
+	}
+}

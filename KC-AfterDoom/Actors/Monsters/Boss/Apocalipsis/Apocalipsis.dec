@@ -1,0 +1,536 @@
+ACTOR Apocalipsist 17002
+{
+//$Category "After Doom Monster"
+  Health 800
+  Radius 40
+  Height 170
+  Mass 6666
+  Speed 16
+  PainChance 0
+  Monster
+  MinMissileChance 66
+  DamageFactor "Bum", 0.0
+  damageFactor "InvAllyDamage", 0.1
+  MeleeRange 100
+  scale 1.7
+  +QUICKTORETALIATE
+  +ALWAYSFAST
+  +NOFEAR
+  +NOTIMEFREEZE
+  +NEVERTARGET
+  +NOTARGET
+  +DONTHARMSPECIES
+  +NOPAIN
+  +MISSILEEVENMORE
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  SeeSound "apoka/sight"
+  PainSound "cyber/pain"
+  AttackSound "tiro/tira"
+  DeathSound "cyber/pain"
+  ActiveSound "cyber/active"
+  Obituary "%o was destroyed by Apocalipsis."
+  Tag "Apocalipsis"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    APOK A 10 A_Look
+    Loop
+  See:
+    APOK A 3 
+	TNT1 A 0 A_Quake(2, 24, 0, 800, "apocalipsis/APOKPISA")
+    APOK ABBCC 3 A_Chase
+	TNT1 A 0 A_Quake(2, 24, 0, 800, "apocalipsis/APOKPISA")
+    APOK D 3 
+    APOK D 3 A_Chase ("Melee", "Missile", 0)
+    Loop
+  Melee:
+	APOK E 6 A_FaceTarget
+	APOK F 4 Bright A_CustomMissile("Rocket", 95, -50, 0, 1)
+	APOK E 6 A_FaceTarget
+	APOK F 4 Bright A_CustomMissile("Rocket", 95, -50, 1, 0)
+	APOK E 6 A_FaceTarget
+	APOK F 4 Bright A_CustomMissile("Rocket", 95, -50, 0, 1)
+	APOK E 6 A_FaceTarget
+	APOK F 4 Bright A_CustomMissile("Rocket", 95, -50, 1, 0)
+	Goto See
+  Missile:
+APOK E 6 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 0, 1)
+    APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 1, 0)
+    APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 0, 0)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 1, 0)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 0, 1)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 0, 0)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 0, 1)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 1, 0)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 0, 0)
+	APOK E 4 A_FaceTarget
+    APOK F 4 Bright A_CustomMissile("MastermindTracer", 100, -50, 1, 0)
+   Goto See
+  Pain:
+    APOK E 10 A_Pain
+    Goto See
+  Death:
+    APOK H 4  A_Scream
+    APOK I 4 
+    APOK J 4 
+    APOK K 4 
+    APOK L 4 
+    APOK M 4 
+    APOK N 4 
+	APOK O 4 
+	APOK P 4 Bright A_NoBlocking
+	APOK Q 4 Bright
+	APOK R 4 Bright
+	APOK S 4 Bright
+	APOK T 4 Bright
+	APOK X 4 Bright
+	APOK Y 4 Bright
+	APOK Z -1
+    Stop
+  }
+}
+ACTOR MastermindTracer
+{
++FULLVOLACTIVE
++FOILINVUL
++THRUGHOST
++FORCEXYBILLBOARD
++EXTREMEDEATH
++RANDOMIZE
++FORCERADIUSDMG 
++BLOODSPLATTER 
+Damagetype "Bum"
+Renderstyle Add
+Projectile  
+  Scale 0.1
+  Radius 20
+  Height 20
+  damage 1
+  speed 70 
+  SeeSound "calibre/balas"
+  DeathSound "bum/bom"
+ Obituary "%o was destroyed by a Apocalipsis."
+  States
+  {
+  Spawn:
+		TNT1 A 1
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail2", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail3", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail4", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail5", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail6", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail7", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail8", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail9", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        Loop
+	Death:
+		TNT1 A 0 A_CustomMissile ("RottenExplosionparticles", 0, 0, random (0, 360), 2, random (40, 90))
+		TNT1 A 0 Radius_QUake(4, 3, 0, 15, 0)
+		EXPL ABCDEFGH 1 BRIGHT
+		Stop
+  }
+}
+
+ACTOR Apocalipsis 17903
+{
+//$Category "After Doom Monster"
+  Health 9999
+  Radius 40
+  Height 160
+  Mass 6666
+  Speed 16
+  PainChance 4
+  REACTIONTIME 25
+  Monster
+  DamageFactor "Bum", 0.0
+  damageFactor "InvAllyDamage", 0.1
+  MeleeRange 1000
+  scale 1.7
+  dropitem "InvulnerabilitySphere"
+  MaxStepHeight 32
+  MaxDropoffHeight 64
+  damagefactor "Avoid", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "TeleportRemover", 0.0
+	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
+ 
+  +SEEINVISIBLE
+  +LOOKALLAROUND
+  +TELESTOMP
+  +MOVEWITHSECTOR
+  +JUMPDOWN
+  +NOTIMEFREEZE
+  +DONTHARMSPECIES
+  +BOSS
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  SeeSound "apoka/sight"
+  PainSound "cyber/pain"
+  AttackSound "tiro/tira"
+  DeathSound "cyber/death"
+  ActiveSound "cyber/active"
+  Obituary "%o was destroyed by Apocalipsis."
+  Tag "Apocalipsis"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BPOK A 10 A_Look
+    Loop
+  See:
+    BPOK A 3 
+		TNT1 A 0 A_Quake(2, 24, 0, 800, "apocalipsis/APOKPISA")
+    BPOK ABBCC 3 A_Chase
+		TNT1 A 0 A_Quake(2, 24, 0, 800, "apocalipsis/APOKPISA")
+    BPOK D 3 
+    BPOK D 3 A_Chase ("Melee", "Missile", 0)
+    Loop
+  Melee:
+	BPOK E 6 A_FaceTarget
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 0, 1)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 1)
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 1, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 0)
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 0, 1)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 0)
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 1, 0)
+	Goto See
+  Missile:
+    BPOK E 6 A_FaceTarget
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 0, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 1)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 1, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 1, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 1)
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 1, 0)	
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 1)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 1, 0)
+    BPOK F 4 Bright A_CustomMissile("SuperMastermindTracer", 100, -50, 0, 0)
+	BPOK G 4 Bright A_CustomMissile("CyberBalls", 95, 50, 0, 1)
+   Goto See
+  Pain:
+    BPOK Q 10 A_Pain
+    Goto See
+  Death:
+    BPOK H 10
+    BPOK I 10 A_Scream
+    BPOK JKL 10
+    BPOK M 10 A_NoBlocking
+    BPOK NO 10
+    BPOK P 30
+    BPOK P -1 A_BossDeath
+    Stop
+  }
+}
+ACTOR SuperMastermindTracer
+{
++FULLVOLACTIVE
++FOILINVUL
++THRUGHOST
++FORCEXYBILLBOARD
++EXTREMEDEATH
++RANDOMIZE
++FORCERADIUSDMG 
++BLOODSPLATTER 
++FOILINVUL
++DEHEXPLOSION
+Damagetype "Bum"
+Renderstyle Add
+Projectile  
+  Scale 0.1
+  Radius 20
+  Height 20
+  damage 2
+  speed 70 
+  SeeSound "calibre/balas"
+  DeathSound "bum/bom"
+ Obituary "%o was destroyed by a Apocalipsis."
+  States
+  {
+  Spawn:
+		TNT1 A 1
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail2", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail3", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail4", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail5", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail6", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail7", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail8", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("MastermindRottenTracerTrail9", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        Loop
+	Death:
+		TNT1 A 0 A_CustomMissile ("RottenExplosionparticles", 0, 0, random (0, 360), 2, random (40, 90))
+		TNT1 A 0 Radius_QUake(4, 3, 0, 15, 0)
+		EXPL ABCDEFGH 1 BRIGHT
+		Stop
+  }
+}
+
+ACTOR CyberBalls
+{
++FULLVOLACTIVE
++FOILINVUL
++FORCEXYBILLBOARD
++EXTREMEDEATH
++RANDOMIZE
++FORCERADIUSDMG 
++BLOODSPLATTER 
++FOILINVUL
++DEHEXPLOSION
+Damagetype "Bum"
+Projectile  
+  Radius 20
+  Height 20
+  damage 8
+  speed 20
+  SeeSound "q2weapon/rocketlauncherfire"
+  DeathSound "q2weapon/rocketexplo"
+ Obituary "%o was destroyed by a Apocalipsis."
+  States
+  {
+  Spawn:
+	MIZL A 1 Bright A_Explode(15,20)
+	MIZL A 0 Bright A_Explode(15,20)
+	MIZL A 1 BRIGHT A_Explode(15,20)
+	Goto Spawn2
+		
+	Spawn2:
+		MIZL A 1 BRIGHT A_Explode(15,20)
+		Loop	
+  Death:
+    TNT1 A 0 
+	TNT1 A 0 Radius_QUake(4, 3, 0, 15, 0)
+    IOS4 B 3 Bright A_Explode(30,30)
+    IOS4 C 3 Bright A_Explode(15,30)
+    IOS4 D 3 Bright A_Explode(15,30)
+	IOS4 E 3 Bright
+	IOS4 F 3 Bright
+	IOS4 G 3 Bright
+	IOS4 H 3 Bright
+	IOS4 I 3 Bright
+	Stop
+  }
+}
+
+ACTOR Cyber_BattleLord 17362
+{
+//$Category "After Doom Monster"
+  Health 1900
+  Radius 40
+  Height 130
+  Mass 6666
+  Speed 16
+  PainChance 0
+  Monster
+  MinMissileChance 66
+  DamageFactor "Bum", 0.0
+  MeleeRange 100
+  scale 1.7
+  +ALWAYSFAST
+  +NOFEAR
+  +NOTIMEFREEZE
+  +NEVERTARGET
+  +NOTARGET
+  +DONTHARMSPECIES
+  +NOPAIN
+  +QUICKTORETALIATE
+  +MISSILEEVENMORE
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  dropitem "Soulsphere"
+  SeeSound "cyber/sight"
+  PainSound "cyber/pain"
+  DeathSound "cyber/death"
+  ActiveSound "cyber/active"
+  Obituary "%o was destroyed by a Battle Lord."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BTLO A 10 A_Look
+    Loop
+  See:
+    BTLO A 3 A_Hoof
+	TNT1 A 0 Radius_QUake(4, 3, 0, 15, 0)
+    BTLO ABBCC 3 A_Chase
+	TNT1 A 0 Radius_QUake(4, 3, 0, 15, 0)
+    BTLO D 3 A_Hoof
+    BTLO D 3 A_Chase ("Melee", "Missile", 0)
+    Loop
+  Melee:
+	BTLO E 6 A_FaceTarget
+	BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 1)
+	BTLO E 6 A_FaceTarget
+	BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 1, 0)
+	BTLO E 6 A_FaceTarget
+	BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 1)
+	BTLO E 6 A_FaceTarget
+	BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 1, 0)
+	Goto See
+  Missile:
+    BTLO E 6 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 1)
+    BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 1, 0)
+    BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 0)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 1, 0)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 1)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 0)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 1)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 1, 0)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 0, 0)
+	BTLO E 4 A_FaceTarget
+    BTLO F 4 Bright A_CustomMissile("MastermindTracer", 45, 40, 1, 0)
+   Goto See
+  Pain:
+    BTLO E 10 A_Pain
+    Goto See
+  Death:
+    BTLO I 4 A_NoBlocking
+    BTLO J 4 
+    BTLO K 4 
+    BTLO L 4 
+    BTLO M 4 
+    BTLO N -1
+	
+    Stop
+  }
+}
+
+ACTOR staticApocalipsist 10789
+{
+  Health 800
+  Radius 40
+  Height 170
+  Mass 6666
+  DamageFactor "Bum", 0.0
+  scale 1.7
+  +ALWAYSFAST
+  +NOFEAR
+  +NOTIMEFREEZE
+  +NEVERTARGET
+  +NOTARGET
+  +DONTHARMSPECIES
+  +NOPAIN
+  +QUICKTORETALIATE
+  +MISSILEEVENMORE
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  Tag "Apocalipsis"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    APOK A -1
+    Loop
+  }
+}	
+
+ACTOR staticApocalipsis 10788
+{
+  Health 9999
+  Radius 40
+  Height 160
+  Mass 6666
+  PainChance 0
+  DamageFactor "Bum", 0.0
+  MeleeRange 1000
+  scale 1.7
+  dropitem "InvulnerabilitySphere"
+  damagefactor "Avoid", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "TeleportRemover", 0.0
+	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
+  +SEEINVISIBLE
+  +QUICKTORETALIATE
+  +LOOKALLAROUND
+  +NOPAIN
+  +TELESTOMP
+  +MOVEWITHSECTOR
+  +JUMPDOWN
+  +NOTIMEFREEZE
+  +DONTHARMSPECIES
+  +BOSS
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  Tag "Apocalipsis"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BPOK A -1
+    Loop
+  }
+}
+
+ACTOR staticBattleLord 10787
+{
+
+  Health 1900
+  Radius 40
+  Height 130
+  Mass 6666
+  PainChance 0
+  DamageFactor "Bum", 0.0
+  scale 1.7
+  +ALWAYSFAST
+  +NOFEAR
+  +NOTIMEFREEZE
+  +NEVERTARGET
+  +NOTARGET
+  +DONTHARMSPECIES
+  +NOPAIN
+  +QUICKTORETALIATE
+  +MISSILEEVENMORE
+  +BOSS
+  +MISSILEMORE
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BTLO A -1
+    Loop
+  }
+}	

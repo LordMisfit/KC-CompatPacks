@@ -1,0 +1,111 @@
+ACTOR Cryocubus 17004
+{
+//$Category "After Doom Monster"
+  Health 600
+  Radius 48
+  Height 64
+  Mass 1000
+  Speed 8
+  PainChance 80
+  Meleerange 300
+  MeleeThreshold 196
+  Monster
+  +ALWAYSFAST
+  +NORADIUSDMG
+  +FLOORCLIP
+  +BOSSDEATH
+  SeeSound "fatso/sight"
+  PainSound "fatso/pain"
+  DeathSound "fatso/death"
+  ActiveSound "fatso/active"
+  Obituary "%o was frozen by the Cryocubus."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    HIEL AB 15 A_Look
+    Loop
+  See:
+    HIEL AABBCCDDEEFF 4 A_Chase
+    Loop
+Melee:
+    HIEL G 20  A_FatRaise
+    HIEL G 0 A_Facetarget
+    HIEL G 0 A_CustomMissile("LanzaHielo2",16,-24,0,3)
+    HIEL H 2 A_CustomMissile("LanzaHielo2",16,24,0,3) 
+	HIEL G 0 A_CustomMissile("LanzaHielo2",16,-24,0,3)
+    HIEL H 2 A_CustomMissile("LanzaHielo2",16,24,0,3)
+    HIEL G 0 A_CustomMissile("LanzaHielo2",16,-24,0,3)
+    HIEL H 2 A_CustomMissile("LanzaHielo2",16,24,0,3)
+    HIEL G 0 A_CustomMissile("LanzaHielo2",16,-24,0,3)
+    HIEL H 2 A_CustomMissile("LanzaHielo2",16,24,0,3) 
+    HIEL G 0 A_CustomMissile("LanzaHielo2",16,-24,0,3)
+    HIEL H 2 A_CustomMissile("LanzaHielo2",16,24,0,3)
+    HIEL G 0 A_CustomMissile("LanzaHielo2",16,-24,0,3)
+    HIEL H 2 A_CustomMissile("LanzaHielo2",16,24,0,3)  	
+    HIEL H 2 A_JumpIfCloser(600, "See")
+    Goto See
+  Pain:
+    HIEL J 3
+	HIEL J 3  A_Pain
+    Goto See
+  Death:
+    HIEL K 6
+    HIEL L 6 A_Scream
+    HIEL M 6 A_NoBlocking
+    HIEL NOP 6
+    HIEL P -1 A_BossDeath
+    Stop
+  Raise:
+    HIEL R 5
+    HIEL QPONMLK 5
+    Goto See
+  }
+}
+
+ACTOR LanzaHielo2
+{
+  Radius 10
+  Height 10
+  Damage 20
+  Speed 25
+  Alpha 0.5
+  Projectile
+  RenderStyle Translucent
+  +THRUACTORS
+  +FORCEXYBILLBOARD
+  +STRIFEDAMAGE
+  +BLOODLESSIMPACT
+  DamageType Ice
+  SeeSound "hielo/llama"
+  Obituary "%o was frozen by the Cryocubus."
+  States
+  {
+  Spawn:
+	HUMO A 0 
+	HUMO ABCDEFGHIJKLMNOPQ 1 A_Explode(2,30)
+	Stop
+  Death:
+	Stop
+  }
+}
+
+ACTOR staticCryocubus 10786
+{
+  Health 600
+  Radius 48
+  Height 64
+  Mass 1000
+  +ALWAYSFAST
+  +NORADIUSDMG
+  +FLOORCLIP
+  +BOSSDEATH
+  var int user_isfiring;
+  Species "Icon"
+  States
+  {
+  Spawn:
+    HIEL A -1
+    Loop
+  }
+}	

@@ -1,0 +1,182 @@
+ACTOR Baronmuerto 10419
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    HFR1 A -1
+    Stop
+  }
+}
+
+ACTOR Baronmuerto2 10418
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PIPI A -1
+    Stop
+  }
+}
+
+ACTOR demonmuerto 10417
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PEMM A -1
+    Stop
+  }
+}
+
+ACTOR demonmuerto2 10416
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PEMN A -1
+    Stop
+  }
+}
+
+ACTOR demonmuerto3 10415
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PEMB A -1
+    Stop
+  }
+}
+
+ACTOR Barril 10414
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    CAPU A -1
+    Stop
+  }
+}
+
+
+ACTOR demonmuerto4 10433
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PEMC A -1
+    Stop
+  }
+}
+
+ACTOR demonmuerto5 10434
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PEMZ A -1
+    Stop
+  }
+}
+
+ACTOR demonmuerto6 10437
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    PEMX A -1
+    Stop
+  }
+}
+
+ACTOR cybermuerto 10438
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    XYVE A -1
+    Stop
+  }
+}
+
+ACTOR fatsomuerto 10439
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    FOFO T -1
+    Stop
+  }
+}
+
+ACTOR revemuerto 10440
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    ZKEL Q -1
+    Stop
+  }
+}
+
+ACTOR zarania 10441
+{
+  Radius 20
+  Height 4
+  +NOBLOCKMAP
+  +MOVEWITHSECTOR
+  States
+  {
+  Spawn:
+    ZPID S -1
+    Stop
+  }
+}

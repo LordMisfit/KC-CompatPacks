@@ -1,0 +1,90 @@
+ACTOR Rotten_Mother 30872
+{
+//$Category "After Doom Monster"
+  Health 8000
+  Tag "Rotten Mother Demon"
+  Radius 40
+  Height 105
+  Mass 10000
+  Speed 25
+  PainChance 6
+  Monster
+  +NOINFIGHTING
+  +NOBLOCKMONST
+  +LOOKALLAROUND
+  +FLOAT
+  +NOGRAVITY
+  +BOSS
+  +NORADIUSDMG
+  +NOTARGET
+  +NOFEAR
+  +NOTIMEFREEZE
+  DropItem "Soulsphere"
+  SeeSound "rottenmother/MOTHVE"
+  PainSound "mom/pain"
+  DeathSound "rottenmother/MOTHDIE"
+  ActiveSound "rottenmother/MOTHBUS"
+  Obituary "%o fell before the might of the Rotten Mother."
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ROTH A 10 A_Look
+    Loop
+  See:
+    ROTH AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    ROTH DG 7 Bright A_FaceTarget
+	ROTH G 0 A_CustomMissile("FireBeam",10,0,10)
+	ROTH G 0 A_CustomMissile("FireBeam",10,0,-10)
+	ROTH G 12 Bright A_CustomMissile("FireBeam",10,0,0)
+	ROTH EF 7 Bright A_FaceTarget
+	ROTH G 0 A_CustomMissile("DaemoniumOverlordTracer",60,-30)
+	ROTH G 0 A_CustomMissile("DaemoniumOverlordTracer",60,30)
+	ROTH G 0 A_CustomMissile("DaemoniumOverlordTracer",30,-30)
+	ROTH G 0 A_CustomMissile("DaemoniumOverlordTracer",30,30)
+	ROTH F 12 Bright
+    Goto See
+  Pain:
+    ROTH H 9 A_Pain
+    Goto See
+  Death:
+    ROTH I 32 
+    ROTH J 8 A_Scream
+	ROTH K 8 A_NoBlocking
+	ROTH L 8 A_SetFloorClip
+    ROTH M 8
+	ROTH N 8 A_XScream
+    ROTH O 8
+    Stop
+  }
+}
+
+ACTOR staticRotten_Mother 10883
+{
+
+  Health 8000
+  Tag "Rotten Mother Demon"
+  Radius 40
+  Height 105
+  Mass 10000
+  PainChance 6
+  +NOINFIGHTING
+  +NOBLOCKMONST
+  +LOOKALLAROUND
+  +FLOAT
+  +NOGRAVITY
+  +BOSS
+  +NORADIUSDMG
+  +NOTARGET
+  +NOFEAR
+  +NOTIMEFREEZE
+  Species "Icon"
+  States
+  {
+  Spawn:
+    ROTH A -1
+    Loop
+  }
+}	

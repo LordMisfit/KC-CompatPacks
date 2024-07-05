@@ -1,0 +1,62 @@
+ACTOR crucificado1 19010
+{
+	States
+	{
+	Spawn:
+		CRUX A -1
+		Stop
+	}
+}
+
+ACTOR crucificado2 19011
+{
+	States
+	{
+	Spawn:
+		CRUX B -1
+		Stop
+	}
+}
+
+ACTOR crucificado3 19012
+{
+	States
+	{
+	Spawn:
+		CRUX C -1
+		Stop
+	}
+}
+
+ACTOR suero 19013
+{
++SOLID
+  Radius 16
+  Height 56
+	States
+	{
+	Spawn:
+		SUER A -1
+		Stop
+	}
+}
+
+ACTOR ciudadano 19014
+{
+	States
+	{
+	Spawn:
+		HORR B -1
+		Stop
+	}
+}
+
+ACTOR ciudadano2 19015
+{
+	States
+	{
+	Spawn:
+		HORR C -1
+		Stop
+	}
+}

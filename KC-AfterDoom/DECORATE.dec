@@ -1,5 +1,0 @@
-#include "decorate/ad-decor.dec"
-#include "decorate/ad-gore.dec"
-#include "decorate/ad-items.dec"
-#include "decorate/ad-monsters.dec"
-#include "decorate/ad-staticmonsters.dec"

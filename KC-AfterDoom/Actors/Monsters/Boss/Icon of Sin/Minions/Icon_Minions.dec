@@ -1,0 +1,406 @@
+actor cacodemonP 14668
+{
+//$Category "Doom Monster Performance"
+  Tag "Cacodemon"
+  Health 340
+  Radius 31
+  Height 56
+  Mass 400
+  Speed 8
+  PainChance 128
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  SeeSound "caco/sight"
+  PainSound "caco/pain"
+  DeathSound "caco/death"
+  ActiveSound "caco/active"
+  Obituary "$OB_CACO"
+  HitObituary "$OB_CACOHIT"
+  DamageFactor "Bum", 0.0
+  Species "Icon"
+  States
+  {
+  Spawn:
+    HEAD A 10 A_Look
+    Loop
+  See:
+    HEAD A 3 A_Chase
+    Loop
+  Missile:
+    HEAD BC 5 A_FaceTarget
+    HEAD D 5 Bright A_CustomMissile("CacodemonBall", 36, 0, 0, 0)
+    Goto See
+  Pain:
+    HEAD E 3
+    HEAD E 3 A_Pain
+    HEAD F 6
+    Goto See
+  Death:
+    HEAD G 8
+    HEAD H 8 A_Scream
+    HEAD IJ 8
+    HEAD K 8 A_NoBlocking
+    PEAD L 1390 A_SetFloorClip
+    Stop
+  }
+}
+
+actor ShotgunguyP 14669
+{
+//$Category "Doom Monster Performance"
+  Tag "Shotgun guy"
+  Health 30
+  Radius 20
+  Height 56
+  Mass 100
+  Speed 8
+  PainChance 170
+  Monster
+  +FLOORCLIP
+  SeeSound "shotguy/sight"
+  AttackSound "shotguy/attack"
+  PainSound "shotguy/pain"
+  DeathSound "shotguy/death"
+  ActiveSound "shotguy/active"
+  Obituary "$OB_SHOTGUY"
+  DropItem "Shotgun"
+  States
+  {
+  Spawn:
+    SPOS AB 10 A_Look
+    Loop
+  See:
+    SPOS AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    SPOS E 10 A_FaceTarget
+    SPOS F 10 Bright A_SPosAttackUseAtkSound
+    SPOS E 10
+    Goto See
+  Pain:
+    SPOS G 3
+    SPOS G 3 A_Pain
+    Goto See
+  Death:
+    SPOS H 5
+    SPOS I 5 A_Scream
+    SPOS J 5 A_NoBlocking
+    SPOS K 5
+    PPOS L -1
+    Stop
+  XDeath:
+    SPOS M 5
+    SPOS N 5 A_XScream
+    SPOS O 5 A_NoBlocking
+    SPOS PQRST 5
+    PPOS U -1
+    Stop
+  Raise:
+    SPOS L 5
+    SPOS KJIH 5
+    Goto See
+  }
+}  
+
+actor ZombieManP 14670
+{
+//$Category "Doom Monster Performance"
+  Tag "Zombie Man"
+  Health 20
+  Radius 20
+  Height 56
+  Speed 8
+  PainChance 200
+  Monster
+  +FLOORCLIP
+  SeeSound "grunt/sight"
+  AttackSound "grunt/attack"
+  PainSound "grunt/pain"
+  DeathSound "grunt/death"
+  ActiveSound "grunt/active"
+  Obituary "$OB_ZOMBIE" // "%o was killed by a zombieman."
+  DropItem "Clip"
+  States
+  {
+  Spawn:
+    POSS AB 10 A_Look
+    Loop
+  See:
+    POSS AABBCCDD 4 A_Chase
+    Loop
+  Missile:
+    POSS E 10 A_FaceTarget
+    POSS F 8 A_PosAttack
+    POSS E 8
+    Goto See
+  Pain:
+    POSS G 3
+    POSS G 3 A_Pain
+    Goto See
+  Death:
+    POSS H 5
+    POSS I 5 A_Scream
+    POSS J 5 A_NoBlocking
+    POSS K 5
+    PPSS L -1
+    Stop
+  XDeath:
+    POSS M 5
+    POSS N 5 A_XScream
+    POSS O 5 A_NoBlocking
+    POSS PQRST 5
+    PPSS U -1
+    Stop
+  Raise:
+    POSS K 5
+    POSS JIH 5
+    Goto See
+  }
+}
+
+actor LostSoulP 14671
+{
+//$Category "Doom Monster Performance"
+  Tag "Lost Soul"
+  Health 100
+  Radius 16
+  Height 56
+  Mass 50
+  Speed 8
+  Damage 3
+  PainChance 256
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +MISSILEMORE
+  +DONTFALL
+  +NOICEDEATH
+  AttackSound "skull/melee"
+  PainSound "skull/pain"
+  DeathSound "skull/death"
+  ActiveSound "skull/active"
+  RenderStyle SoulTrans
+  Obituary "$OB_SKULL" // "%o was spooked by a lost soul."
+  States
+  {
+  Spawn:
+    SKUL AB 10 Bright A_Look
+    Loop
+  See:
+    SKUL AB 6 Bright A_Chase
+    Loop
+  Missile:
+    SKUL C 10 Bright A_FaceTarget
+    SKUL D 4 Bright A_SkullAttack
+    SKUL CD 4 Bright
+    Goto Missile+2
+  Pain:
+    SKUL E 3 Bright
+    SKUL E 3 Bright A_Pain
+    Goto See
+  Death:
+    SKUL F 6 Bright
+    SKUL G 6 Bright A_Scream
+    SKUL H 6 Bright
+    SKUL I 6 Bright A_NoBlocking
+    SKUL J 6
+    SKUL K 6
+    Stop
+  }
+}  
+
+actor DoomImpP 14672
+{
+//$Category "Doom Monster Performance"
+  Tag "Imp"
+   Health 60
+  Radius 20
+  Height 56
+  Mass 100
+  Speed 8
+  PainChance 200
+  Monster
+  +FLOORCLIP
+  SeeSound "imp/sight"
+  PainSound "imp/pain"
+  DeathSound "imp/death"
+  ActiveSound "imp/active"
+  HitObituary "$OB_IMPHIT"
+  Obituary "$OB_IMP"
+  States
+  {
+  Spawn:
+    TROO AB 10 A_Look
+    Loop
+  See:
+    TROO AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+  Missile:
+    TROO EF 8 A_FaceTarget
+    TROO G 6 A_TroopAttack
+    Goto See
+  Pain:
+    TROO H 2
+    TROO H 2 A_Pain
+    Goto See
+  Death:
+    TROO I 8
+    TROO J 8 A_Scream
+    TROO K 6
+    TROO L 6 A_NoBlocking
+    PROO M 1390
+    Stop
+  XDeath:
+    TROO N 5
+    TROO O 5 A_XScream
+    TROO P 5
+    TROO Q 5 A_NoBlocking
+    TROO RST 5
+    PROO U 1390
+    Stop
+  }
+} 
+ 
+ actor DemonP 14673
+{
+//$Category "Doom Monster Performance"
+  Tag "Demon"
+   Health 150
+  PainChance 180
+  Speed 10
+  Radius 30
+  Height 56
+  Mass 400
+  Monster
+  +FLOORCLIP
+  SeeSound "demon/sight"
+  AttackSound "demon/melee"
+  PainSound "demon/pain"
+  DeathSound "demon/death"
+  ActiveSound "demon/active"
+  Obituary "$OB_DEMONHIT" // "%o was bit by a demon."
+  States
+  {
+  Spawn:
+    SARG AB 10 A_Look
+    Loop
+  See:
+    SARG AABBCCDD 2 Fast A_Chase
+    Loop
+  Melee:
+    SARG EF 8 Fast A_FaceTarget
+    SARG G 8 Fast A_SargAttack
+    Goto See
+  Pain:
+    SARG H 2 Fast
+    SARG H 2 Fast A_Pain
+    Goto See
+  Death:
+    SARG I 8
+    SARG J 8 A_Scream
+    SARG K 4
+    SARG L 4 A_NoBlocking
+    SARG M 4
+    PARG N 1390
+    Stop
+  }
+} 
+
+ actor ArachnotronP 14674
+{
+//$Category "Doom Monster Performance"
+  Tag "Arachnotron"
+  Health 500
+  Radius 64
+  Height 64
+  Mass 600
+  Speed 12
+  PainChance 128
+  Monster
+  +FLOORCLIP
+  +BOSSDEATH
+  SeeSound "baby/sight"
+  PainSound "baby/pain"
+  DeathSound "baby/death"
+  ActiveSound "baby/active"
+  Obituary "$OB_BABY"
+  States
+  {
+  Spawn:
+    BSPI AB 10 A_Look
+    Loop
+  See:
+    BSPI A 20
+    BSPI A 3 A_BabyMetal
+    BSPI ABBCC 3 A_Chase
+    BSPI D 3 A_BabyMetal
+    BSPI DEEFF 3 A_Chase
+    Goto See+1
+  Missile:
+    BSPI A 20 Bright A_FaceTarget
+    BSPI G 4 Bright A_BspiAttack
+    BSPI H 4 Bright
+    BSPI H 1 Bright A_SpidRefire
+    Goto Missile+1
+  Pain:
+    BSPI I 3
+    BSPI I 3 A_Pain
+    Goto See+1
+  Death:
+    BSPI J 20 A_Scream
+    BSPI K 7 A_NoBlocking
+    BSPI LMNO 7
+    PSPI P 1390 A_BossDeath
+    Stop
+  }
+}  
+
+ actor HellKnightP 14675
+{
+//$Category "Doom Monster Performance"
+  Tag "HellKnight"
+  Health 500
+  Radius 24
+  Height 64
+  Mass 1000
+  Speed 8
+  PainChance 50
+  Monster
+  +FLOORCLIP
+  +BOSSDEATH
+  SeeSound "knight/sight"
+  ActiveSound "knight/active"
+  PainSound "knight/pain"
+  DeathSound "knight/death"
+  HitObituary "$OB_KNIGHTHIT"
+  Obituary "$OB_KNIGHT"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    BOS2 AB 10 A_Look
+    Loop
+  See:
+    BOS2 AABBCCDD 3 A_Chase
+    Loop
+  Melee:
+  Missile:
+    BOS2 EF 8 A_FaceTarget
+    BOS2 G 8 A_CustomMissile("BaronBall", 46, 0, 0, 0)
+    Goto See
+  Pain:
+    BOS2 H 2
+    BOS2 H 2 A_Pain
+    Goto See
+  Death:
+    BOS2 I 8
+    BOS2 J 8 A_Scream
+    BOS2 K 8
+    BOS2 L 8 A_NoBlocking
+    BOS2 MN 8
+    POS2 O 1390
+    Stop
+  }
+}  

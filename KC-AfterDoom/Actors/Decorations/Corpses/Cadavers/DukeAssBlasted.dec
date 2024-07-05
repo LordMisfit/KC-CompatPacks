@@ -1,0 +1,46 @@
+Actor Duke_Ass_Blasted 16376
+{
+	-SOLID
+	+NOGRAVITY
+	+SHOOTABLE
+	+DONTFALL
+	Health 1
+	Mass 999999
+	Radius 12
+	Height 56
+	BloodColor "Red"
+ActiveSound "Duke/Agony"
+DeathSound "Duke/DMDEATH"
+
+	States
+	{
+	Spawn:
+		DEDK A 4 A_Look
+		Loop
+	  See: 
+	   DEDK A 4 A_Activesound
+	   DEDK B 4
+	   DEDK C 4 
+	   DEDK D 4
+	   DEDK E 4 
+	   DEDK F 4 
+	   DEDK A 4 
+	   DEDK B 4
+	   DEDK C 4
+ 	   DEDK D 4
+	   DEDK E 4
+	   DEDK F 4 
+	   DEDK A 4
+	   DEDK B 4 
+	   DEDK C 4 
+	   DEDK D 4 
+	   DEDK E 4
+	   DEDK F 4 	  
+	   Loop	
+    Death:
+	    TNT1 A 0 A_PlaySound("Duke/DMDEATH")
+		DEDK G 18 A_Scream
+		DEDK G -1 A_StopSound
+	Stop				
+	}
+}

@@ -1,0 +1,39 @@
+ACTOR Cyberpatas 17893
+{
+//$Category "Doom Monster pack"
+  Health 200
+  Radius 40
+  Height 56
+  Mass 500
+  Speed 12
+  PainChance 0
+  +BOSS
+  +FLOORCLIP
+  +BOSSDEATH
+  +SOLID
+  +SHOOTABLE
+   DeathSound "world/barrelx"
+  Obituary "$OB_CYBORG"
+  Species "Icon"
+  States
+  {
+  Spawn:
+    PATA A 10 
+    Loop
+  See:
+    PATA A 3 A_Hoof
+    PATA ABBCC 3 A_Chase
+    PATA D 3 A_Metal
+    PATA D 3 A_Chase
+    Loop
+  Death:
+    PATA H 10 
+    PATA I 10   
+    PATA JKL 10 A_Scream
+    PATA M 10 A_NoBlocking
+    PATA NO 10
+    PATA P 30
+    PATA P -1 A_BossDeath
+    Stop
+  }
+}

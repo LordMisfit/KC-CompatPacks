@@ -1,0 +1,81 @@
+ACTOR HangedMarine1 17506
+{
+  Game Doom
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    HMAR A -1
+    Stop
+  }
+}
+
+ACTOR HangedMarine2 17505
+{
+  Game Doom
+  Radius 22
+  Height 55
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    HMAR B -1
+    Stop
+  }
+}
+
+ACTOR HangedMarine3 17507
+{
+  Game Doom
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    HMAR C -1
+    Stop
+  }
+}
+
+ACTOR VACA 17508
+{
+SCALE 0.7
+  Game Doom
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    VACA A -1
+    Stop
+  }
+}
+
+ACTOR BACA 17509
+{
+SCALE 0.7
+  Game Doom
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    BACA B -1
+    Stop
+  }
+}

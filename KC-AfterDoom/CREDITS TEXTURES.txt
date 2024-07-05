@@ -1,0 +1,52 @@
+ Texture credits:
+ ESTECIEL by Uriko (Ola Björling)
+ 
+ 
+ Blood textures:
+ Conversion: Ceeb
+ Author: Monolith, Sunstorm Interactive
+ 
+ 
+ Duke Nukem 3d textures: 
+ Conversion: Tormentor667
+ Author: 3D Realms
+ 
+ 
+ OGRO TEXTURE PACK
+ Conversion: Afterglow
+ Author: François-Xavier Delmotte
+ 
+ 
+ QUAKE I TEXTURE PACK
+ Conversion: Ceeb
+ Author: id Software, Hipnotic Int., Rogue Ent.
+ 
+ 
+ 5TH EPISODE TEXTURE PACK
+ Author: Nightmare
+ 
+ 
+ CAGE'S TEXTURE PACK
+ Author: Cage
+ 
+ 
+ CAGE'S TEXTURE PACK VOL.2
+ Conversion: Zero X. Diamond
+ Author: Cage, Fox666, NeuralStunner 
+(the latter two for the enhanced cacodemon marble texture)
+
+
+ DARKBASE TEXTURE PACK
+ Author: David Gevert
+ 
+ 
+ PSX FIRE SKIES
+ Conversion: fenderc01
+ Author: scalliano
+ Edits: scalliano, Gez
+ 
+ 
+ USEFUL DOOM EDITS
+ Author: Enjay, Nightmare, Malinku, Earthquake
+ 
+ 

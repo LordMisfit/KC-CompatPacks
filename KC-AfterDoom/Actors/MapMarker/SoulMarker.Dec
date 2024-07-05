@@ -1,0 +1,10 @@
+ACTOR SoulMarker : MapMarker 30508
+{
+//$Category "MapMarker"
+  States
+  {
+  Spawn:
+    SOUL ABCDCB 6 
+    Loop
+  }
+}

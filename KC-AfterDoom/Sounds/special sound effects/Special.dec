@@ -1,0 +1,60 @@
+ACTOR risaa 16980
+{
+  Radius 0
+  Height 0
+  Mass 0
+  Speed 0
+  +FLOORCLIP
+  +INVISIBLE
+  SeeSound "risaa/see"
+  States
+{
+  Spawn:
+    TNT1 AB 10 A_Look
+    Loop
+  See:
+    TNT1 AB 2  A_Chase
+	Loop
+  }
+}
+
+ACTOR risab 16981
+{
+  Radius 0
+  Height 0
+  Mass 0
+  Speed 0
+  +FLOORCLIP
+  +INVISIBLE
+  SeeSound "risab/see"
+  States
+{
+  Spawn:
+    TNT1 AB 10 A_Look
+    Loop
+  See:
+    TNT1 AB 2  A_Chase
+	Loop
+  }
+}
+
+ACTOR VIOLA 16982
+{
+  Radius 0
+  Height 0
+  Mass 0
+  Speed 0
+  +INVISIBLE
+  +NoGravity
+  +Float
+  SeeSound "viola/see"
+  States
+{
+  Spawn:
+    TNT1 AB 10 A_Look
+    Loop
+  See:
+    TNT1 AB 2  A_Chase
+	Loop
+  }
+}
