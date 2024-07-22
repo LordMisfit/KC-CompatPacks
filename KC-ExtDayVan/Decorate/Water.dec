@@ -1,8 +1,8 @@
 Actor UnderwaterExplosion
 {
-+NOCLIP
-+NOGRAVITY
-states
+	+NOCLIP
+	+NOGRAVITY
+	states
 	{
 	Spawn:
 		 TNT1 A 1

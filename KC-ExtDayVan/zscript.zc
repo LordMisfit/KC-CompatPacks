@@ -1026,99 +1026,121 @@ class Trashcan1 : FlowerPot
 		angmin = frandom(0,360);
 		angmax = frandom(0,360);
 		
-		if (random(1,1048576) <= 1) A_SpawnItemEx("TSArtifactSpawner", frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
-		else
+		int rarestfactor = 131072; // 1048576;
+		int rarerfactor = 16384; // 131072;
+		int rarefactor = 2048; // 16384;
+		int semicommonfactor = 256; // 2048;
+		int commonfactor = 32; // 256;
+		int verycommonfactor = 4; // 32;
+		int extremelycommonfactor = randompick(1,1,1,1,1,1,1,1,2);
+		
+		if (type >= 1)
 		{
-			if (random(1,131072) <= 1) A_SpawnItemEx("SpecialBackPack", frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
-			else
+			rarestfactor *= 2.0;
+			rarerfactor *= 1.875;
+			rarefactor *= 1.75;
+			semicommonfactor *= 1.625;
+			commonfactor *= 1.5;
+			verycommonfactor *= 1.375;
+			extremelycommonfactor *= 1.25;
+		}
+		
+		if (random(1,rarestfactor) <= 1) 
+		{
+			A_SpawnItemEx("TSArtifactSpawner", frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,rarerfactor) <= 1) 
+		{
+			A_SpawnItemEx("SpecialBackPack", frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,rarefactor) <= 1) 
+		{
+			int user_type = random(1,20);
+			string spawntype;
+			if (user_type >= 1 && user_type <= 4) spawntype = "VitalCapsule";
+			if (user_type >= 5 && user_type <= 8)  spawntype = "SpeedCapsule";
+			if (user_type >= 9 && user_type <= 12) spawntype = "IQCapsule";
+			if (user_type >= 13 && user_type <= 16) spawntype = "GutsCapsule";
+			if (user_type >= 17 && user_type <= 20) spawntype = "LuckCapsule";
+			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,semicommonfactor) <= 1)
+		{
+			int user_type = random(1,22);
+			string spawntype;
+			if (user_type >= 1 && user_type <= 2) spawntype = "Glock21";
+			if (user_type >= 3 && user_type <= 4) spawntype = "BlasterPickup";
+			if (user_type >= 5 && user_type <= 6) spawntype = "RiotGun";
+			if (user_type >= 7 && user_type <= 8) spawntype = "TommyGun";
+			if (user_type >= 9 && user_type <= 10) spawntype = "BlasterRifle";
+			if (user_type >= 11 && user_type <= 12) spawntype = "Devastator";
+			if (user_type >= 13 && user_type <= 14) spawntype = "Deviation";
+			if (user_type >= 13 && user_type <= 16) spawntype = "TeslaCannon";
+			if (user_type >= 17 && user_type <= 18) spawntype = "BHGen";
+			if (user_type >= 19 && user_type <= 20) spawntype = "SawThrower";
+			if (user_type >= 21 && user_type <= 22) spawntype = "ImpalerXBow";
+			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,commonfactor) <= 1)
+		{
+			int user_type = random(1,22);
+			string spawntype;
+			if (user_type >= 1 && user_type <= 2) spawntype = "ClipBox";
+			if (user_type >= 3 && user_type <= 4) spawntype = "CellPack";
+			if (user_type >= 5 && user_type <= 6) spawntype = "ShellBox";
+			if (user_type >= 7 && user_type <= 8) spawntype = "TommAmmoBig";
+			if (user_type >= 9 && user_type <= 10) spawntype = "CellPack";
+			if (user_type >= 11 && user_type <= 12) spawntype = "MiniRocketBox";
+			if (user_type >= 13 && user_type <= 14) spawntype = "RocketBox";
+			if (user_type >= 13 && user_type <= 16) spawntype = "BoltsLarge";
+			if (user_type >= 17 && user_type <= 18) spawntype = "CellPack";
+			if (user_type >= 19 && user_type <= 20) spawntype = "SawBox";
+			if (user_type >= 21 && user_type <= 22) spawntype = "ImpalerBoltsBig";
+			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,verycommonfactor) <= 1)
+		{
+			int user_type = random(1,22);
+			string spawntype;
+			if (user_type >= 1 && user_type <= 2) spawntype = "Clip";
+			if (user_type >= 3 && user_type <= 4) spawntype = "Cell";
+			if (user_type >= 5 && user_type <= 6) spawntype = "Shell";
+			if (user_type >= 7 && user_type <= 8) spawntype = "TommAmmo";
+			if (user_type >= 9 && user_type <= 10) spawntype = "Cell";
+			if (user_type >= 11 && user_type <= 12) spawntype = "MiniRockets";
+			if (user_type >= 13 && user_type <= 14) spawntype = "Rocket";
+			if (user_type >= 13 && user_type <= 16) spawntype = "Bolts";
+			if (user_type >= 17 && user_type <= 18) spawntype = "CellPack";
+			if (user_type >= 19 && user_type <= 20) spawntype = "Saws";
+			if (user_type >= 21 && user_type <= 22) spawntype = "ImpalerBolts";
+			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,extremelycommonfactor) <= 1)
+		{
+			int randrolls2 = randompick(1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4) * 2;
+			for (int i; i < randrolls2; i++)
 			{
-				if (random(1,16384) <= 1) 
+				int randrolls = randompick(1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4);
+				for (int i; i < randrolls; i++)
 				{
-					int user_type = random(1,20);
+					int user_type = random(1,22);
 					string spawntype;
-					if (user_type >= 1 && user_type <= 4) spawntype = "VitalCapsule";
-					if (user_type >= 5 && user_type <= 8)  spawntype = "SpeedCapsule";
-					if (user_type >= 9 && user_type <= 12) spawntype = "IQCapsule";
-					if (user_type >= 13 && user_type <= 16) spawntype = "GutsCapsule";
-					if (user_type >= 17 && user_type <= 20) spawntype = "LuckCapsule";
+					if (user_type >= 1 && user_type <= 10) spawntype = "ArmorBonus2";
+					if (user_type >= 11 && user_type <= 20) spawntype = "HealthBonus2";
+					if (user_type >= 21 && user_type <= 21) spawntype = "ArmorBonusBig";
+					if (user_type >= 22 && user_type <= 22) spawntype = "HealthBonusBig";
 					A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
 				}
-				else
+				randrolls = randompick(1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4);
+				for (int i; i < randrolls; i++)
 				{
-					if (random(1,2048) <= 1)
-					{
-						int user_type = random(1,22);
-						string spawntype;
-						if (user_type >= 1 && user_type <= 2) spawntype = "Glock21";
-						if (user_type >= 3 && user_type <= 4) spawntype = "BlasterPickup";
-						if (user_type >= 5 && user_type <= 6) spawntype = "RiotGun";
-						if (user_type >= 7 && user_type <= 8) spawntype = "TommyGun";
-						if (user_type >= 9 && user_type <= 10) spawntype = "BlasterRifle";
-						if (user_type >= 11 && user_type <= 12) spawntype = "Devastator";
-						if (user_type >= 13 && user_type <= 14) spawntype = "Deviation";
-						if (user_type >= 13 && user_type <= 16) spawntype = "TeslaCannon";
-						if (user_type >= 17 && user_type <= 18) spawntype = "BHGen";
-						if (user_type >= 19 && user_type <= 20) spawntype = "SawThrower";
-						if (user_type >= 21 && user_type <= 22) spawntype = "ImpalerXBow";
-						A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
-					}
-					else
-					{
-						if (random(1,256) <= 1)
-						{
-							int user_type = random(1,22);
-							string spawntype;
-							if (user_type >= 1 && user_type <= 2) spawntype = "ClipBox";
-							if (user_type >= 3 && user_type <= 4) spawntype = "CellPack";
-							if (user_type >= 5 && user_type <= 6) spawntype = "ShellBox";
-							if (user_type >= 7 && user_type <= 8) spawntype = "TommAmmoBig";
-							if (user_type >= 9 && user_type <= 10) spawntype = "CellPack";
-							if (user_type >= 11 && user_type <= 12) spawntype = "MiniRocketBox";
-							if (user_type >= 13 && user_type <= 14) spawntype = "RocketBox";
-							if (user_type >= 13 && user_type <= 16) spawntype = "BoltsLarge";
-							if (user_type >= 17 && user_type <= 18) spawntype = "CellPack";
-							if (user_type >= 19 && user_type <= 20) spawntype = "SawBox";
-							if (user_type >= 21 && user_type <= 22) spawntype = "ImpalerBoltsBig";
-							A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
-						}
-						else
-						{
-							if (random(1,32) <= 1)
-							{
-								int user_type = random(1,22);
-								string spawntype;
-								if (user_type >= 1 && user_type <= 2) spawntype = "Clip";
-								if (user_type >= 3 && user_type <= 4) spawntype = "Cell";
-								if (user_type >= 5 && user_type <= 6) spawntype = "Shell";
-								if (user_type >= 7 && user_type <= 8) spawntype = "TommAmmo";
-								if (user_type >= 9 && user_type <= 10) spawntype = "Cell";
-								if (user_type >= 11 && user_type <= 12) spawntype = "MiniRockets";
-								if (user_type >= 13 && user_type <= 14) spawntype = "Rocket";
-								if (user_type >= 13 && user_type <= 16) spawntype = "Bolts";
-								if (user_type >= 17 && user_type <= 18) spawntype = "CellPack";
-								if (user_type >= 19 && user_type <= 20) spawntype = "Saws";
-								if (user_type >= 21 && user_type <= 22) spawntype = "ImpalerBolts";
-								A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
-							}
-							else
-							{
-								if (random(1,4) <= 1)
-								{
-									int randrolls = randompick(1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4);
-									for (int i; i < randrolls; i++)
-									{
-										int user_type = random(1,22);
-										string spawntype;
-										if (user_type >= 1 && user_type <= 10) spawntype = "ArmorBonus2";
-										if (user_type >= 11 && user_type <= 20) spawntype = "HealthBonus2";
-										if (user_type >= 21 && user_type <= 21) spawntype = "ArmorBonusBig";
-										if (user_type >= 22 && user_type <= 22) spawntype = "HealthBonusBig";
-										A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
-									}
-								}
-							}
-						}
-					}
+					int user_type = random(1,22);
+					string spawntype;
+					if (user_type >= 1 && user_type <= 10) spawntype = "ArmorBonus2";
+					if (user_type >= 11 && user_type <= 20) spawntype = "HealthBonus2";
+					if (user_type >= 21 && user_type <= 21) spawntype = "ArmorBonusBig";
+					if (user_type >= 22 && user_type <= 22) spawntype = "HealthBonusBig";
+					A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
 				}
 			}
 		}
