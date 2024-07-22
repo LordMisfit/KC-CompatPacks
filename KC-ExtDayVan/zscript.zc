@@ -1029,7 +1029,8 @@ class Trashcan1 : FlowerPot
 		int rarestfactor = 131072; // 1048576;
 		int rarerfactor = 16384; // 131072;
 		int rarefactor = 2048; // 16384;
-		int semicommonfactor = 256; // 2048;
+		int semicommonfactor = 512; // 4096;
+		int somewhatcommonfactor = 128; // 1024;
 		int commonfactor = 32; // 256;
 		int verycommonfactor = 4; // 32;
 		int extremelycommonfactor = randompick(1,1,1,1,1,1,1,1,2);
@@ -1040,9 +1041,10 @@ class Trashcan1 : FlowerPot
 			rarerfactor *= 1.875;
 			rarefactor *= 1.75;
 			semicommonfactor *= 1.625;
-			commonfactor *= 1.5;
-			verycommonfactor *= 1.375;
-			extremelycommonfactor *= 1.25;
+			somewhatcommonfactor *= 1.5;
+			commonfactor *= 1.375;
+			verycommonfactor *= 1.25;
+			extremelycommonfactor *= 1.125;
 		}
 		
 		if (random(1,rarestfactor) <= 1) 
@@ -1065,6 +1067,17 @@ class Trashcan1 : FlowerPot
 			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
 		}
 		if (random(1,semicommonfactor) <= 1)
+		{
+			int user_type = random(1,5);
+			string spawntype;
+			if (user_type == 1) spawntype = "TommyGunModpack";
+			if (user_type == 2) spawntype = "BlasterRifleModpack";
+			if (user_type == 3) spawntype = "BlasterPistolModpack";
+			if (user_type == 4) spawntype = "DevastatorModpack";
+			if (user_type == 5) spawntype = "RiotgunModpack";
+			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
+		}
+		if (random(1,somewhatcommonfactor) <= 1)
 		{
 			int user_type = random(1,22);
 			string spawntype;
