@@ -1074,7 +1074,7 @@ class Trashcan1 : FlowerPot
 			if (user_type == 2) spawntype = "BlasterRifleModpack";
 			if (user_type == 3) spawntype = "BlasterPistolModpack";
 			if (user_type == 4) spawntype = "DevastatorModpack";
-			if (user_type == 5) spawntype = "RiotgunModpack";
+			if (user_type == 5) spawntype = "RiotGunModpack";
 			A_SpawnItemEx(spawntype, frandom(posxmin,posxmax), frandom(posymin,posymax), frandom(posymin,poszmax), frandom(velxmin,velxmax), frandom(velymin,velymax), frandom(velzmin,velzmax), frandom(angmin,angmax), SXF_NOCHECKPOSITION);
 		}
 		if (random(1,somewhatcommonfactor) <= 1)

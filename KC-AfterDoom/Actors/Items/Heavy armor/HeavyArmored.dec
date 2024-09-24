@@ -1,4 +1,4 @@
-Actor HeavyArmored : BasicArmorPickup 12453
+Actor HeavyArmored : BasicArmorPickup //12453
 {
   Radius 20
   Height 16
