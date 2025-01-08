@@ -39,6 +39,7 @@ map map35 "Inferno City"
 	cluster = 0
 	par = 2200
 	music = "NOSOUND"
+	ForceNoSkyStretch
 }
 
 map map36 "Icon of Sin is dead"
@@ -46,7 +47,7 @@ map map36 "Icon of Sin is dead"
     Author = "by 00_Zombie_00"
 	levelnum = 36
 	titlepatch = "WILV00"
-	next = "map37" 
+	next = "map38" 
 	sky1 = "RSKYRED"
 	cluster = 0
 	par = 2200
@@ -84,7 +85,7 @@ map map38 "The Fallen Absolution"
 map map39 "Hate Never Dies"
 {
 	Author = "by 00_Zombie_00"
-	next = "map40" 
+	next = "map41" 
 	music = "D_STLKS2"
 	levelnum = 39
 	cluster = 0
@@ -96,11 +97,27 @@ map map40 "CAST"
 {
 	Author = "by 00_Zombie_00 & Salahmander2"
 	next = "EndGameC" 
-	music = "d_dm2int"
+	music = "D_DM2INT"
 	levelnum = 40
 	cluster = 0
 	sky1 = CNHADES1
 	par = 1800
+}
+
+map map41 "The Destruction of Argent D'Nur"
+{
+	Author = "by 00_Zombie_00"
+	next = "map40" 
+	music = "D_DDTBL2"
+	levelnum = 41
+	cluster = 0
+	sky1 = CNHADES1
+	ForceNoSkyStretch
+	par = 1800
+	Fade = "0b304e"
+	OutsideFog = "1784A8"
+	fogdensity = 15
+	outsidefogdensity = 10
 }	
 	
 episode map33
@@ -129,7 +146,7 @@ episode map36
 
 episode map37
 {
-   name = "Deep darkness of hell"
+   name = "Deep darkness of hell (bonus map)"
    key = "m"
 }
 
@@ -142,5 +159,11 @@ episode map38
 episode map39
 {
    name = "Hate Never Dies"
+   key = "m"
+}
+
+episode map41
+{
+   name = "The Destruction of Argent D'Nur"
    key = "m"
 }

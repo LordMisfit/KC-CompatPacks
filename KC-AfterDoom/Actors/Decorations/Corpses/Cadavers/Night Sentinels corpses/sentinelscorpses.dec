@@ -1,0 +1,70 @@
+ACTOR sentinels_corpses1 30225
+{
+  //$Category "night sentinels corpses"
+  Radius 36
+  Height 36
+  Health 20  
+  States
+  {
+  Spawn:
+		SENM A -1
+		Stop
+  }
+}
+
+ACTOR sentinels_corpses2 30226
+{
+  //$Category "night sentinels corpses"
+  Radius 36
+  Height 36
+  Health 20  
+  States
+  {
+  Spawn:
+		SENM B -1
+		Stop
+  }
+}
+
+ACTOR sentinels_corpses3 30227
+{
+  //$Category "night sentinels corpses"
+  Radius 36
+  Height 36
+  Health 20  
+  States
+  {
+  Spawn:
+		SENM C -1
+		Stop
+  }
+}
+
+ACTOR sentinels_corpses4 30228
+{
+  //$Category "night sentinels corpses"
+  Radius 36
+  Height 36
+  Health 20  
+  States
+  {
+  Spawn:
+		SENM D -1
+		Stop
+  }
+}
+
+ACTOR sentinels_corpses5 30229
+{
+  //$Category "night sentinels corpses"
+  Radius 36
+  Height 36
+  Health 20  
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+		SENM E -1
+		Stop
+  }
+}

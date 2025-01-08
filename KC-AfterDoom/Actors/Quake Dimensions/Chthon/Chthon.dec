@@ -1,0 +1,17 @@
+ACTOR Chthon 16217
+{
+	//$Category Models
+  Radius 199
+  Height 264
+  tag "Chthon"
+  +FLOORCLIP
+  +SOLID
+  -BOSSDEATH
+  States
+  {
+  Spawn:
+     TNT1 A 0
+     MDLA A -1 A_Look
+    loop	
+  }
+}

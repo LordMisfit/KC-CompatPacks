@@ -1,0 +1,146 @@
+actor Thunder_GeneratorWhite : SwitchableDecoration 19070
+{
+  //$Category FX
+	+NoBlockMap +NoGravity +NoInteraction +NoClip -Solid +CLIENTSIDEONLY   +FORCEYBILLBOARD
+        Renderstyle Add
+        Height 1
+        Radius 1
+        Alpha 0.2
+        states
+        {
+        Spawn:
+           Active:
+                TNT1 A 0               
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0
+                TRUD AAAA 1 Bright A_FadeIn(0.2)
+                TRUD AAAA 2 Bright A_FadeOut(0.2)
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1  Bright
+                Goto Inactive
+           Inactive:
+	        TNT1 A 1
+	        Loop
+        }     
+        
+}
+
+actor Thunder_GeneratorRed1 : Thunder_GeneratorWhite 19071
+{
+  //$Category FX
+        translation "80:111=171:191"
+	states
+		 {
+        Spawn:
+           Active:
+                TNT1 A 0               
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0
+                TRUD AAAA 1 Bright A_FadeIn(0.2)
+                TRUD AAAA 2 Bright A_FadeOut(0.2)
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1  Bright
+                Goto Inactive
+           Inactive:
+	        TNT1 A 1
+	        Loop
+        }     
+}
+
+actor Thunder_GeneratorRed2 : Thunder_GeneratorWhite 19072
+{
+  //$Category FX
+        translation "80:111=171:191"
+			states
+{
+		        Spawn:
+           Active:
+                TNT1 A 0               
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0
+                TRUD BBBB 1 Bright A_FadeIn(0.2)
+                TRUD BBBB 2 Bright A_FadeOut(0.2)
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1  Bright
+                Goto Inactive
+           Inactive:
+	        TNT1 A 1
+	        Loop
+ }
+}
+
+actor Thunder_GeneratorRed3 : Thunder_GeneratorWhite 19073
+{
+  //$Category FX
+        translation "80:111=171:191"
+			states
+			{		
+	        Spawn:
+           Active:
+                TNT1 A 0             
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0
+                TRUD CCCC 1 Bright A_FadeIn(0.2)
+                TRUD CCCC 2 Bright A_FadeOut(0.2)
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1  Bright
+                Goto Inactive
+           Inactive:
+	        TNT1 A 1
+	        Loop	
+}
+}
+actor Thunder_GeneratorRed4 : Thunder_GeneratorWhite 19074
+{
+  //$Category FX
+        translation "80:111=171:191"
+			states
+			{		
+         Spawn:
+           Active:
+                TNT1 A 0            
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0
+                TRUD DDDD 1 Bright A_FadeIn(0.2)
+                TRUD DDDD 2 Bright A_FadeOut(0.2)
+                TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1  Bright
+                Goto Inactive
+           Inactive:
+	        TNT1 A 1
+	        Loop		
+}
+}
+
+ACTOR CacodemonZGOD
+{
+  Health 100
+  Radius 31
+  Height 56
+  Mass 250
+  PainChance 128
+  tag "Cacodemon"
+  monster
+  SCALE 0.4
+  -COUNTKILL
+  +SHADOW
+  +SOLID
+  +SHOOTABLE
+  +FLOAT
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+    HEAD A 10 A_Look
+    Loop
+  See:
+    HEAD A 3 A_Chase
+    Loop
+  Pain:
+    HEAD E 3
+    HEAD E 3 A_Pain
+    HEAD F 6
+    Goto See
+  Death:
+    HEAD G 1
+    HEAD H 1 A_Scream
+    HEAD IJ 1
+    HEAD K 1 A_NoBlocking
+    HEAD L 1 A_SetFloorClip
+    Stop
+  Raise:
+    HEAD L 8 A_UnSetFloorClip
+    HEAD KJIHG 8
+    Goto See
+  }
+}

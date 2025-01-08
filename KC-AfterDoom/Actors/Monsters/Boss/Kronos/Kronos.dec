@@ -1,4 +1,272 @@
-ACTOR Kronos 30870
+ACTOR Kronos 26570
+{
+//$Category "After Doom Monster"
+	Obituary "%o was bruised by Kronos"
+	+NOICEDEATH
+	Game Doom
+	Monster
+	Health 2500
+	Radius 100
+	Height 150
+    damagefactor "Crush", 30.0
+	Mass 6666
+	Speed 30
+	PainChance 40
+	Monster
+	scale 2
+	DamageFactor "Fire", 0.0
+	DamageFactor "onda", 0.0
+	tag "Kronos"
+  Species "Icon"
+  +FLOAT 
+  +NOGRAVITY
+  +BOSS
+  +FLOORCLIP
+  +DONTMORPH
+  +MISSILEEVENMORE
+  +NOINFIGHTING
+  +NOTELEFRAG
+  +LOOKALLAROUND
+  +BOSSDEATH
+  +NOTARGET
+  +NOFEAR
+  +QUICKTORETALIATE
+  +NODAMAGETHRUST
+  +NOICEDEATH
+  +NEVERRESPAWN
+  +TELESTOMP 
+  +THRUSPECIES
+  DeathSound "brain/death"
+	ActiveSound "Kronoshabla/KRONOSSP"
+    damagefactor "Blood", 0.0
+	States
+	{
+	
+    Spawn:
+		KRON D 10 A_Look
+		Loop
+		
+	See:	
+		KRON A 4 A_Chase
+		TNT1 A 0 A_SpawnItemEx("KronosGhostA",0,0,0,0,0,0,0,128)
+		KRON B 4 A_Chase
+		TNT1 A 0 A_SpawnItemEx("KronosGhostB",0,0,0,0,0,0,0,128)
+		KRON C 4 A_Chase
+		TNT1 A 0 A_SpawnItemEx("KronosGhostC",0,0,0,0,0,0,0,128)
+    goto See
+	Melee:
+  Missile:
+    TNT1 A 0 A_Jump(200,"Missile3","Missile2")
+	KRON EF 6  A_FaceTarget
+	KRON G 10 Bright
+    TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,0)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,-5)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,-10)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,0,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,15,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,30,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,45,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,60,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,75,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,90,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,105,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,120,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,135,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,150,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,165,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,180,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,195,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,210,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,225,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,240,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,255,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,270,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,285,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,300,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,315,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,330,2,-15)
+	TNT1 A 0 A_CustomMissile("Kronosball",64,16,345,2,-15)
+    goto See
+  Missile3:
+	   KRON EF 8 A_FaceTarget
+       KRON P 8 Bright A_CustomMissile ("ArchonComet",122,0,0,0)
+	   Goto See
+  Missile2:
+	   KRON EF 8 A_FaceTarget
+       KRON P 8 Bright A_CustomMissile ("DCBMiss1",122,0,0,0)
+	   Goto See	   
+	  Pain:		
+    KRON E 1 
+	TNT1 A 0
+	TNT1 A 0 A_Jump(255, "AvoidLeft", "AvoidRight")
+	Goto AvoidLeft	
+	  
+	  AvoidLeft:
+	    KRON A 1 A_FaceTarget
+	    TNT1 A 0 ThrustThing(angle*256/360+192, 11, 0, 0)
+        KRON A 1 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("KronosGhostA",0,0,0,0,0,0,0,128)
+        Goto Missile
+	AvoidRight:
+	    KRON C 1 A_FaceTarget
+	    TNT1 A 0 ThrustThing(angle*256/360+64, 11, 0, 0)
+        KRON C 1 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("KronosGhostC",0,0,0,0,0,0,0,128)
+        Goto Missile
+	   Death:
+	DRON A 6 Bright A_Scream  
+	DRON B 6 Bright A_NoBlocking
+	DRON C 6
+	DRON D 6 
+	DRON E 6 
+	DRON F -1
+    Stop
+	}
+}
+
+
+ACTOR FAKEKronos 30870
 {
 //$Category "After Doom Monster"
 	Obituary "%o was bruised by Kronos"

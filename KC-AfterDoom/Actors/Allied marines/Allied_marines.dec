@@ -2,8 +2,7 @@
 actor zMarineAllyPistol 11812
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 02- Pistol
+  //$Category Allied marines
   Health 120
   GibHealth -45
   Radius 20
@@ -104,8 +103,7 @@ actor zMarineAllyPistol 11812
 actor zMarine_Rifle 11813
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 03- Machinegun
+  //$Category Allied marines
   Health 120
   GibHealth -45
   Radius 20
@@ -165,7 +163,6 @@ actor zMarine_Rifle 11813
   loop
   Missile:
   ALY3 E 7 A_FaceTarget
-  ALY3 E 0 A_Jump(96,"MGRapidFireShot")
   ALY3 F 0 A_AlertMonsters
   ALY3 F 0 A_FaceTarget
   ALY3 F 2 BRIGHT A_CustomBulletAttack(3,4,1,4,"_INVBulletPuffAlly")
@@ -173,15 +170,11 @@ actor zMarine_Rifle 11813
   ALY3 F 2 BRIGHT A_CustomBulletAttack(5,6,1,4,"_INVBulletPuffAlly")
   ALY3 E 2
   ALY3 F 2 BRIGHT A_CustomBulletAttack(7,8,1,4,"_INVBulletPuffAlly")
-  ALY3 E 7
+  ALY3 E 2
+  ALY3 F 2 BRIGHT A_CustomBulletAttack(7,8,1,4,"_INVBulletPuffAlly")
+  ALY3 E 2
+  ALY3 F 2 BRIGHT A_CustomBulletAttack(7,8,1,4,"_INVBulletPuffAlly")
   goto See
-  MGRapidFireShot:
-  ALY3 E 7 A_FaceTarget
-  ALY3 E 0 A_FaceTarget
-  ALY3 F 0 A_AlertMonsters
-  ALY3 F 3 BRIGHT A_CustomBulletAttack(3,4,1,4,"_INVBulletPuffAlly")
-  ALY3 E 1 A_CPosRefire
-  goto MGRapidFireShot+2
   Pain:
   ALY3 G 5 A_Pain
   ALY3 G 3
@@ -205,8 +198,7 @@ actor zMarine_Rifle 11813
 actor zMarine_Minigun 11814
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 04- Chaingun
+  //$Category Allied marines
   Health 120
   GibHealth -45
   Radius 20
@@ -267,8 +259,35 @@ actor zMarine_Minigun 11814
    ALY4 E 1 A_FaceTarget
    ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
    ALY4 F 0 A_AlertMonsters
-   ALY4 F 1 A_CPosRefire
-   Goto Missile+2
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")
+   ALY4 E 1 A_FaceTarget
+   ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "_INVBulletPuffAlly")   
+   Goto See
    Pain:
    ALY4 G 5 A_Pain
    ALY4 G 3
@@ -292,8 +311,7 @@ actor zMarine_Minigun 11814
 actor zMarine_Shotgun 11815
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 05- Shotgun
+  //$Category Allied marines
   Health 120
   GibHealth -45
   Radius 20
@@ -380,8 +398,7 @@ actor zMarine_Shotgun 11815
 actor zMarineAllyMinigun 11816
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 06- Minigun
+  //$Category Allied marines
   Health 120
   GibHealth -35
   Radius 20
@@ -471,8 +488,7 @@ actor zMarineAllyMinigun 11816
   actor zMarineAllyMinigun2 21816
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 06- Minigun2
+  //$Category Allied marines
   Health 120
   GibHealth -35
   Radius 20
@@ -563,8 +579,7 @@ actor zMarineAllyMinigun 11816
 actor zMarine_PlasmaGun 11818
 {
   Game Doom
-  //$Category Monsters
-  //$Title Ally 08- Plasmagun
+  //$Category Allied marines
   Health 120
   GibHealth -45
   Radius 20
@@ -626,9 +641,13 @@ actor zMarine_PlasmaGun 11818
   ALY8 E 10 A_FaceTarget
   TNT1 A 0 A_FaceTarget
   ALY8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
-  ALY8 F 0 A_AlertMonsters
-  ALY8 E 4 A_SpidRefire
-  Goto Missile+2
+  ALY8 E 4 A_FaceTarget
+  ALY8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ALY8 E 4 A_FaceTarget
+  ALY8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ALY8 E 4 A_FaceTarget
+  ALY8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")  
+  Goto See
   Pain:
   ALY8 G 5 A_Pain
   ALY8 G 3

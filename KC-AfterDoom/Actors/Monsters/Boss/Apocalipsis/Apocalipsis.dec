@@ -115,9 +115,10 @@ ACTOR MastermindTracer
 +FORCERADIUSDMG 
 +BLOODSPLATTER 
 Damagetype "Bum"
-Renderstyle Add
+RenderStyle Add
+Alpha 0.9
 Projectile  
-  Scale 0.1
+  Scale 0.7
   Radius 20
   Height 20
   damage 1
@@ -255,9 +256,10 @@ ACTOR SuperMastermindTracer
 +FOILINVUL
 +DEHEXPLOSION
 Damagetype "Bum"
-Renderstyle Add
+RenderStyle Add
+Alpha 0.9
 Projectile  
-  Scale 0.1
+  Scale 0.7
   Radius 20
   Height 20
   damage 2
@@ -301,7 +303,7 @@ Damagetype "Bum"
 Projectile  
   Radius 20
   Height 20
-  damage 8
+  damage 12
   speed 20
   SeeSound "q2weapon/rocketlauncherfire"
   DeathSound "q2weapon/rocketexplo"

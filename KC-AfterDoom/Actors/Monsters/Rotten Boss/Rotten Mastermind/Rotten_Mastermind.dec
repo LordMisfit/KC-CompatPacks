@@ -129,7 +129,6 @@ speed 80
 damage 5
 RenderStyle Add
 Alpha 0.9
-Scale 0.2
 seesound "rottenmastermind/VULCAN2"
 Damagetype "Bum"
 DeathSound "bum/bom"

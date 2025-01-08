@@ -1,0 +1,107 @@
+ACTOR Rotten_Cyberdemon 20271
+{
+//$Category "After Doom Monster"
+  Health 9000
+  Radius 60
+  Height 140
+  Mass 1000
+  Speed 16
+  PainChance 20
+  Monster
+  scale 1.4
+  MinMissileChance 160
+  tag "Rotten Cyberdemon"
+  DropItem "Megasphere" 
+  Species "Icon"
+  +SEEINVISIBLE
+  +NOINFIGHTING
+  +NEVERTARGET
+  +NOTARGET
+  +LOOKALLAROUND
+  +TELESTOMP
+  +MOVEWITHSECTOR
+  +JUMPDOWN
+  +NOTIMEFREEZE
+  +DONTHARMSPECIES
+  +BOSS
+  +FLOORCLIP
+  +NORADIUSDMG
+  +DONTMORPH
+  +BOSSDEATH
+  SeeSound "cyber/sight"
+  PainSound "cyber/pain"
+  DeathSound "cyber/death"
+  ActiveSound "cyber/active"
+  Obituary "%o was destroyed by Rotten Cyberdemon."
+  States
+  {
+  Spawn:
+    RYBR AB 10 A_Look
+    Loop
+  See:
+    RYBR A 3 A_Hoof
+    RYBR ABBCC 3 A_Chase
+    RYBR D 3 A_Metal
+    RYBR D 3 A_Chase
+    Loop
+  Missile:
+    RYBR E 6 A_FaceTarget
+	RYBR H 0 Bright A_CustomMissile("Rocket", 70, 0, -4, 0, 0)
+	RYBR H 0 Bright A_CustomMissile("Rocket", 70, 0, 4, 0, 0)
+    RYBR F 12 Bright A_CustomMissile("Rocket", 70, 0, 0, 0, 0)
+    RYBR E 12 A_FaceTarget
+	RYBR H 0 Bright A_CustomMissile("Rocket", 70, 0, -4, 0, 0)
+	RYBR H 0 Bright A_CustomMissile("Rocket", 70, 0, 4, 0, 0)	
+    RYBR F 12 Bright A_CustomMissile("Rocket", 70, 0, 0, 0, 0)
+    RYBR E 12 A_FaceTarget
+	RYBR H 0 Bright A_CustomMissile("Rocket", 70, 0, -4, 0, 0)
+	RYBR H 0 Bright A_CustomMissile("Rocket", 70, 0, 4, 0, 0)	
+    RYBR F 12 Bright A_CustomMissile("Rocket", 70, 0, 0, 0, 0)
+    Goto See
+  Pain:
+    RYBR G 10 A_Pain
+    Goto See
+  Death:
+    RYBR H 10
+    RYBR I 10 A_Scream
+    RYBR JKL 10
+    RYBR M 10 A_NoBlocking
+    RYBR NO 10
+    RYBR P 30
+    RYBR P -1 A_BossDeath
+    Stop
+  }
+}
+
+ACTOR staticRottenCyberdemon 19283
+{
+
+  Health 1500
+  PainChance 0
+  Radius 30
+  Height 80
+  Mass 1000
+  scale 1.4
+  +BOSS
+  +FLOORCLIP
+  +DONTMORPH
+  +MISSILEEVENMORE
+  +NOINFIGHTING
+  +NOTELEFRAG
+  +LOOKALLAROUND
+  +BOSSDEATH
+  +NOTARGET
+  +NOFEAR
+  +QUICKTORETALIATE
+  +NODAMAGETHRUST
+  +NOICEDEATH
+  +NEVERRESPAWN
+  +TELESTOMP 
+  +THRUSPECIES
+  Species "Icon"
+  States
+  {
+  Spawn:
+    RYBR A -1
+ }
+}

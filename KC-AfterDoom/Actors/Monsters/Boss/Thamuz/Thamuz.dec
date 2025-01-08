@@ -258,7 +258,7 @@ Actor DCBMiss2
   Height 8
   Health 5
   Speed 28
-  Damage 15 
+  Damage 10 
   RenderStyle Add
   Projectile
   Translation "160:167=120:127", "208:223=120:127"

@@ -1,0 +1,560 @@
+ actor SentinelAllyTurret  22816
+{
+  Game Doom
+  //$Category Allied Night Sentinels
+  Health 9999
+  Radius 20
+  Height 56
+  Mass 10000000
+  OBITUARY "%o was turned into mincemeat by an ally's Plasmagun!"
+  MaxTargetRange 6000
+  MONSTER
+  Species "Marines"
+  PainChance "InvAllyDamage", 0
+  damageFactor "InvAllyDamage", 0
+  damageFactor "Bum", 100
+  DamageFactor "Fire", 100
+  DamageFactor "onda", 100 
+  +NODAMAGE
+  +DONTHARMSPECIES
+  +ALWAYSFAST
+  +FLOORCLIP
+  +FRIENDLY
+  +QUICKTORETALIATE
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +SLIDESONWALLS
+  +JUMPDOWN
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +NODROPOFF
+  +NOTAUTOAIMED
+  +NOBLOCKMONST
+  +NOTAUTOAIMED
+  -COUNTKILL
+  //+NOTIMEFREEZE
+  //+NOFEAR
+  //+LOOKALLAROUND
+  //+TELESTOMP
+   states
+  {
+   Spawn:
+   SENQ B 5 A_Look
+   loop
+   See:
+   SENQ B 3 A_Chase
+   SENQ B 0 A_CheckSight("A06Patrol")
+   loop
+   A06Patrol:
+   SENQ B 3 A_Wander
+   SENQ B 0 A_Look
+   loop
+   Missile:
+   SENQ B 10 A_FaceTarget
+    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+	SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+	SENQ E 1 Bright A_FaceTarget
+    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+    SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+	SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0) 
+	    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+	SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+	SENQ E 1 Bright A_FaceTarget
+    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+    SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+	SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0) 
+	    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+	SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+	SENQ E 1 Bright A_FaceTarget
+    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+    SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+	SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0) 
+	    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+	SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -3, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+	SENQ E 1 Bright A_FaceTarget
+    SENQ C 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+    SENQ D 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 0, 1, 0)
+	SENQ E 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 3, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 2, 1, 0)
+    SENQ C 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 2, 1, 0)
+    SENQ D 1 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -1, 1, 0)
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 3, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, 1, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, -3, 1, 0)
+	SENQ C 1 Bright A_FaceTarget
+    TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 22, 0, 3, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, -2, 1, 0)
+    SENQ E 1 Bright A_FaceTarget
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 42, 0, 2, 1, 0)
+	TNT1 A 0 Bright A_CustomMissile("SentinelAllyTurretTracer", 32, 0, -1, 1, 0)
+   Goto See
+     
+  }
+}  
+
+Actor SentinelAllyTurretTracer
+{
++BLOODSPLATTER 
++FULLVOLACTIVE
++EXTREMEDEATH
++THRUGHOST
+-DONTSPLASH
++FORCERADIUSDMG
+Projectile 
+speed 80
+damage 5
+seesound "NightSentinel/SENTTOR"
+DamageType "InvAllyDamage"
+DeathSound "NightSentinel/ZBUUM"
+States
+{
+
+	Spawn:
+		TNT1 A 1
+		TNT1 A 0 A_SpawnItemEx("SentinelAllyTurret2", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("SentinelAllyTurret3", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        TNT1 A 0 A_SpawnItemEx("SentinelAllyTurret4", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("SentinelAllyTurret4", (8 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
+        Loop
+	Death:
+		TNT1 A 0 A_CustomMissile ("TurrentExplosionparticles", 0, 0, random (0, 360), 2, random (40, 90))
+		Stop
+}
+}
+
+actor SentinelAllyTurretTrail
+{
+    Scale 1.2
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        ZPRK S 2 Bright
+        stop
+    }
+}
+
+
+
+actor SentinelAllyTurret2 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret3 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret4 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret5 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret6 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret7 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret8 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret9 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret10 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret11 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret12 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret13 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret14 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret15 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret16 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret17 : SentinelAllyTurretTrail {}
+actor SentinelAllyTurret18 : SentinelAllyTurretTrail {}
+
+ACTOR TurrentExplosionparticles
+{
+	Radius 1
+	Height 1
+	Scale 0.1
+	Speed 1
+	Gravity 0.7
+	+BOUNCEONCEILINGS
+	+BOUNCEONWALLS
+	-SKYEXPLODE
+	+NOGRAVITY
+	States
+    {
+        Spawn: 
+			TNT1 A 0
+			TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
+	Spawn1:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(-0.2, -0.3)
+			Goto live
+	
+	Spawn2:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(0.1, -0.1)
+			Goto live
+			
+	Spawn3:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(-0.3, 0.3)
+			Goto live
+			
+	Live:	
+			ZPKS ABCDEFGHI 1 BRIGHT Radius_QUake(1, 3, 0, 5, 0)
+			Stop
+    }
+}
+
+ actor SentinelAllyLast  22817
+ {
+  Game Doom
+  //$Category Allied Night Sentinels
+  Health 120
+  Radius 20
+  Height 38
+  Mass 10000000
+  OBITUARY "%o was turned into mincemeat by an ally's Plasmagun!"
+  SEESOUND "Ally/Site"
+  ATTACKSOUND "ALMini/ALMinigun"
+  PAINSOUND "Ally/Pain"
+  DEATHSOUND "Ally/Death"
+  ACTIVESOUND "Ally/Active"
+  Meleerange 128
+  MONSTER
+  Species "Marines"
+  PainChance "InvAllyDamage", 0
+  damageFactor "InvAllyDamage", 0
+  damageFactor "Bum", 100
+  DamageFactor "Fire", 100
+  DamageFactor "onda", 100   
+  dropitem "PlasmaRifle"
+  +DONTHARMSPECIES
+  +ALWAYSFAST
+  +FLOORCLIP
+  +FRIENDLY
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +SLIDESONWALLS
+  +NODROPOFF
+  +NOTAUTOAIMED
+  +NOBLOCKMONST
+  +NOTAUTOAIMED
+  -COUNTKILL
+  //+NOTIMEFREEZE
+  //+NOFEAR
+  //+LOOKALLAROUND
+  //+TELESTOMP
+   states
+  {
+   Spawn:
+   LANM A 5 A_Look
+   loop
+    See:
+   LANM A 3 A_Chase
+   loop
+   Missile:
+   LANM A 1 A_FaceTarget
+   LANM B 4 BRIGHT A_custommissile("_INVPlasmaBallAlly", 17, -9)
+   LANM A 1 A_SpidRefire
+   Goto Missile
+   Death:
+   SENM A 3 A_Scream
+   SENM A -1 A_NoBlocking
+   Stop
+    }
+}
+
+ actor SentinelAllyStatic  22818
+ {
+  Game Doom
+  //$Category Allied Night Sentinels
+  Health 120
+  Radius 20
+  Height 38
+  Mass 10000000
+  OBITUARY "%o was turned into mincemeat by an ally's Minigun!"
+  SEESOUND "Ally/Site"
+  PAINSOUND "Ally/Pain"
+  DEATHSOUND "Ally/Death"
+  ACTIVESOUND "Ally/Active"
+  MONSTER
+  Species "Marines"
+  PainChance "InvAllyDamage", 0
+  damageFactor "InvAllyDamage", 0
+  damageFactor "Bum", 100
+  DamageFactor "Fire", 100
+  DamageFactor "onda", 100   
+  +DONTHARMSPECIES
+  +ALWAYSFAST
+  +FLOORCLIP
+  +FRIENDLY
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +SLIDESONWALLS
+  +NODROPOFF
+  +NOTAUTOAIMED
+  +NOBLOCKMONST
+  +NOTAUTOAIMED
+  -COUNTKILL
+  //+NOTIMEFREEZE
+  //+NOFEAR
+  //+LOOKALLAROUND
+  //+TELESTOMP
+   states
+  {
+   Spawn:
+   ZEN8 E 5 A_Look
+   loop
+    See:
+   ZEN8 E 3 A_Chase
+   loop
+   Missile:
+   ZEN8 E 1 A_FaceTarget
+   ZEN8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly", 35, -9)
+   ZEN8 E 1 A_SpidRefire
+   Goto Missile
+   Death:
+  ZEN8 H 3 A_Scream
+  ZEN8 J 3
+  ZEN8 K 5 A_NoBlocking
+  ZEN8 M 1390
+  Stop
+    }
+}
+
+actor SentinelAllyPlasma 22819
+{
+  Game Doom
+  //$Category Allied Night Sentinels
+  Health 120
+  Radius 20
+  Height 56
+  Speed 8
+  PainChance 72
+  OBITUARY "%o was vapourised by friendly fire!"
+  SEESOUND "Ally/Site"
+  ATTACKSOUND "grunt/attack"
+  PAINSOUND "Ally/Pain"
+  DEATHSOUND "Ally/Death"
+  ACTIVESOUND "Ally/Active"
+  MaxStepHeight 32
+  MaxDropoffHeight 64
+  MaxTargetRange 4000
+  MONSTER
+  Species "Marines"
+  PainChance "InvAllyDamage", 0
+  damageFactor "InvAllyDamage", 0
+  damageFactor "Bum", 100
+  DamageFactor "Fire", 100
+  DamageFactor "onda", 100  
+  +DONTHARMSPECIES
+  +FLOORCLIP
+  +FRIENDLY
+  +QUICKTORETALIATE
+  +MISSILEMORE
+  +SLIDESONWALLS
+  +JUMPDOWN
+  +CANPUSHWALLS
+  +CANUSEWALLS
+  +NODROPOFF
+  +PUSHABLE
+  +NOTAUTOAIMED
+  +NOBLOCKMONST
+  +AVOIDMELEE
+  +NOTAUTOAIMED
+  -COUNTKILL
+  //+NOTIMEFREEZE
+  //+NOFEAR
+  //+LOOKALLAROUND
+  //+TELESTOMP
+  States
+ {
+  Spawn:
+  ZEN8 AABB 5 A_Look
+  loop
+  See:
+  ZEN8 AABBCCDD 2 A_Chase
+  ZEN8 A 0 A_CheckSight("A08Patrol")
+  Loop
+  A08Patrol:
+  ZEN8 AABBCCDD 2 A_Wander
+  ZEN8 A 0 A_Look
+  Loop
+  Missile:
+  ZEN8 E 10 A_FaceTarget
+  TNT1 A 0 A_FaceTarget
+  ZEN8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ZEN8 F 0 A_AlertMonsters
+  ZEN8 E 4 A_FaceTarget
+  ZEN8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ZEN8 F 0 A_AlertMonsters
+  ZEN8 E 4 A_FaceTarget
+  ZEN8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ZEN8 F 0 A_AlertMonsters
+  ZEN8 E 4 A_FaceTarget
+  ZEN8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ZEN8 F 0 A_AlertMonsters
+  ZEN8 E 4 A_FaceTarget
+  ZEN8 F 4 BRIGHT A_custommissile("_INVPlasmaBallAlly")
+  ZEN8 F 0 A_AlertMonsters
+  ZEN8 E 4 A_FaceTarget
+  Goto See
+  Pain:
+  ZEN8 G 5 A_Pain
+  ZEN8 G 3
+  Goto See
+  Death:
+  ZEN8 H 3 A_Scream
+  ZEN8 J 3
+  ZEN8 K 5 A_NoBlocking
+  ZEN8 M -1
+  Stop
+  }
+ }

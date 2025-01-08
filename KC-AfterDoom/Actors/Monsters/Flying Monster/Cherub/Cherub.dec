@@ -1,0 +1,81 @@
+Actor Cherub 19702
+{
+//$Category "After Doom Monster"
+  Obituary "A Cherub rammed %o"
+  Health 25
+  Radius 14
+  Height 30
+  Mass 50
+  Speed 8
+  PainChance 230
+  SeeSound "rottenabortion/ROTABOAC"
+  PainSound "rottenabortion/ROTABOPA"
+  DeathSound "rottenabortion/ROTABOMU"
+  ActiveSound "rottenabortion/ROTABOAC"
+  Damage 3
+  Monster
+  tag "Cherub"
+  Species "Icon"
+  +FloorClip
+  +Float
+  +NoGravity
+  +FloatBob
+  States
+  {
+  Spawn:
+    RRUL A 0 
+    RRUL A 0  A_ChangeFlag("FloatBob", 1)
+    RRUL ABCD 3  A_Look
+    Loop
+  See:
+    RRUL A 0 A_ChangeFlag("FloatBob", 1)
+    RRUL AABBCCDD 3  A_Chase
+    Loop
+  Missile:
+    RRUL E 0 A_ChangeFlag("FloatBob", 0)
+    RRUL E 2  A_FaceTarget
+    RRUL E 0  A_PlaySound("Mosca/Cherub")
+    RRUL E 2  A_SkullAttack
+    RRUL E 2 
+ Goto Missile+2
+  Pain:
+    RRUL M 0 A_ChangeFlag("FloatBob", 1)
+    RRUL M 3 
+    RRUL M 3  A_Pain
+    Goto See
+  Death:
+    RRUL F 0 A_ChangeFlag("FloatBob", 0)
+    RRUL G 0 A_Stop
+    RRUL F 4 A_Scream
+    RRUL G 6  A_NoBlocking
+    RRUL H 6 
+    RRUL I 650 
+ 
+    Stop
+  }
+}
+
+Actor staticCherub 19784
+{
+
+  Health 40
+  Radius 14
+  Height 30
+  Mass 50
+  Scale 0.7
+  Species "Icon"
+  tag "Cherub"
+  +FloorClip
+  +Float
+  +NoGravity
+  +NoIceDeath
+  +DontFall
+  +FloatBob
+  +NoBlood
+  States
+  {
+  Spawn:
+    RRUL AAAAAABBBBBB -1 
+    Loop
+  }
+}	

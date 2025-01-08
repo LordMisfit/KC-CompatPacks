@@ -1,0 +1,11 @@
+Model Chthon
+{
+    Path "Models/Chthon"
+    Model 0 "Chthon.md3"
+    Scale 2.100000 2.100000 2.200000
+	Skin 0 "Chthon.png"
+	USEACTORPITCH
+    USEACTORROLL
+
+    FrameIndex MDLA A 0 0
+}

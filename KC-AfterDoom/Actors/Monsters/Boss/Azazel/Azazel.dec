@@ -220,7 +220,7 @@ ACTOR StaticCyber_Azazel 31886
   Mass 1000
   MinMissileChance 160
   Scale 1.2
-  tag "Cyber Axazel"
+  tag "Cyber Azazel"
   +JUMPDOWN
   +NOINFIGHTING
   +NEVERTARGET

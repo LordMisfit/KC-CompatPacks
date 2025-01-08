@@ -1,0 +1,148 @@
+//Hanging Monsters
+#include "Actors/Monsters/Hanging monster/colgadogritona.dec"
+#include "Actors/Monsters/Hanging monster/colgadoconarma.dec"
+
+//Flyng Monster
+#include "Actors/Monsters/Flying Monster/Fallen/Fallen.dec"
+#include "Actors/Monsters/Flying Monster/Forgotten/ForgottenOne.dec"
+#include "Actors/Monsters/Flying Monster/Cherub/Cherub.dec"
+
+
+//Demons
+#include "Actors/Monsters/Demons/Cryocubus/Cryocubus.dec"
+#include "Actors/Monsters/Demons/Butcher/Butcher.dec"
+#include "Actors/Monsters/Demons/Melee Revenant/MeleeRevenant.dec"
+#include "Actors/Monsters/Demons/Melee Revenant/MeleeRebenant.dec"
+#include "Actors/Monsters/Demons/AngryFatso/AngryFatso.dec"
+#include "Actors/Monsters/Demons/Bulltubus/Bulltubus.dec"
+#include "Actors/Monsters/Demons/Belphegor/Belphegor.dec"
+#include "Actors/Monsters/Demons/Scientist/ZombieScientist.dec"
+#include "Actors/Monsters/Demons/Scientist/ZombieScientist2.dec"
+#include "Actors/Monsters/Demons/Scientist/ZombieScientist3.dec"
+#include "Actors/Monsters/Demons/Scientist/ZombieScientist4.dec"
+#include "Actors/Monsters/Demons/Scientist/FemaleScientist.dec"
+#include "Actors/Monsters/Demons/Scientist/FemaleScientist2.dec"
+#include "Actors/Monsters/Demons/Scientist/FemaleScientist3.dec"
+#include "Actors/Monsters/Demons/Scientist/FemaleScientist4.dec"
+
+
+
+//Rotten Monsters
+#include "Actors/Monsters/Rotten Monsters/Rotten Nobu/Rotten_Nobu.dec"
+#include "Actors/Monsters/Rotten Monsters/Rotten Cacodemon/Rotten_Cacodemon.dec"
+#include "Actors/Monsters/Rotten Monsters/Rotten imp/Rotten_imp.dec"
+#include "Actors/Monsters/Rotten Monsters/Rotten Mancubus/Rotten_Mancubus.dec"
+#include "Actors/Monsters/Rotten Monsters/FLESHGOLEM/FLESHGOLEM.dec"
+#include "Actors/Monsters/Rotten Monsters/Rotten Abortion/Rotten_Abortion.dec"
+#include "Actors/Monsters/Rotten Monsters/Rotten Vassago/Rotten_Vassago.dec"
+#include "Actors/Monsters/Rotten Monsters/Rotten Flesh Wizard/Rotten_FleshWizard.dec"
+
+
+//Boss
+#include "Actors/Monsters/Boss/Apocalipsis/Apocalipsis.dec"
+#include "Actors/Monsters/Boss/Giant Demon/GiantDemon.dec"
+#include "Actors/Monsters/Boss/Cyberdemon 2 & Cyberdemon with flamethrower/Cyberdemon2.dec"
+#include "Actors/Monsters/Boss/Spider Mastermind 2/SpiderMastermind2.dec"
+#include "Actors/Monsters/Boss/Cyberdemon with chaingun/Cyberdemon_with_chaingun.dec"
+#include "Actors/Monsters/Boss/Maledict/Maledict.dec"
+#include "Actors/Monsters/Boss/Maledict/Cubo.dec"
+#include "Actors/Monsters/Boss/AracnorbQueen/AracnorbQueen.dec"
+#include "Actors/Monsters/Boss/Icon of Sin/Titan Icon of Sin/God.dec"
+#include "Actors/Monsters/Boss/Icon of Sin/Icon of Sin first phase/SinIncarnate.dec"
+#include "Actors/Monsters/Boss/HellstormArchon/HellstormArchon.dec"
+#include "Actors/Monsters/Boss/Kronos/Kronos.dec"
+#include "Actors/Monsters/Boss/Summoner/Summoner_Eye.dec"
+#include "Actors/Monsters/Boss/Infernal Hitler/InfernalHitler.dec"
+#include "Actors/Monsters/Boss/Inferno Demon/InfernoDemon.dec"
+#include "Actors/Monsters/Boss/Giygas/Giygas.dec"
+#include "Actors/Monsters/Boss/Mother Demon dying/MotherDemon_dying.dec"
+#include "Actors/Monsters/Boss/Thamuz/Thamuz.dec"
+#include "Actors/Monsters/Boss/Azazel/Azazel.dec"
+#include "Actors/Monsters/Boss/Dark Demolisher/Dark_Demolisher.dec"
+#include "Actors/Monsters/Boss/Conqueror of Sky/ConquerorofSky.dec"
+
+//Projectiles
+#include "Actors/Monsters/Boss/Icon of Sin/Icon projectiles/Icon_projectiles.dec"
+
+//Minions
+#include "Actors/Monsters/Boss/Icon of Sin/Minions/Icon_Minions.dec"
+
+
+//Rotten Boss
+#include "Actors/Monsters/Rotten Boss/Rotten Mastermind/Rotten_Mastermind.dec"
+#include "Actors/Monsters/Rotten Boss/Rotten Apocalipsis/Rotten_Apocalipsis.dec"
+#include "Actors/Monsters/Rotten Boss/Rotten Mother/Rotten_Mother.dec"
+#include "Actors/Monsters/Rotten Boss/Rotten God/Rotten_God.dec"
+#include "Actors/Monsters/Rotten Boss/Rotten Azazel/Rotten_Azazel.dec"
+#include "Actors/Monsters/Rotten Boss/Rotten Cyberdemon/Rotten_Cyberdemon.dec"
+
+//Decorations
+#include "Actors/Decorations/GodHand/Godhand.dec"
+#include "Actors/Decorations/Eclipse/Eclipse/Eclipse.dec"
+#include "Actors/Decorations/Eclipse/Red Eclipse/Eclipse_red.dec"
+#include "Actors/Decorations/Meat/Korazon.dec"
+#include "Actors/Decorations/Tree/SkullTree1.dec"
+#include "Actors/Decorations/Deep Darkness of Hell decorations/Holograms.dec"
+//Corpses
+#include "Actors/Decorations/Corpses/Cyberdemon legs/Cyberleg.dec"
+#include "Actors/Decorations/Corpses/Dead Titan Icon of Sin/DeadGod.dec"
+#include "Actors/Decorations/Corpses/Cadavers/night sentinels corpses/sentinelscorpses.dec"
+#include "Actors/Decorations/Hanging/Hanging torso/Hanging_Torso.dec"
+#include "Actors/Decorations/Hanging/Hanging Nobu/Hanging_Nobu.dec"
+#include "Actors/Decorations/Hanging/Hanging corpses/Hanging_corpses.dec"
+#include "Actors/Decorations/Hanging/Hanging corpses/HangedMarine.dec"
+#include "Actors/Decorations/Hanging/Hanging Zombieman/colgadosinarma.Dec"
+#include "Actors/Decorations/Corpses/Impaled/Impaled marines/Impaled_marines.dec"
+#include "Actors/Decorations/Corpses/Impaled/Corpse impaled/Corpse_impaled.dec"
+#include "Actors/Decorations/Corpses/Impaled/Corpse impaled/BurningCorpse.dec"
+#include "Actors/Decorations/Corpses/Impaled/Corpse impaled/crucified.dec"
+#include "Actors/Decorations/Corpses/Impaled/Impaled demons/ImpsStick.dec"
+#include "Actors/Decorations/Corpses/Daisy/Daisystick.dec"
+#include "Actors/Decorations/Corpses/Cadavers/Cadavers.dec"
+#include "Actors/Decorations/Corpses/Cadavers/CorpseBurning.dec"
+#include "Actors/Decorations/Corpses/Cadavers/CorpsePile.dec"
+#include "Actors/Decorations/Corpses/Cadavers/BonePile.dec"
+#include "Actors/Decorations/Corpses/Cadavers/HellGrowth.dec"
+#include "Actors/Decorations/Corpses/Cadavers/HellstormArchondead.dec"
+#include "Actors/Decorations/Corpses/Cadavers/DukeAssBlasted.dec"
+//Chain
+#include "Actors/Decorations/Chain/PSXBloodyChain/PSXBloodyChain.dec"
+
+//light resources
+#include "Actors/Decorations/Candle/CandleAD.dec"
+#include "Actors/Decorations/Torches/D64torchesAD.dec"
+
+//Pickup
+#include "Actors/Items/Daisy/Daisy_Pickup.dec"
+#include "Actors/Items/Speak/speak.dec"
+#include "Actors/Items/TimeFreezeSphere/TimeFreezeSphere.dec"
+#include "Actors/Items/Heavy armor/HeavyArmored.dec"
+
+//special sound effects
+#include "Sounds/special sound effects/Special.dec"
+
+//Ally
+#include "Actors/Allied marines/Allied_marines.dec"
+#include "Actors/Allied Night Sentinels/Allied_Night_Sentinels.dec"
+
+//MapMarker
+#include "Actors/MapMarker/YellowCard.Dec"
+#include "Actors/MapMarker/RedCard.Dec"
+#include "Actors/MapMarker/BlueCard.Dec"
+#include "Actors/MapMarker/YellowSkull.Dec"
+#include "Actors/MapMarker/RedSkull.Dec"
+#include "Actors/MapMarker/BlueSkull.Dec"
+#include "Actors/MapMarker/PortalMarker.Dec"
+#include "Actors/MapMarker/SoulMarker.Dec"
+#include "Actors/MapMarker/Exit.Dec"
+#include "Actors/MapMarker/LabEntrance.Dec"
+#include "Actors/MapMarker/SkullSwitch.Dec"
+
+//FX
+#include "Actors/Decorations/Skybox/Thunder.dec"
+
+//ANGEL
+#include "Actors/Maykr Angels/Maykr_Angels.dec"
+
+//Quake
+#include "Actors/Quake Dimensions/Chthon/Chthon.dec"

@@ -1,0 +1,30 @@
+actor MaykrAngel  27800
+ {
+  Game Doom
+  //$Category Maykr Angels
+  Radius 20
+  Height 38
+  Mass 10000000
+  +DONTHARMSPECIES
+  +ALWAYSFAST
+  +FLOORCLIP
+  +FRIENDLY
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  +SLIDESONWALLS
+  +NODROPOFF
+  +NOTAUTOAIMED
+  +NOBLOCKMONST
+  +NOTAUTOAIMED
+  -COUNTKILL
+  //+NOTIMEFREEZE
+  //+NOFEAR
+  //+LOOKALLAROUND
+  //+TELESTOMP
+   states
+  {
+   Spawn:
+   MAYK A 5 A_Look
+   loop
+    }
+}

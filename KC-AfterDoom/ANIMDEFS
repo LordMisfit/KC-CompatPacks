@@ -35,7 +35,7 @@ warp texture FFLR6_4
 warp texture RTRI6_4
 warp texture H2_DECO4
 warp texture SLIPGATE
-warp texture TILE0243
+warp texture TILE0243 0.1
 warp texture RTILE099
 
 texture UACA001

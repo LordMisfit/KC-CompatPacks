@@ -447,6 +447,7 @@ ACTOR CacodemonZ
   }
 }
 
+
 ACTOR RevenantZ 30063
 {
 //$Category "Doom Monster Performance"
@@ -722,7 +723,7 @@ ACTOR FatsoZ2
     FATT L 6 A_Scream
     FATT M 6 A_NoBlocking
     FATT NOPQRS 6
-    FATT T -1 A_BossDeath
+    FATT T 1111 A_BossDeath
     Stop
   Raise:
     FATT R 5

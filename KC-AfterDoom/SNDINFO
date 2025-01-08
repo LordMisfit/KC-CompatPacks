@@ -203,6 +203,9 @@ $ambient 933 Ambient/EVILWIND Point Continuous 1.0
 Ambient/RADIOEVI		RADIOEVI
 $ambient 932 Ambient/RADIOEVI Point Continuous 1.0
 
+Ambient/BLUBLUBL		BLUBLUBL
+$ambient 931 Ambient/BLUBLUBL Point Continuous 1.0
+
 
 apoka/sight APOKAALE
 tiro/tira DSRLAUNC
@@ -233,10 +236,7 @@ weapons/hellex dshellex
 
 icon/thud iconthud
 
-Blood/Spit		BLDSPIT
-$limit Blood/Spit 0
-Blood/Impact	BLDIMPAC
-$limit Blood/Impact 0
+
 
 hielo/llama HIELOLLA
 
@@ -473,26 +473,52 @@ colgado/gritona GRITONA
 fleshgolem/FLESHALE FLESHALE
 fleshgolem/FLESHDED FLESHDED
 fleshgolem/FLESHPER FLESHPER
+
+//Rotten Mancubus
 rottenmancubus/ROTMANVE ROTMANVE
 rottenmancubus/ROTMANMU ROTMANMU
 rottenmancubus/ROTMANPA ROTMANPA
 rottenmancubus/ROTMANAC ROTMANAC
 rottenmancubus/ROTMANCA ROTMANCA
+$Volume rottenmancubus/ROTMANVE 0.8
+$Volume rottenmancubus/ROTMANMU 0.8
+$Volume rottenmancubus/ROTMANPA 0.8
+$Volume rottenmancubus/ROTMANAC 0.8
+$Volume rottenmancubus/ROTMANCA 0.8
+
+
+
 rottenabortion/ROTABOAC ROTABOAC
 rottenabortion/ROTABOMU ROTABOMU
 rottenabortion/ROTABOPA ROTABOPA
 rottenabortion/ROTABOAC ROTABOAC
 rottenabortion/ROTABOAT ROTABOAT
+
+
 $random Rottennobu/Death { RNOBUD1 RNOBUD2 }
 RNOBUD1  RNOBUD1
 RNOBUD2 RNOBUD2
 rottennobu/RNOBU RNOBU
-monster/plaugeBall      dsbloodx
+
+
+//Rotten Imp
 rottenimp/COSAPAIN COSAPAIN
 rottenimp/COSAVE COSAVE
 rottenimp/COSAMUER COSAMUER
+$Volume rottenimp/COSAVE 0.8
+$Volume rottenimp/COSAPAIN 0.8
+$Volume rottenimp/COSAMUER 0.8
+
+//Rotten Cacodemon
 rottencacodemon/THINGPAIN THINGPAI
 rottencacodemon/THINGDEAD THINGDEA
+Blood/Spit		BLDSPIT
+$limit Blood/Spit 0
+Blood/Impact	BLDIMPAC
+$limit Blood/Impact 0
+
+monster/plaugeBall      dsbloodx
+
 rottenmother/MOTHBUS MOTHBUS
 rottenmother/MOTHATK MOTHATK
 rottenmother/MOTHDIE MOTHDIE
@@ -519,3 +545,45 @@ Duke/DMDEATH DMDEATH
 ATTACK/atkomni atkomni
 DEAD/dedomni dedomni
 SEE/seeomni seeomni
+
+$random thunder/hit { thunder/hit2  thunder/hit4 thunder/hit5 }
+thunder/hit2 TRUENO2
+thunder/hit4 TRUENO4
+thunder/hit5 TRUENO5
+$Volume thunder/hit 0.5
+
+$random thunder/hitr { thunder/hit1 thunder/hit3 thunder/hit6 thunder/hit7 thunder/hit8 }
+thunder/hit1 TRUENO
+thunder/hit3 TRUENO3
+thunder/hit6 TRUENO6
+thunder/hit7 TRUENO7
+thunder/hit8 TRUENO8
+$Volume thunder/hitr 0.7
+
+NightSentinel/SENTTOR SENTTOR
+$Volume NightSentinel/SENTTOR 0.3
+
+NightSentinel/ZBUUM ZBUUM
+
+$random wizard/tele 		{ dwiztel1  dwiztel2 }
+dwiztel1                    dwiztel1
+dwiztel2                    dwiztel2
+wizard/pain                     dwizpain
+$random wizard/sight           { dwizact dwizact1 dwizact2  dwizact3 }
+wizard/death                    dwizdth 
+$random wizard/active 		{ dwizact dwizact1 dwizact2  dwizact3 }
+dwizact2 dwizact2
+dwizact dwizact
+dwizact3 dwizact3
+dwizact1 dwizact1
+wizard/ball  DWDET
+
+Breack/wall BREACKR
+
+Mosca/Cherub flies_02
+
+//Rotten Vassago
+Vassago/atack DSVASATK
+Vassago/pain DSVASACT
+Vassago/death DSVASDTH
+Vassago/see DSVASSIT

@@ -1,5 +1,6 @@
 ACTOR Baronmuerto 10419
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -14,6 +15,7 @@ ACTOR Baronmuerto 10419
 
 ACTOR Baronmuerto2 10418
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -28,6 +30,7 @@ ACTOR Baronmuerto2 10418
 
 ACTOR demonmuerto 10417
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -42,6 +45,7 @@ ACTOR demonmuerto 10417
 
 ACTOR demonmuerto2 10416
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -56,6 +60,7 @@ ACTOR demonmuerto2 10416
 
 ACTOR demonmuerto3 10415
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -85,6 +90,7 @@ ACTOR Barril 10414
 
 ACTOR demonmuerto4 10433
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -99,6 +105,7 @@ ACTOR demonmuerto4 10433
 
 ACTOR demonmuerto5 10434
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -113,6 +120,7 @@ ACTOR demonmuerto5 10434
 
 ACTOR demonmuerto6 10437
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -127,6 +135,7 @@ ACTOR demonmuerto6 10437
 
 ACTOR cybermuerto 10438
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -141,6 +150,7 @@ ACTOR cybermuerto 10438
 
 ACTOR fatsomuerto 10439
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -155,6 +165,7 @@ ACTOR fatsomuerto 10439
 
 ACTOR revemuerto 10440
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP
@@ -169,6 +180,7 @@ ACTOR revemuerto 10440
 
 ACTOR zarania 10441
 {
+  //$Category "Monster corpses"
   Radius 20
   Height 4
   +NOBLOCKMAP

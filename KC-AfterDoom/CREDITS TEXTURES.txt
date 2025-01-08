@@ -1,5 +1,5 @@
  Texture credits:
- ESTECIEL by Uriko (Ola Björling)
+OTEX 1.1 by Uriko (Ola Björling)
  
  
  Blood textures:
