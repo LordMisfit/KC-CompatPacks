@@ -314,14 +314,14 @@ ACTOR BrutalWaterDropOnFloor : KCVaccableObject
 
 ACTOR Toilet : KCSwitchableDecoration 2226
 {
-	MONSTER
 	+SOLID
 	+SHOOTABLE
 	+NOBLOOD
 	+USESPECIAL
-	-COUNTKILL
 	+NOTAUTOAIMED
-	+FRIENDLY
+	//MONSTER
+	//-COUNTKILL
+	//+FRIENDLY
 	Activation THINGSPEC_Switch | THINGSPEC_ThingTargets | THINGSPEC_NoDeathSpecial
 	Mass 999999
 	Radius 12
@@ -3029,9 +3029,9 @@ ACTOR Shower : KCSwitchableDecoration 4899
 	Radius 4
 	Height 80
 	+USESPECIAL
-	MONSTER
-	-SHOOTABLE
-	-COUNTKILL
+	//MONSTER
+	//-SHOOTABLE
+	//-COUNTKILL
 	+THRUACTORS
 	Speed 0
 	Activation THINGSPEC_Switch | THINGSPEC_ThingTargets | THINGSPEC_NoDeathSpecial
@@ -3065,9 +3065,9 @@ ACTOR FaucetWater : KCSwitchableDecoration 4898
 	Radius 12
 	Height 12
 	+USESPECIAL
-	MONSTER
-	-SHOOTABLE
-	-COUNTKILL
+	//MONSTER
+	//-SHOOTABLE
+	//-COUNTKILL
 	+THRUACTORS
 	Speed 0
 	Activation THINGSPEC_Switch | THINGSPEC_ThingTargets | THINGSPEC_NoDeathSpecial
@@ -3426,12 +3426,12 @@ ACTOR SynthClubMusic : KCBaseZSC 2891
 
 ACTOR FireballTrapSmart : KCBaseZSC 20005
 { 
-	Monster
-	-COUNTKILL
+	//Monster
+	//-COUNTKILL
+	-SHOOTABLE
 	+STANDSTILL
 	+NOBLOCKMAP
 	+NOGRAVITY
-	-SHOOTABLE
 	States
 	{
 		Spawn:
@@ -5392,9 +5392,9 @@ Actor VaseBrown : PlantVase823 1754
 	Health 30
 	Scale 1.0
 	+ACTLIKEBRIDGE
-	MONSTER
-	+FRIENDLY
-	-COUNTKILL
+	//MONSTER
+	//+FRIENDLY
+	//-COUNTKILL
 	states
 	{
 		Spawn:
@@ -5559,8 +5559,9 @@ ACTOR ReflectionStaticGreen : TopLight1Red 8291
 	Alpha 0.4
 	+FORCEYBILLBOARD
 	//+FORCEXYBILLBOARD
-	MONSTER
-	-COUNTKILL
+	//MONSTER
+	//-COUNTKILL
+	+SHOOTABLE
 	Health 9
 	States
 	{
@@ -7483,9 +7484,9 @@ Actor PalmTreeTop : KCBaseZSC
 	Mass 9999999
 	+SHOOTABLE
 	+NOBLOOD
-	MONSTER
-	-COUNTKILL
-	+FRIENDLY
+	//MONSTER
+	//-COUNTKILL
+	//+FRIENDLY
 	Health 90
 	DamageFactor "PalmTree", 25.0
 	states
@@ -7529,9 +7530,9 @@ Actor PalmTreeWood1 : KCBaseZSC
 	Mass 9999999
 	+SHOOTABLE
 	+NOBLOOD
-	MONSTER
-	-COUNTKILL
-	+FRIENDLY
+	//MONSTER
+	//-COUNTKILL
+	//+FRIENDLY
 	Health 100
 	states
 	{
@@ -7727,10 +7728,10 @@ Actor TreeJungleMassive : KCBaseZSC 1239
 Actor JungleTreePart : KCBaseZSC
 {
 	Scale 1.0
-	MONSTER
+	//MONSTER
+	//-COUNTKILL
+	//+FRIENDLY
 	-SHOOTABLE
-	+FRIENDLY
-	-COUNTKILL
 	+THRUACTORS
 	+NOGRAVITY
 	+FLOAT

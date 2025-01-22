@@ -114,13 +114,10 @@ class FoodDonuts : KCHealthBoostItem
 		KCHealthBoostItem.healpercent 0.01; // 0.01
 		KCHealthBoostItem.healstring "You ate a Donut.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 		Radius 4;
 		Height 4;
 		+USESPECIAL;
-		MONSTER;
-		-SHOOTABLE;
-		-COUNTKILL;
 		Speed 0;
 		Activation THINGSPEC_Activate | THINGSPEC_ThingTargets | THINGSPEC_NoDeathSpecial;
 		Scale 0.6;
@@ -217,7 +214,7 @@ class FoodSalad1 : FoodDonuts
 		KCHealthBoostItem.healpercent 0.02; // 0.02
 		KCHealthBoostItem.healstring "You ate some salad.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -242,7 +239,7 @@ class FoodSalad2 : FoodDonuts
 		KCHealthBoostItem.healpercent 0.02; // 0.02
 		KCHealthBoostItem.healstring "You ate some salad.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -267,7 +264,7 @@ class FoodLobster: FoodDonuts
 		KCHealthBoostItem.healpercent 0.1; // 0.1
 		KCHealthBoostItem.healstring "You ate some yummy Lobster.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -292,7 +289,7 @@ class FoodShank : FoodDonuts
 		KCHealthBoostItem.healpercent 0.06; // 0.06
 		KCHealthBoostItem.healstring "You ate some Pork Shanks.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -317,7 +314,7 @@ class FoodPork : FoodDonuts
 		KCHealthBoostItem.healpercent 0.1; // 0.1
 		KCHealthBoostItem.healstring "You ate a large Pork Dish.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -342,7 +339,7 @@ class FoodCheese : FoodDonuts
 		KCHealthBoostItem.healpercent 0.08; // 0.03
 		KCHealthBoostItem.healstring "You ate some delicious cheese.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -367,7 +364,7 @@ class FoodPizza : FoodDonuts
 		KCHealthBoostItem.healpercent 0.24; // 0.04
 		KCHealthBoostItem.healstring "You ate a large pizza.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -392,7 +389,7 @@ class FoodPizzaSlice : FoodDonuts
 		KCHealthBoostItem.healpercent 0.03; // 0.01
 		KCHealthBoostItem.healstring "You ate a slice of pizza.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -417,7 +414,7 @@ class FoodShank2: FoodDonuts
 		KCHealthBoostItem.healpercent 0.08;
 		KCHealthBoostItem.healstring "You ate a large Pork Shank.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -442,7 +439,7 @@ class FoodFish1 : FoodDonuts
 		KCHealthBoostItem.healpercent 0.06;
 		KCHealthBoostItem.healstring "You ate a whole fish.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -468,7 +465,7 @@ class FoodBaguette : FoodDonuts
 		KCHealthBoostItem.healpercent 0.06;
 		KCHealthBoostItem.healstring "You ate a baguette.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -493,7 +490,7 @@ class FoodChickenLegs : FoodDonuts
 		KCHealthBoostItem.healpercent 0.06;
 		KCHealthBoostItem.healstring "You ate some chicken legs.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -518,7 +515,7 @@ class FoodShrimp : FoodDonuts
 		KCHealthBoostItem.healpercent 0.04;
 		KCHealthBoostItem.healstring "You ate some shrimp.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -543,7 +540,7 @@ class FoodChocolate : FoodDonuts
 		KCHealthBoostItem.healpercent 0.02; // 0.01
 		KCHealthBoostItem.healstring "You ate a chocolate bar.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -568,7 +565,7 @@ class FoodPuding : FoodDonuts
 		KCHealthBoostItem.healpercent 0.02; // 0.01
 		KCHealthBoostItem.healstring "You ate some pudding.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -593,7 +590,7 @@ class FoodBanana : FoodDonuts
 		KCHealthBoostItem.healpercent 0.04; // 0.02
 		KCHealthBoostItem.healstring "You ate a banana.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -618,7 +615,7 @@ class FoodTurkey : FoodDonuts
 		KCHealthBoostItem.healpercent 0.24; // 0.12
 		KCHealthBoostItem.healstring "You ate a whole Turkey.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -643,7 +640,7 @@ class FoodChicken : FoodDonuts
 		KCHealthBoostItem.healpercent 0.12; // 0.06
 		KCHealthBoostItem.healstring "You ate a whole chicken.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -668,7 +665,7 @@ class FoodHotDog : FoodDonuts
 		KCHealthBoostItem.healpercent 0.03; // 0.01
 		KCHealthBoostItem.healstring "You ate a hot dog.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -693,7 +690,7 @@ class FoodSteak : FoodDonuts
 		KCHealthBoostItem.healpercent 0.18; // 0.06
 		KCHealthBoostItem.healstring "You ate a big steak.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -718,7 +715,7 @@ class FoodRamen : FoodDonuts
 		KCHealthBoostItem.healpercent 0.025; // 0.1
 		KCHealthBoostItem.healstring "You ate some ramen.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -742,7 +739,7 @@ class FoodSushiBig : FoodDonuts
 		KCHealthBoostItem.healpercent 0.105; // 0.06
 		KCHealthBoostItem.healstring "You ate a lot of sushi.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -767,7 +764,7 @@ class FoodSushiSmall : FoodDonuts
 		KCHealthBoostItem.healpercent 0.035; // 0.02
 		KCHealthBoostItem.healstring "You ate some sushi.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -792,7 +789,7 @@ class FoodBurger : FoodDonuts
 		KCHealthBoostItem.healpercent 0.06; // 0.03
 		KCHealthBoostItem.healstring "You ate a whole burger.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -817,7 +814,7 @@ class FoodFries : FoodDonuts
 		KCHealthBoostItem.healpercent 0.03; // 0.01
 		KCHealthBoostItem.healstring "You ate some fries.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -842,7 +839,7 @@ class FoodPineApple : FoodDonuts
 		KCHealthBoostItem.healpercent 0.03; // 0.03
 		KCHealthBoostItem.healstring "You ate a whole pineapple.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -867,7 +864,7 @@ class FoodLunch : FoodDonuts
 		KCHealthBoostItem.healpercent 0.025; // 0.01
 		KCHealthBoostItem.healstring "You ate a small sandwich.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/Eat";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -892,7 +889,7 @@ class FoodAplle : FoodDonuts
 		KCHealthBoostItem.healpercent 0.05; // 0.01
 		KCHealthBoostItem.healstring "You ate an apple.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/EatApple";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
@@ -917,7 +914,7 @@ class FoodCake : FoodDonuts
 		KCHealthBoostItem.healpercent 0.40; // 0.08
 		KCHealthBoostItem.healstring "You ate an entire birthday cake.";
 		KCHealthBoostItem.healsound1 "EATING";
-		KCHealthBoostItem.healsound2 "Dinah/EatApple";
+		KCHealthBoostItem.healsound2 "Heiwa/Eat";
 	}
 	
 	States
