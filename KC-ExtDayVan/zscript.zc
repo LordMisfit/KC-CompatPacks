@@ -65,10 +65,10 @@ class WaterActivation : KCHealthBoostItem
 					int oldhealth = player.health;
 					int temp2 = (player.CountInv("PlayerMaxHP") * 1);
 					int temp3 = player.CountInv("PlayerMaxHP");
+					temp3 *= healthgain;
+					temp3 += random(healamt2rand1,healamt2rand2);
 					if (temp1 < temp2)
 					{
-						temp3 *= healthgain;
-						temp3 += random(healamt2rand1,healamt2rand2);
 						if (temp3 < 1) temp3 = 1;
 						temp1 += temp3;
 						
@@ -149,11 +149,11 @@ class FoodDonuts : KCHealthBoostItem
 		int oldhealth = player.health;
 		int temp2 = (player.CountInv("PlayerMaxHP") * 2);
 		int temp3 = player.CountInv("PlayerMaxHP");
+		temp3 *= healthgain;
+		temp3 += random(healamt2rand1,healamt2rand2);
 		//Console.Printf("temp3: %d, healamt: %.8f", temp3, healthgain);
 		if (temp1 < temp2)
 		{
-			temp3 *= healthgain;
-			temp3 += random(healamt2rand1,healamt2rand2);
 			if (temp3 < 1) temp3 = 1;
 			temp1 += temp3;
 			//Console.Printf("temp3: %d, healamt: %.8f", temp3, healthgain);
