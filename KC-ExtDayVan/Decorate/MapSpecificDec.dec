@@ -2450,7 +2450,12 @@ States
 ACTOR BDECRedLightWall1 : BDdecorationBase
 {
 	MONSTER
-	+INVULNERABLE +FRIENDLY -COUNTKILL +FLOAT +NOGRAVITY -SHOOTABLE
+	+INVULNERABLE 
+	+FRIENDLY 
+	-COUNTKILL 
+	+FLOAT 
+	+NOGRAVITY 
+	-SHOOTABLE
 	RenderStyle "Add"
 	Alpha 0.2
 	XScale 0.6
@@ -3388,33 +3393,34 @@ States
 
 ACTOR BDecMap16SecretExit : BDdecorationBase
 {
- XScale 1.0
- YScale 0.2
- MONSTER
- -SHOOTABLE
- -COUNTKILL
- MaxTargetRAnge 50
- Speed 0
- States
+	XScale 1.0
+	YScale 0.2
+	MONSTER
+	-SHOOTABLE
+	-COUNTKILL
+	MaxTargetRange 50
+	Speed 0
+	States
 	{
 		Spawn:
-		SPDF D 1 BRIGHT A_chase("","")
-		SPDF D 5 BRIGHT A_JumpIfCloser(40, "Die")
-		TNT1 A 0 A_ClearTarget
-		SPDF D 1 BRIGHT A_chase("","")
-		SPDF D 5 BRIGHT A_JumpIfCloser(40, "Die")
-		TNT1 A 0 A_ClearTarget
-		SPDF D 1 BRIGHT A_chase("","")
-		SPDF D 5 BRIGHT A_JumpIfCloser(40, "Die")
-		TNT1 A 0 A_ClearTarget
-		TNT1 A 0 A_CustomMissile ("RealisticFireSparks1", 1, 0, random (0, 140), 2, random (0, 160))
-		Loop
+			SPDF D 1 BRIGHT A_chase("","")
+			SPDF D 5 BRIGHT A_JumpIfCloser(40, "Die")
+			TNT1 A 0 A_ClearTarget
+			SPDF D 1 BRIGHT A_chase("","")
+			SPDF D 5 BRIGHT A_JumpIfCloser(40, "Die")
+			TNT1 A 0 A_ClearTarget
+			SPDF D 1 BRIGHT A_chase("","")
+			SPDF D 5 BRIGHT A_JumpIfCloser(40, "Die")
+			TNT1 A 0 A_ClearTarget
+			TNT1 A 0 A_CustomMissile ("RealisticFireSparks1", 1, 0, random (0, 140), 2, random (0, 160))
+			Loop
 		
 		Die:
-		TNT1 A 0
-		TNT1 A 0 ACS_ExecuteAlways(1216)
-		Stop
-}}
+			TNT1 A 0
+			TNT1 A 0 ACS_ExecuteAlways(1216)
+			Stop
+	}
+}
 
 
 

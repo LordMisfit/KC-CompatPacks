@@ -14,6 +14,8 @@ class WaterActivation : KCHealthBoostItem
 		MaxTargetRange 150;
 		Scale 0.6;
 		KCHealthBoostItem.healpercent 0.01; // 0.01
+		KCHealthBoostItem.healfixedrand1 0;
+		KCHealthBoostItem.healfixedrand2 2;
 		KCHealthBoostItem.healstring "You drank some water.";
 		KCHealthBoostItem.healsound1 "SLURPING";
 		KCHealthBoostItem.healsound2 "Tea/Sipping";
@@ -26,6 +28,7 @@ class WaterActivation : KCHealthBoostItem
 			TNT1 A 0
 			{
 				bFRIENDLY = false; 
+				bISMONSTER = false; 
 				actor player = players[0].mo;
 				if (player)
 				{
@@ -47,6 +50,7 @@ class WaterActivation : KCHealthBoostItem
 				A_NoBlocking();
 				A_Scream();
 				bUSESPECIAL = false;
+				//Console.Printf("#R#R");
 			}
 			TNT1 A 1
 			{
@@ -56,6 +60,7 @@ class WaterActivation : KCHealthBoostItem
 				
 				if (target && target == player)
 				{
+					//Console.Printf("target");
 					int temp1 = player.health;
 					int oldhealth = player.health;
 					int temp2 = (player.CountInv("PlayerMaxHP") * 1);
@@ -63,6 +68,7 @@ class WaterActivation : KCHealthBoostItem
 					if (temp1 < temp2)
 					{
 						temp3 *= healthgain;
+						temp3 += random(healamt2rand1,healamt2rand2);
 						if (temp3 < 1) temp3 = 1;
 						temp1 += temp3;
 						
@@ -70,7 +76,7 @@ class WaterActivation : KCHealthBoostItem
 						player.health = temp1;
 						int healdiff = player.health - oldhealth;
 						if (healdiff) A_RecoverHUD(healdiff, 0, true);
-						if (MiscItem) MiscItem.HPRegenBoostTimer += (randompick(9,10,10,11,11,12,13) * (healamt * 100));
+						if (MiscItem) MiscItem.HPRegenBoostTimer += (randompick(9,10,10,11,11,12,13) * (temp3 * 100));
 						
 						// PP restoration [since drinking water at least SLIGHTLY restores PP in EB, LUL :V]
 						if (A_CheckForHeiwaPlayer())
@@ -94,7 +100,7 @@ class WaterActivation : KCHealthBoostItem
 							player.A_StopSound(CHAN_VOICE);
 							player.A_StartSound(sound2,CHAN_VOICE,CHANF_DEFAULT,1.0,ATTN_NORM,maskpitch);
 						}
-						player.A_SetBlend("f1 ff f1",0.1,(random(2,3) * (healamt * 100)));
+						player.A_SetBlend("f1 ff f1",0.1,(random(2,3) * (temp3 * 5)));
 						
 						A_StartSound(sound1, CHAN_BODY);
 						Console.Printf("%s Health + %d", foodquote, temp3);
@@ -112,6 +118,8 @@ class FoodDonuts : KCHealthBoostItem
 	{
 		//$Category Food_Items
 		KCHealthBoostItem.healpercent 0.01; // 0.01
+		KCHealthBoostItem.healfixedrand1 6; // +6
+		KCHealthBoostItem.healfixedrand2 6; // +6
 		KCHealthBoostItem.healstring "You ate a Donut.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -139,12 +147,13 @@ class FoodDonuts : KCHealthBoostItem
 		
 		int temp1 = player.health;
 		int oldhealth = player.health;
-		int temp2 = (player.CountInv("PlayerMaxHP") * 3);
+		int temp2 = (player.CountInv("PlayerMaxHP") * 2);
 		int temp3 = player.CountInv("PlayerMaxHP");
 		//Console.Printf("temp3: %d, healamt: %.8f", temp3, healthgain);
 		if (temp1 < temp2)
 		{
 			temp3 *= healthgain;
+			temp3 += random(healamt2rand1,healamt2rand2);
 			if (temp3 < 1) temp3 = 1;
 			temp1 += temp3;
 			//Console.Printf("temp3: %d, healamt: %.8f", temp3, healthgain);
@@ -153,7 +162,7 @@ class FoodDonuts : KCHealthBoostItem
 			player.health = temp1;
 			int healdiff = player.health - oldhealth;
 			if (healdiff) A_RecoverHUD(healdiff, 0, true);
-			if (MiscItem) MiscItem.HPRegenBoostTimer += (randompick(9,10,10,11,11,12,13) * (healamt * 100));
+			if (MiscItem) MiscItem.HPRegenBoostTimer += (randompick(9,10,10,11,11,12,13) * (temp3 * 100));
 			
 			if (MiscItem && MiscItem.CanTalkUnderwater)
 			{
@@ -162,7 +171,7 @@ class FoodDonuts : KCHealthBoostItem
 				player.A_StopSound(CHAN_VOICE);
 				player.A_StartSound(sound2,CHAN_VOICE,CHANF_DEFAULT,1.0,ATTN_NORM,maskpitch);
 			}
-			player.A_SetBlend("f1 ff f1",0.1,(random(2,3) * (healamt * 100)));
+			player.A_SetBlend("f1 ff f1",0.1,(random(2,3) * (temp3 * 5)));
 		}
 		Console.Printf("%s Health + %d", foodquote, temp3);
 	}
@@ -187,6 +196,8 @@ class FoodCofee : FoodDonuts
 	{
 		Scale 0.6;
 		KCHealthBoostItem.healpercent 0.02; // 0.02
+		KCHealthBoostItem.healfixedrand1 10; // +6
+		KCHealthBoostItem.healfixedrand2 14; // +6
 		KCHealthBoostItem.healstring "You drank some coffee.";
 		KCHealthBoostItem.healsound1 "SLURPING";
 		KCHealthBoostItem.healsound2 "Tea/Sipping";
@@ -212,6 +223,8 @@ class FoodSalad1 : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.02; // 0.02
+		KCHealthBoostItem.healfixedrand1 15; // +6
+		KCHealthBoostItem.healfixedrand2 21; // +6
 		KCHealthBoostItem.healstring "You ate some salad.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -237,6 +250,8 @@ class FoodSalad2 : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.02; // 0.02
+		KCHealthBoostItem.healfixedrand1 15; // +6
+		KCHealthBoostItem.healfixedrand2 21; // +6
 		KCHealthBoostItem.healstring "You ate some salad.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -262,6 +277,8 @@ class FoodLobster: FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.1; // 0.1
+		KCHealthBoostItem.healfixedrand1 75; // +6
+		KCHealthBoostItem.healfixedrand2 105; // +6
 		KCHealthBoostItem.healstring "You ate some yummy Lobster.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -287,6 +304,8 @@ class FoodShank : FoodDonuts
 	{
 		Scale 0.5;
 		KCHealthBoostItem.healpercent 0.06; // 0.06
+		KCHealthBoostItem.healfixedrand1 45; // +6
+		KCHealthBoostItem.healfixedrand2 75; // +6
 		KCHealthBoostItem.healstring "You ate some Pork Shanks.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -312,6 +331,8 @@ class FoodPork : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.1; // 0.1
+		KCHealthBoostItem.healfixedrand1 75; // +6
+		KCHealthBoostItem.healfixedrand2 105; // +6
 		KCHealthBoostItem.healstring "You ate a large Pork Dish.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -337,6 +358,8 @@ class FoodCheese : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.08; // 0.03
+		KCHealthBoostItem.healfixedrand1 47; // +6
+		KCHealthBoostItem.healfixedrand2 77; // +6
 		KCHealthBoostItem.healstring "You ate some delicious cheese.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -362,6 +385,8 @@ class FoodPizza : FoodDonuts
 	{
 		Scale 1.0;
 		KCHealthBoostItem.healpercent 0.24; // 0.04
+		KCHealthBoostItem.healfixedrand1 275; // +6
+		KCHealthBoostItem.healfixedrand2 325; // +6
 		KCHealthBoostItem.healstring "You ate a large pizza.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -387,6 +412,8 @@ class FoodPizzaSlice : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.03; // 0.01
+		KCHealthBoostItem.healfixedrand1 34; // +6
+		KCHealthBoostItem.healfixedrand2 41; // +6
 		KCHealthBoostItem.healstring "You ate a slice of pizza.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -412,6 +439,8 @@ class FoodShank2: FoodDonuts
 	{
 		Scale 0.6;
 		KCHealthBoostItem.healpercent 0.08;
+		KCHealthBoostItem.healfixedrand1 47; // +6
+		KCHealthBoostItem.healfixedrand2 77; // +6
 		KCHealthBoostItem.healstring "You ate a large Pork Shank.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -437,6 +466,8 @@ class FoodFish1 : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.06;
+		KCHealthBoostItem.healfixedrand1 45; // +6
+		KCHealthBoostItem.healfixedrand2 75; // +6
 		KCHealthBoostItem.healstring "You ate a whole fish.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -463,6 +494,8 @@ class FoodBaguette : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.06;
+		KCHealthBoostItem.healfixedrand1 45; // +6
+		KCHealthBoostItem.healfixedrand2 75; // +6
 		KCHealthBoostItem.healstring "You ate a baguette.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -488,6 +521,8 @@ class FoodChickenLegs : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.06;
+		KCHealthBoostItem.healfixedrand1 45; // +6
+		KCHealthBoostItem.healfixedrand2 75; // +6
 		KCHealthBoostItem.healstring "You ate some chicken legs.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -513,6 +548,8 @@ class FoodShrimp : FoodDonuts
 	{
 		Scale 0.6;
 		KCHealthBoostItem.healpercent 0.04;
+		KCHealthBoostItem.healfixedrand1 23; // +6
+		KCHealthBoostItem.healfixedrand2 37; // +6
 		KCHealthBoostItem.healstring "You ate some shrimp.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -538,6 +575,8 @@ class FoodChocolate : FoodDonuts
 	{
 		Scale 0.6;
 		KCHealthBoostItem.healpercent 0.02; // 0.01
+		KCHealthBoostItem.healfixedrand1 15; // +6
+		KCHealthBoostItem.healfixedrand2 21; // +6
 		KCHealthBoostItem.healstring "You ate a chocolate bar.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -563,6 +602,8 @@ class FoodPuding : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.02; // 0.01
+		KCHealthBoostItem.healfixedrand1 10; // +6
+		KCHealthBoostItem.healfixedrand2 14; // +6
 		KCHealthBoostItem.healstring "You ate some pudding.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -588,6 +629,8 @@ class FoodBanana : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.04; // 0.02
+		KCHealthBoostItem.healfixedrand1 23; // +6
+		KCHealthBoostItem.healfixedrand2 37; // +6
 		KCHealthBoostItem.healstring "You ate a banana.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -613,6 +656,8 @@ class FoodTurkey : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.24; // 0.12
+		KCHealthBoostItem.healfixedrand1 275; // +6
+		KCHealthBoostItem.healfixedrand2 325; // +6
 		KCHealthBoostItem.healstring "You ate a whole Turkey.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -638,6 +683,8 @@ class FoodChicken : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.12; // 0.06
+		KCHealthBoostItem.healfixedrand1 138; // +6
+		KCHealthBoostItem.healfixedrand2 163; // +6
 		KCHealthBoostItem.healstring "You ate a whole chicken.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -663,6 +710,8 @@ class FoodHotDog : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.03; // 0.01
+		KCHealthBoostItem.healfixedrand1 138; // +6
+		KCHealthBoostItem.healfixedrand2 163; // +6
 		KCHealthBoostItem.healstring "You ate a hot dog.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -812,6 +861,8 @@ class FoodFries : FoodDonuts
 	{
 		Scale 0.6;
 		KCHealthBoostItem.healpercent 0.03; // 0.01
+		KCHealthBoostItem.healfixedrand1 34; // +6
+		KCHealthBoostItem.healfixedrand2 41; // +6
 		KCHealthBoostItem.healstring "You ate some fries.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -837,6 +888,8 @@ class FoodPineApple : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.03; // 0.03
+		KCHealthBoostItem.healfixedrand1 34; // +6
+		KCHealthBoostItem.healfixedrand2 41; // +6
 		KCHealthBoostItem.healstring "You ate a whole pineapple.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -862,6 +915,8 @@ class FoodLunch : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.025; // 0.01
+		KCHealthBoostItem.healfixedrand1 18; // +6
+		KCHealthBoostItem.healfixedrand2 24; // +6
 		KCHealthBoostItem.healstring "You ate a small sandwich.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -887,6 +942,8 @@ class FoodAplle : FoodDonuts
 	{
 		Scale 0.8;
 		KCHealthBoostItem.healpercent 0.05; // 0.01
+		KCHealthBoostItem.healfixedrand1 36; // +6
+		KCHealthBoostItem.healfixedrand2 48; // +6
 		KCHealthBoostItem.healstring "You ate an apple.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
@@ -912,6 +969,8 @@ class FoodCake : FoodDonuts
 	{
 		Scale 1.0;
 		KCHealthBoostItem.healpercent 0.40; // 0.08
+		KCHealthBoostItem.healfixedrand1 450; // +6
+		KCHealthBoostItem.healfixedrand2 550; // +6
 		KCHealthBoostItem.healstring "You ate an entire birthday cake.";
 		KCHealthBoostItem.healsound1 "EATING";
 		KCHealthBoostItem.healsound2 "Heiwa/Eat";
