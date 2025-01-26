@@ -38,6 +38,8 @@ DoomEdNums
 	4728 = FoodLunch
 	4729 = FoodAplle
 	4730 = FoodCake
+	12344 = InfernalMultiplayer
+	12345 = Infernal
 }
 
 clearepisodes

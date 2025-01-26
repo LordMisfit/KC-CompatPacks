@@ -207,6 +207,7 @@ LampShade
 LampShadeOther
 CofeeMaker
 Toaster
+SignStop
 TankHitBoxFront
 TankHitBoxBack
 TankHitBoxSide
