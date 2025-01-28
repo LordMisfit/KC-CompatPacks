@@ -1,5 +1,6 @@
 DoomEdNums
 {
+	666 = IconOfSinBoss
 	1312 = Trashcan1
 	1313 = Trashcan2
 	1314 = Trashcan3
@@ -38,6 +39,9 @@ DoomEdNums
 	4728 = FoodLunch
 	4729 = FoodAplle
 	4730 = FoodCake
+	8753 = CyberdemonLordMinor
+	8758 = CyberdemonLord
+	8759 = CyberdemonLordMP
 	12344 = InfernalMultiplayer
 	12345 = Infernal
 }
