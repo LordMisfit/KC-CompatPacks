@@ -1,0 +1,75 @@
+class KidMagic : KCNPC
+{
+	default
+	{
+		//$Category KC AugZen NPCs
+		Health 10;
+		Radius 20;
+		Height 56;
+		Speed 0;
+		Scale 1;
+		PainChance 256;
+		Mass 5000;
+		+NOGRAVITY
+		+FLOATBOB
+		-SOLID
+		Tag "Kid Magic";
+	}
+		
+	States
+	{
+		Spawn:
+			WTCH A 0 ThrustThingz(0,0,0,0);
+			WTCH AB 10 A_Look();
+			Goto See;
+		See:
+			WTCH AB 10 A_Chase();
+			Loop;
+		Death:
+			WTCH CCC 20 { bFLOATBOB = false; }
+			WTCH C 1 A_CheckProximity("Death","KCPlayer",40);
+			WTCH C -1 Thing_Raise(0);
+		Raise:
+			WTCH AA 2 thrustthingz(0,6,0,1);
+			WTCH AA 2 thrustthingz(0,4,1,1);
+			WTCH A 0 { bFLOATBOB = true; }
+			Goto Spawn;
+	}
+}
+
+class KidSweep1 : KCNPC
+{
+	default
+	{
+		//$Category KC AugZen NPCs
+		Health 10;
+		Radius 20;
+		Height 64;
+		Speed 10;
+		Scale 0.75;
+		PainChance 256;
+		Mass 5000;
+		MaxStepHeight 8;
+		DamageFactor "Cricket", 3;
+		DamageFactor "Lead", 2;
+		-CANUSEWALLS
+		Tag "Kid Sweep 1";
+	}
+	
+	States
+	{
+		Spawn:
+			NKD2 A 10 A_Look();
+			Goto See;
+		See:
+			NKD2 ABAB 10 A_Wander();
+			Goto Spawn;
+		Death:
+			NKD2 CCC 20;
+			NKD2 C 1 A_CheckProximity("Death","KCPlayer",40);
+			NKD2 C -1 Thing_Raise(0);
+		Raise:
+			NKD2 AA 1;
+			Goto See;
+	}
+}
